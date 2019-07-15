@@ -1,0 +1,51 @@
+{
+  "name": "puo-website",
+  "description": "The website for the Princeton University Orchestra",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "ReillyBova",
+  "keywords": [
+    "PUO",
+    "Princeton",
+    "Orchestra",
+    "Symphony",
+    "University",
+    "Classical Music"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://reillybova.github.io/PUO-Website"
+  },
+  "private": false,
+  "homepage": "orchestra.princeton.edu",
+  "scripts": {
+    "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "format": "prettier --write '*.js' '*.jsx' 'src/**/*.js' 'src/**/*.jsx'",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "@reach/router": "^1.2.1",
+    "gatsby": "^2.13.15",
+    "gatsby-plugin-layout": "^1.1.1",
+    "gatsby-plugin-manifest": "^2.2.2",
+    "gatsby-plugin-material-ui": "^2.1.4",
+    "gatsby-plugin-module-resolver": "^1.0.3",
+    "gatsby-plugin-offline": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.1.1",
+    "gatsby-plugin-sitemap": "^2.2.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-transition-group": "^4.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  }
+}

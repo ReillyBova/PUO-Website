@@ -1,0 +1,63 @@
+/* Apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Reset */
+html, body, div {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f2f2f2;
+    min-width: 300px;
+    overflow-x: scroll;
+
+    /* Ease in the site with an opacity animation */
+	animation: SoftLoad 2s ease 0.5s forwards;
+	opacity: 0;
+
+    /* Helps fonts on OSX look more consistent with other systems */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Use momentum-based scrolling on iOS devices */
+    -webkit-overflow-scrolling: touch;
+
+    /* Adjust text sizes */
+    -webkit-text-size-adjust: 100%;
+
+}
+
+body.mobile-menu {
+    overflow-y: hidden;
+}
+
+a {
+  color: #f58025;
+  text-decoration: none;
+
+}
+
+a:hover, a:active, a.active {
+  color: #f58025;
+}
+
+canvas {
+    display: block;
+}
+
+@keyframes SoftLoad {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

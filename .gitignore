@@ -59,3 +59,14 @@ typings/
 
 # next.js build output
 .next
+
+# Project dependencies
+.cache
+.idea
+node_modules
+
+# Build directory
+/public
+
+# Mac OSX
+.DS_Store
