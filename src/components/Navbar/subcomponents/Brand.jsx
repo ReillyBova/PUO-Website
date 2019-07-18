@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 // Project imports
-import { LargeDarkLogo, MaterialDarkLogo, TextDarkLogo } from 'branding';
+import { LargeDarkLogo, TextDarkLogo } from 'branding';
 
 // A component that renders PUO logo and text for the navbar
-const Brand = ({ classes, setMenuState, isMobileMode }) => {
+const Brand = ({ classes, setMenuState }) => {
     // CSS classes for styling
     const { brand, brandOrch, brandText } = classes;
 
@@ -16,11 +16,7 @@ const Brand = ({ classes, setMenuState, isMobileMode }) => {
     // Render
     return (
         <Link to="/" className={brand} onClick={() => setMenuState(false)}>
-            <img
-                className={brandOrch}
-                src={isMobileMode ? MaterialDarkLogo : LargeDarkLogo}
-                alt={alt_brand}
-            />
+            <img className={brandOrch} src={LargeDarkLogo} alt={alt_brand} />
             <img
                 className={clsx(brandText, 'below')}
                 src={TextDarkLogo}
@@ -38,7 +34,6 @@ const Brand = ({ classes, setMenuState, isMobileMode }) => {
 Brand.propTypes = {
     classes: PropTypes.object, // CSS classes
     setMenuState: PropTypes.func, // Hook for setting menu state
-    isMobileMode: PropTypes.bool, // Screen size status
 };
 
 export default Brand;

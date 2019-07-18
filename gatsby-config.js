@@ -54,6 +54,7 @@ module.exports = {
             { page: 'Donate' },
         ],
     },
+    pathPrefix: '/PUO-Website', // Remove for production build
     plugins: [
         // Material UI
         'gatsby-plugin-top-layout',
@@ -83,10 +84,13 @@ module.exports = {
                     branding: './assets/branding', // <- will become ./src/assets/branding
                     videos: './assets/videos', // <- will become ./src/assets/branding
                     components: './components', // <- will become ./src/components
+                    content: './content', // <- will become ./src/content
                     utils: './utils', // <- will become ./src/utils
                 },
             },
         },
+        // Markdown support
+        'gatsby-transformer-remark',
         // Global navbar sits above pages
         {
             resolve: `gatsby-plugin-layout`,
@@ -96,9 +100,44 @@ module.exports = {
                 ),
             },
         },
+        // Written (markdown) content filesystem for queries
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `content`,
+                path: `${__dirname}/src/content`,
+            },
+        },
         // Sitemap generation
         'gatsby-plugin-sitemap',
         // Caching site locally
-        'gatsby-plugin-offline',
+        {
+            resolve: 'gatsby-plugin-offline',
+            options: {
+                runtimeCaching: [
+                    {
+                        // Default: Use cacheFirst since these don't need to be
+                        // revalidated
+                        // CHANGED: exclude static.*.mp4 files because they follow a different rule
+                        urlPattern: /(\.js$|\.css$|static\/^[^.]+$|\.(?!(mp4)$)([^.]+$))/,
+                        handler: `cacheFirst`,
+                    },
+                    {
+                        // Default: Add runtime caching of various other page resources
+                        urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+                        handler: `staleWhileRevalidate`,
+                    },
+                    {
+                        // Default: Google Fonts CSS (doesn't end in .css so we need to specify it)
+                        urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+                        handler: `staleWhileRevalidate`,
+                    },
+                ],
+            },
+        },
+        // Custom workbox caching for videos to work with Safari
+        'gatsby-plugin-cache-video',
+        // Force service worker updates when any changes are detected
+        'gatsby-plugin-update-sw',
     ],
 };

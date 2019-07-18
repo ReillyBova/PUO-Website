@@ -76,7 +76,6 @@ const Seo = ({ title, description, lang, meta }) => {
                     property: `og:image:height`,
                     content: site.siteMetadata.card.height,
                 },
-
                 // Twitter Headers:
                 {
                     name: `twitter:card`,

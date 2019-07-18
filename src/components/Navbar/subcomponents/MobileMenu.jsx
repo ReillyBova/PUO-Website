@@ -35,7 +35,9 @@ const MobileMenu = ({
     // Function for generating navbar elements from site navigation configuration
     const makeLinkAndDropdown = (navItem, i) => {
         // Make Header JSX
-        const baseURL = navItem.link || urlify(navItem.page);
+        const baseURL = navItem.specialLink
+            ? navItem.link
+            : urlify(navItem.page);
         const headerLink = (
             <Link
                 to={`/${baseURL}`}
@@ -114,7 +116,10 @@ const MobileMenu = ({
                 unmountOnExit
             >
                 <nav className={mobileMenu}>
-                    {makeLinkAndDropdown({ page: 'Home', link: './' }, -1)}
+                    {makeLinkAndDropdown(
+                        { page: 'Home', specialLink: true, link: '' },
+                        -1
+                    )}
                     {navigation.map(makeLinkAndDropdown)}
                 </nav>
             </CSSTransition>

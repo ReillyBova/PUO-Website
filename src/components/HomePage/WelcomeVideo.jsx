@@ -11,7 +11,7 @@ import {
     tinyWelcomeMP4,
     posterWelcomeJPG,
 } from 'videos/Welcome';
-import { winWidth } from 'utils';
+import { addToVideoCache, winWidth } from 'utils';
 
 // Custom styles for component
 const videoStyles = makeStyles(() => ({
@@ -41,6 +41,12 @@ const videoStyles = makeStyles(() => ({
             transform: 'translateX(-50%)',
             height: '100%',
         },
+        // Loading transition from black
+        transition: 'opacity 0.5s ease-in',
+        opacity: 1,
+        '&.loading': {
+            opacity: 0,
+        },
     },
 }));
 
@@ -48,6 +54,8 @@ const videoStyles = makeStyles(() => ({
 function WelcomeVideo() {
     // Hook for toggling video orientation CSS
     const [orientation, setOrientation] = useState('landscape');
+    // Hook for toggling loading state
+    const [loading, setLoading] = useState(true);
     // Ref for keeping track of wrapper
     const wrapperRef = useRef();
     const videoRef = useRef();
@@ -77,6 +85,26 @@ function WelcomeVideo() {
             // Load full size video
             videoSource.src = largeWelcomeMP4;
         }
+
+        // Callbacks for loading side-effects
+        videoSource.onerror = () => {
+            // Show poster if it is there
+            setLoading(false);
+        };
+        videoSource.onabort = () => {
+            // Show poster if it is there
+            setLoading(false);
+        };
+        videoSource.onstalled = () => {
+            // Show poster if it is there
+            setLoading(false);
+        };
+        videoElement.oncanplaythrough = () => {
+            // Video is loaded and can be played
+            setLoading(false);
+            addToVideoCache(videoSource.src);
+        };
+
         // Load new source
         videoElement.load();
     };
@@ -110,7 +138,7 @@ function WelcomeVideo() {
         handleResize();
         // Load video
         lazyLoadVideo();
-        // Cleapup event handler in case of unmount
+        // Cleanup event handler in case of unmount
         return function cleanup() {
             window.removeEventListener('resize', orientVideo);
         };
@@ -123,12 +151,13 @@ function WelcomeVideo() {
         <div className={wrapper} ref={wrapperRef}>
             <video
                 ref={videoRef}
-                className={clsx(video, orientation)}
+                className={clsx(video, orientation, loading && 'loading')}
                 poster={posterWelcomeJPG}
                 autoPlay
                 loop
                 muted
                 playsInline
+                crossOrigin={'anonymous'}
             >
                 <source type="video/mp4" />
             </video>
