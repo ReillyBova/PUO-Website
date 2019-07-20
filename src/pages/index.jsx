@@ -8,7 +8,9 @@ function HomePage() {
         <PageLayout>
             <Parallax>
                 <WelcomeVideo />
-                <WelcomeOverlay />
+                <WelcomeOverlay to={"/concerts"}>
+                    {"Explore Our 2018 – 2019 Season"}
+                </WelcomeOverlay>
             </Parallax>
             <Container maxWidth="sm">
                 <div style={{ height: 5000, backgroundColor: 'red' }}>
