@@ -12,12 +12,12 @@ import { DelayedLink } from 'components';
 const buttonStyles = makeStyles((theme) => ({
     // Animation for SVG arrow
     '@keyframes bounce': {
-            '0%, 100%': {
-                transform: 'translateX(0)',
-            },
-            '56%': {
-                transform: 'translateX(4px)',
-            }
+        '0%, 100%': {
+            transform: 'translateX(0)',
+        },
+        '56%': {
+            transform: 'translateX(4px)',
+        },
     },
     // Traditional opacity fade-in animation
     '@keyframes fadein': {
@@ -26,21 +26,21 @@ const buttonStyles = makeStyles((theme) => ({
     },
     // Animation for ripple override
     '@keyframes pressDown': {
-      '0%': {
-        opacity: 0.75,
-        transform: 'scale(0)',
+        '0%': {
+            opacity: 0.75,
+            transform: 'scale(0)',
+        },
+        '100%': {
+            opacity: 1,
+            transform: 'scale(1)',
+        },
     },
-      '100%': {
-        opacity: 1,
-        transform: 'scale(1)',
-      }
-  },
-  // SVG arrow
-  arrow: {
-      // Put distance between arrow and button text
-      marginLeft: 8,
-  },
-  // Custom styling for button; messy because overrides Material UI
+    // SVG arrow
+    arrow: {
+        // Put distance between arrow and button text
+        marginLeft: 8,
+    },
+    // Custom styling for button; messy because overrides Material UI
     button: {
         // Text default properties
         fontFamily: 'Roboto, Open Sans, Roboto, Helvetica, Arial, sans-serif',
@@ -57,44 +57,44 @@ const buttonStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(0, 0, 0, 0.2) !important',
         // Orange on hover
         '&:hover': {
-          backgroundColor: `${theme.palette.primary.main} !important`,
-          border: `2px solid ${theme.palette.primary.main} !important`,
-      },
-      // Further text properties
+            backgroundColor: `${theme.palette.primary.main} !important`,
+            border: `2px solid ${theme.palette.primary.main} !important`,
+        },
+        // Further text properties
         '&>span:first-of-type': {
-          color: 'white !important',
-          position: 'relative',
-          zIndex: 1,
-      },
-      // Bouncing arrow animation on hover
-      '&:hover svg': {
-          animation: '$bounce 1s infinite',
-      },
-      // Ripple animation overrides
+            color: 'white !important',
+            position: 'relative',
+            zIndex: 1,
+        },
+        // Bouncing arrow animation on hover
+        '&:hover svg': {
+            animation: '$bounce 1s infinite',
+        },
+        // Ripple animation overrides
         '&>span:last-of-type': {
-          borderRadius: '0 !important',
+            borderRadius: '0 !important',
 
-          '& span': {
-            opacity: '1 !important',
-            animation: '$pressDown 550ms cubic-bezier(0.4, 0, 0.2, 1) !important',
-          }
-        }
-    }
+            '& span': {
+                opacity: '1 !important',
+                animation:
+                    '$pressDown 550ms cubic-bezier(0.4, 0, 0.2, 1) !important',
+            },
+        },
+    },
 }));
 
 // Custom button for welcome screen
-const WelcomeButton = ({children, to}) => {
-
-// CSS classes for styling
-const { arrow, button } = buttonStyles();
-// Render
-  return (
-      <DelayedLink delay={500} to={to}>
-          <Button className={button} variant="outlined" color="primary">
-              { children }
-              <ArrowRightAlt className={arrow} />
-          </Button>
-      </DelayedLink>
+const WelcomeButton = ({ children, to }) => {
+    // CSS classes for styling
+    const { arrow, button } = buttonStyles();
+    // Render
+    return (
+        <DelayedLink delay={500} to={to}>
+            <Button className={button} variant="outlined" color="primary">
+                {children}
+                <ArrowRightAlt className={arrow} />
+            </Button>
+        </DelayedLink>
     );
 };
 

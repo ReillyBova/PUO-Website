@@ -73,7 +73,7 @@ const DropdownList = ({ list, headerRef, style }) => {
 
     // Adjust dropdown orientation based on distance from screen edge
     const orientDropdown = () => {
-        if (!dropdownRef.current) {
+        if (!dropdownRef.current || !headerRef.current) {
             return;
         }
 

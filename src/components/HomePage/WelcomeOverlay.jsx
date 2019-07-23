@@ -15,17 +15,19 @@ function WelcomeOverlay({ to, children }) {
     // Query quotes from markdown
     const rawQuotes = useStaticQuery(
         graphql`
-        query {
-            allFile(filter: {relativePath: {eq: "HomePage/quotes.md"}}) {
-                edges {
-                    node {
-                        childMarkdownRemark {
-                            rawMarkdownBody
+            query {
+                allFile(
+                    filter: { relativePath: { eq: "HomePage/quotes.md" } }
+                ) {
+                    edges {
+                        node {
+                            childMarkdownRemark {
+                                rawMarkdownBody
+                            }
                         }
                     }
                 }
             }
-        }
         `
     ).allFile.edges[0].node.childMarkdownRemark.rawMarkdownBody;
 
@@ -34,34 +36,44 @@ function WelcomeOverlay({ to, children }) {
 
     // Process raw markdown into a more useful object format
     const quotes = useMemo(() => {
-        const formattedQuotes = rawQuotes.split("\n\n").map((quote) => {
-            // Split quote text from author
-            const splitQuote = quote.split("\n");
-            if (splitQuote.length < 2) {
-                // Something went wrong; skip quote completely
-                return null;
-            }
-            // Return (text, author) pair extracted from quote
-            return {text: splitQuote[0], author: splitQuote[1]};
-        }).filter((quote) => !!quote);
+        const formattedQuotes = rawQuotes
+            .split('\n\n')
+            .map((quote) => {
+                // Split quote text from author
+                const splitQuote = quote.split('\n');
+                if (splitQuote.length < 2) {
+                    // Something went wrong; skip quote completely
+                    return null;
+                }
+                // Return (text, author) pair extracted from quote
+                return { text: splitQuote[0], author: splitQuote[1] };
+            })
+            .filter((quote) => !!quote);
 
         // Shuffle to mix up order
         shuffleArray(formattedQuotes);
-        return (formattedQuotes);
+        return formattedQuotes;
     }, [rawQuotes]);
 
     // Hooks for changing quote every 12s
-    const advanceQuote = () => setActiveQuote((activeQuote + 1) % quotes.length);
+    const advanceQuote = () =>
+        setActiveQuote((activeQuote + 1) % quotes.length);
     useEffect(() => {
-            // Keep track of timeout so it can be cleared on dismount if necessary
-            const id = setTimeout(advanceQuote, 15000);
-            return (() => (clearTimeout(id)));
-        },
-        [activeQuote]
-    );
+        // Keep track of timeout so it can be cleared on dismount if necessary
+        const id = setTimeout(advanceQuote, 15000);
+        return () => clearTimeout(id);
+    }, [activeQuote]);
 
     // CSS classes for styling
-    const { overlayWrapper, quotesWrapper, quoteBlock, centerer, quoteText, quoteAuthor, buttonWrapper } = overlayStyles();
+    const {
+        overlayWrapper,
+        quotesWrapper,
+        quoteBlock,
+        centerer,
+        quoteText,
+        quoteAuthor,
+        buttonWrapper,
+    } = overlayStyles();
     // Render
     return (
         <div className={overlayWrapper}>
@@ -69,22 +81,20 @@ function WelcomeOverlay({ to, children }) {
                 {quotes.map((quote, i) => (
                     <Fade in={i === activeQuote} key={i} timeout={4000} appear>
                         <div className={quoteBlock}>
-                          <div className={centerer}>
-                            <div className={quoteText}>
-                               {`“${quote.text}”`}
+                            <div className={centerer}>
+                                <div className={quoteText}>
+                                    {`“${quote.text}”`}
+                                </div>
+                                <div className={quoteAuthor}>
+                                    {`– ${quote.author}`}
+                                </div>
                             </div>
-                            <div className={quoteAuthor}>
-                              {`– ${quote.author}`}
-                            </div>
-                          </div>
                         </div>
                     </Fade>
                 ))}
             </div>
             <div className={buttonWrapper}>
-                <WelcomeButton to={to}>
-                    { children }
-                </WelcomeButton>
+                <WelcomeButton to={to}>{children}</WelcomeButton>
             </div>
         </div>
     );

@@ -136,6 +136,12 @@ const navbarStyles = makeStyles((theme) => ({
             lineHeight: '18px',
             height: 70,
 
+            // Mini scaling for dropdown elements
+            '& $desktopDropdownLink': {
+                fontSize: 14,
+                '& a': { padding: 14 },
+            },
+
             '@media screen and (min-width: 1251px)': {
                 '& $brandOrch': { width: 225 },
                 '& $brandText.inline': {
@@ -316,11 +322,6 @@ const navbarStyles = makeStyles((theme) => ({
         },
         '& a.active': {
             color: theme.palette.primary.main,
-        },
-
-        '& $navbarMain.mini': {
-            fontSize: 14,
-            '& a': { padding: 14 },
         },
     },
     hamburgerWrapper: {
