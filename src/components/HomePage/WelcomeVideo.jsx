@@ -29,18 +29,11 @@ const videoStyles = makeStyles(() => ({
         },
     },
     video: {
-        // Styling for landscape browser windows
-        '&.landscape': {
-            position: 'absolute',
-            bottom: 0,
-            width: '100%',
-        },
-        // Styling for portrait browser windows
-        '&.portrait': {
-            marginLeft: '50%',
-            transform: 'translateX(-50%)',
-            height: '100%',
-        },
+        // Styling for full screen videos
+        height: '100%',
+        width: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
         // Loading transition from black
         transition: 'opacity 0.5s ease-in',
         opacity: 1,
@@ -52,12 +45,9 @@ const videoStyles = makeStyles(() => ({
 
 // Welcoming and flashy video for homepage
 function WelcomeVideo() {
-    // Hook for toggling video orientation CSS
-    const [orientation, setOrientation] = useState('landscape');
     // Hook for toggling loading state
     const [loading, setLoading] = useState(true);
     // Ref for keeping track of wrapper
-    const wrapperRef = useRef();
     const videoRef = useRef();
 
     // Function for (lazy) loading video and forcing muted
@@ -108,50 +98,20 @@ function WelcomeVideo() {
         // Load new source
         videoElement.load();
     };
-    // Adjust dropdown orientation based on distance from screen edge
-    const orientVideo = () => {
-        const wrapperElement = wrapperRef.current;
-        if (!wrapperElement) {
-            return;
-        }
-
-        // Compute dimension ratio (need to subtract 40 because of padding)
-        const ratio =
-            wrapperElement.clientWidth / (wrapperElement.clientHeight - 40);
-        // Set orientation
-        if (16.0 / 9.0 - ratio > 0) {
-            setOrientation('portrait');
-        } else {
-            setOrientation('landscape');
-        }
-    };
-    // Browser event controller
+    // Trigger lazy loading on mount
     useLayoutEffect(() => {
-        function handleResize() {
-            // Reorient video if necessary
-            orientVideo();
-        }
-
-        // Register event handler
-        window.addEventListener('resize', orientVideo, false);
-        // Invoke resize to start
-        handleResize();
         // Load video
         lazyLoadVideo();
-        // Cleanup event handler in case of unmount
-        return function cleanup() {
-            window.removeEventListener('resize', orientVideo);
-        };
     }, []);
 
     // CSS classes for styling
     const { wrapper, video } = videoStyles();
     // Render
     return (
-        <div className={wrapper} ref={wrapperRef}>
+        <div className={wrapper}>
             <video
                 ref={videoRef}
-                className={clsx(video, orientation, loading && 'loading')}
+                className={clsx(video, loading && 'loading')}
                 poster={posterWelcomeJPG}
                 autoPlay
                 loop

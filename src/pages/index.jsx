@@ -30,7 +30,7 @@ function HomePage() {
                     {'Explore Our 2018 – 2019 Season'}
                 </WelcomeOverlay>
             </Parallax>
-            <Sheet className={homeSheet} maxWidth={1200}>
+            <Sheet className={homeSheet}>
                 <div
                     style={{height: 5000, backgroundColor: 'red' }}
                 >

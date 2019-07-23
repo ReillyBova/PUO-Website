@@ -58,9 +58,7 @@ module.exports = {
     plugins: [
         // Material UI
         'gatsby-plugin-top-layout',
-        {
-            resolve: 'gatsby-plugin-material-ui',
-        },
+        'gatsby-plugin-material-ui',
         // Search Engine Optimization (SEO)
         'gatsby-plugin-react-helmet',
         {
@@ -89,8 +87,6 @@ module.exports = {
                 },
             },
         },
-        // Markdown support
-        'gatsby-transformer-remark',
         // Global navbar sits above pages
         {
             resolve: `gatsby-plugin-layout`,
@@ -100,6 +96,8 @@ module.exports = {
                 ),
             },
         },
+        // Markdown support
+        'gatsby-transformer-remark',
         // Written (markdown) content filesystem for queries
         {
             resolve: `gatsby-source-filesystem`,
@@ -108,8 +106,16 @@ module.exports = {
                 path: `${__dirname}/src/content`,
             },
         },
-        // Sitemap generation
-        'gatsby-plugin-sitemap',
+        // Image support
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/assets/images`,
+            },
+    },
         // Caching site locally
         {
             resolve: 'gatsby-plugin-offline',
@@ -137,6 +143,8 @@ module.exports = {
         },
         // Custom workbox caching for videos to work with Safari
         'gatsby-plugin-cache-video',
+        // Sitemap generation
+        'gatsby-plugin-sitemap',
         // Force service worker updates when any changes are detected
         'gatsby-plugin-update-sw',
     ],
