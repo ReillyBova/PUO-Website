@@ -54,9 +54,9 @@ _Need help? Found a bug? Submit an issue and/or reach out to the original develo
 
 ## 🧐 What's inside?
 
-Here is a quick look at the top-level files and directories in a Gatsby project:
+Here is a quick look at the top-level files and directories in a Gatsby project such as this one:
 
-    .
+    ./PUO-Website
     ├── .cache
     ├── .git
     ├── node_modules
