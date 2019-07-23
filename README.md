@@ -1,26 +1,31 @@
 <p align="center">
   <a href="https://orchestra.princeton.edu">
-    <img alt="PUO" src="src/assets/branding/material_dark_PUOLOGO.svg" width="80" />
+    <img alt="PUO" src="src/assets/branding/material_dark_PUOLOGO.svg" width="250" />
   </a>
 </p>
 <h1 align="center">
-  Princeton University Orchestra
+  The Princeton University Orchestra
 </h1>
 
-Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need.
+This is the repository for the Princeton University Orchestra's website. It is composed from an array of modern web technologies in order to ensure maximum customizability, minimal development headaches, and — most importantly — a lightning-fast user experience.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://next.gatsbyjs.org/docs/gatsby-starters/)._
+_Need help? Found a bug? Submit an issue and/or reach out to the original developer: @ReillyBova._
 
 ## 🚀 Quick start
 
-1.  **Install the Gatsby CLI.**
+1.  **Clone this repository**
 
-    The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
-
+    You will need to download this repository locally before you can begin development. Make sure you already have [git installed](https://git-scm.com/downloads).
+    
     ```sh
-    # install the Gatsby CLI globally
-    npm install -g gatsby-cli
+    # create a new Gatsby site using the default starter
+    git clone https://github.com/ReillyBova/PUO-Website.git
+    cd ./PUO-Website
     ```
+    
+1.  **Install Node package manager (npm).**
+
+    Node allows you to manage and update the development libraries this website depends on. Instructions for installing node may be found on [their website](https://nodejs.org/en/download/).
 
 2.  **Create a Gatsby site.**
 
