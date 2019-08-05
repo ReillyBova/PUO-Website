@@ -10,7 +10,7 @@ season: "1989/90"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "puccini"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
