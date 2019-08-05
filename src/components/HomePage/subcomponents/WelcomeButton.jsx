@@ -90,7 +90,7 @@ const WelcomeButton = ({ children, to }) => {
     // Render
     return (
         <DelayedLink delay={500} to={to}>
-            <Button className={button} variant="outlined" color="primary">
+            <Button className={button} variant="outlined" color="primary" aria-label="Current Season">
                 {children}
                 <ArrowRightAlt className={arrow} />
             </Button>

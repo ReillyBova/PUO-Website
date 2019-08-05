@@ -25,7 +25,7 @@ const PageLayout = ({ title, description, lang, meta, children }) => {
                 lang={lang}
                 meta={meta}
             />
-            <div className={layout}> {children} </div>
+            <main className={layout}> {children} </main>
         </Fragment>
     );
 };

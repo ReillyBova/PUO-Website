@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 // Project imports
-import { activeHash, urlify } from 'utils';
+import { activeHash, activePath, urlify } from 'utils';
 // Local imports
 import { HoverDropdown } from './HoverDropdown';
 
@@ -34,14 +34,18 @@ const DesktopLinks = ({ classes, navigation }) => {
         } else {
             // Generate dropdown
             const listLinks = navItem.sections.map((section, j) => {
-                const sectionURL = `#${urlify(section)}`;
+                const sectionURL =
+                    (navItem.type === "OnePageOnly")?
+                    `#${urlify(section)}` : `/${urlify(section)}`;
+                const fullURL = `${baseURL}${sectionURL}`;
+                const activationCallback = (navItem.type === "OnePageOnly")?
+                    ({ location }) => activeHash(sectionURL, location.hash)
+                    : ({ location }) => activePath(`/${fullURL}`, location.pathname);
                 return (
                     <div className={desktopDropdownLink} key={j}>
                         <Link
-                            to={`/${baseURL}/${sectionURL}`}
-                            getProps={({ location }) =>
-                                activeHash(sectionURL, location.hash)
-                            }
+                            to={`/${baseURL}${sectionURL}`}
+                            getProps={activationCallback}
                         >
                             {section}
                         </Link>

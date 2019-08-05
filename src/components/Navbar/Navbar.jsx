@@ -27,6 +27,7 @@ function Navbar({ children }) {
                     siteMetadata {
                         navigation {
                             page
+                            type
                             sections
                         }
                     }

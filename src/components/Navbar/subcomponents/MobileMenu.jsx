@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 // Project imports
-import { activeHash, urlify } from 'utils';
+import { activeHash, activePath, urlify } from 'utils';
 // Local imports
 import { MobileDropdown } from './';
 
@@ -62,19 +62,17 @@ const MobileMenu = ({
         } else {
             // Generate dropdown
             const listLinks = navItem.sections.map((section, j) => {
-                const sectionURL = `#${urlify(section)}`;
+                const sectionURL = (navItem.type === "OnePageOnly")?
+                `#${urlify(section)}` : `/${urlify(section)}`;
+                const activationCallback = (navItem.type === "OnePageOnly")?
+                    ({ location }) => activeHash(sectionURL, location.hash, mobileMenuDropdownLink)
+                    : ({ location }) => activePath(`/${fullURL}`, location.pathname, mobileMenuDropdownLink);
                 return (
                     <Link
-                        to={`/${baseURL}/${sectionURL}`}
+                        to={`/${baseURL}${sectionURL}`}
                         key={j}
                         onClick={() => setMenuState(false)}
-                        getProps={({ location }) =>
-                            activeHash(
-                                sectionURL,
-                                location.hash,
-                                mobileMenuDropdownLink
-                            )
-                        }
+                        getProps={activationCallback}
                     >
                         <span>{'>'}</span>
                         <div>{section}</div>

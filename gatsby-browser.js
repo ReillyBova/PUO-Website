@@ -10,7 +10,7 @@ exports.onClientEntry = () => {
 
     // Load Open Sans font to support Material Design
     const pathOpenSans =
-        'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700';
     const linkOpenSans = document.createElement('link');
     linkOpenSans.setAttribute('rel', 'stylesheet');
     linkOpenSans.setAttribute('href', pathOpenSans);

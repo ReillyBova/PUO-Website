@@ -1,5 +1,6 @@
 // Library imports
 import React from 'react';
+import { graphql } from 'gatsby';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 // Project imports
@@ -19,7 +20,10 @@ const homepageStyles = makeStyles(() => ({
     },
 }));
 
-function HomePage() {
+function HomePage({data}) {
+    // Preprocess season string (NB: this uses an en-dash, not a hyphen)
+    const currentSeason = data.site.siteMetadata.currentSeason;
+    const currentSeasonString = `${currentSeason - 1} – ${currentSeason}`;
     // CSS classes for styling
     const { homeSheet } = homepageStyles();
     return (
@@ -27,13 +31,11 @@ function HomePage() {
             <Parallax>
                 <WelcomeVideo />
                 <WelcomeOverlay to={'/concerts'}>
-                    {'Explore Our 2018 – 2019 Season'}
+                    {`Explore Our ${currentSeasonString} Season`}
                 </WelcomeOverlay>
             </Parallax>
             <Sheet className={homeSheet}>
-                <div
-                    style={{height: 5000, backgroundColor: 'red' }}
-                >
+                <div style={{ height: 5000, backgroundColor: 'red' }}>
                     {`This is just me tesrting :)
                 This is just me tesrting :)
                 This is just me tesrting :)
@@ -63,5 +65,15 @@ function HomePage() {
         </PageLayout>
     );
 }
+
+export const pageQuery = graphql`
+    query {
+        site {
+            siteMetadata {
+                currentSeason
+            }
+        }
+    }
+`;
 
 export default HomePage;

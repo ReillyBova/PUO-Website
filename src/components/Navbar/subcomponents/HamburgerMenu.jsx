@@ -27,6 +27,7 @@ const HamburgerMenu = ({ classes, menuIsActive, setMenuState }) => {
             <Button
                 className={clsx(hamburger, menuIsActive && 'active')}
                 onClick={() => setMenuState(!menuIsActive)}
+                aria-label="Toggle Menu"
             >
                 <svg>
                     <path
