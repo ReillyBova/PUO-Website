@@ -1,5 +1,6 @@
 /* TEAM */
 Creator: Reilly Bova
+Additional Contributors: Joanna Kuo
 URL: https://reillybova.github.io/PUO-Website
 Description: Website for the Princeton University Orchestra
 

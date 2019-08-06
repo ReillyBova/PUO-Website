@@ -1,6 +1,7 @@
 export { default as ConcertBreak } from './ConcertBreak.jsx';
 export { default as ConcertComposer } from './ConcertComposer.jsx';
 export { default as ConcertDatetime } from './ConcertDatetime.jsx';
+export { default as ConcertGeneraltime } from './ConcertGeneraltime.jsx';
 export { default as ConcertHall } from './ConcertHall.jsx';
 export { default as ConcertOverline } from './ConcertOverline.jsx';
 export { default as ConcertSoloist } from './ConcertSoloist.jsx';

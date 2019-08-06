@@ -8,7 +8,7 @@ date: "2019-06-01"
 # Season
 season: "2018/19"
 # Is current season?
-current: "true"
+current: "false"
 # Poster filename (without extension)
 poster: "reunions"
 # Google Calendar link (if applicable)
