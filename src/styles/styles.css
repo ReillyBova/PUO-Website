@@ -44,10 +44,6 @@ a {
 
 }
 
-a:hover, a:active, a.active {
-  color: #f58025;
-}
-
 canvas {
     display: block;
 }

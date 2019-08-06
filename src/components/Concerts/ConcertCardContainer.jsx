@@ -15,6 +15,7 @@ import concertCardStyles from './concert_card-styles';
 import {
     ConcertBreak,
     ConcertDatetime,
+    ConcertGeneraltime,
     ConcertHall,
     ConcertOverline,
     ConcertSubtitle,
@@ -72,6 +73,8 @@ const ConcertCardContainer = ({
                 return <ConcertHall key={i} text={content} />;
             case 'datetime':
                 return <ConcertDatetime key={i} text={content} />;
+            case 'generaltime':
+                return <ConcertGeneraltime key={i} text={content} />;
             case 'overline':
                 return <ConcertOverline key={i} text={content} />;
             case 'work':
