@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Mahler Symphony No. 6
+Title = Destiny Arrives All the Same
 Subtitle = *Stuart B. Mindlin Memorial Concert*
 Subtitle = Michael Pratt, Conductor
 

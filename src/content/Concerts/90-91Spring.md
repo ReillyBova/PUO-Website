@@ -4,7 +4,7 @@ concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#7E57C2"
 # Date YY-MM-DD (for sorting)
-date: "1991-04-00"
+date: "1991-04-27"
 # Season
 season: "1990/91"
 # Is current season?
@@ -28,7 +28,7 @@ Subtitle = Michael Pratt, Conductor
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Generaltime = April 1991
+Datetime = April 27, 1991 19:30
 
 Section
 

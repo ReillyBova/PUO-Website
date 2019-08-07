@@ -34,7 +34,7 @@ Datetime = April 26, 2019 19:30
 
 Spacing
 
-Hall = Trenton War Memorial
+Hall = Trenton War Memorial | FREE ADMISSION
 Datetime = April 27, 2019 16:00
 
 Section

@@ -4,7 +4,7 @@ concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#00B0FF"
 # Date YY-MM-DD (for sorting)
-date: "1990-12-00"
+date: "1990-12-15"
 # Season
 season: "1990/91"
 # Is current season?
@@ -28,7 +28,7 @@ Subtitle = Michael Pratt, Conductor
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Generaltime = December 1990
+Datetime = December 15, 1990 19:30
 
 Section
 

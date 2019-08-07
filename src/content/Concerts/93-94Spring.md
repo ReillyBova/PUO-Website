@@ -4,7 +4,7 @@ concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#7E57C2"
 # Date YY-MM-DD (for sorting)
-date: "1994-04-00"
+date: "1994-04-22"
 # Season
 season: "1993/94"
 # Is current season?
@@ -23,13 +23,15 @@ youtube: ""
 spotify: ""
 ---
 Title = Verdi Requiem
-Subtitle = Michael Pratt, Conductor
+Subtitle = Michael Pratt, Conductor (Saturday)
+Subtitle = Peter Westergaard, Conductor (Friday)
 Subtitle = Princeton University Glee Club
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Generaltime = April 1994
+Datetime = April 22, 1994 19:30
+Datetime = April 23, 1994 19:30
 
 Section
 

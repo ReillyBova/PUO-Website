@@ -4,7 +4,7 @@ concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#00B0FF"
 # Date YY-MM-DD (for sorting)
-date: "1991-12-00"
+date: "1991-12-14"
 # Season
 season: "1991/92"
 # Is current season?
@@ -28,12 +28,12 @@ Subtitle = Michael Pratt, Conductor
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Generaltime = December 1991
+Datetime = December 14, 1991 19:30
 
 Section
 
 Overline = Program
-Work = Alban Berg ~ Violin Concerto
-Work = Richard Strauss ~ Orchestral Songs
+Work = Alban Berg ~ Violin Concerto ~ Mark Steinberg, Violin
+Work = Richard Strauss ~ Orchestral Songs ~ Martha Elliot, Soprano
 Break = --- Intermission ---
 Work = Robert Schumann ~ Symphony No. 3 in E-flat major, op. 97, *Rhenish*

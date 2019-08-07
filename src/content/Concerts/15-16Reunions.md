@@ -27,7 +27,7 @@ Subtitle = Michael Pratt, Conductor
 
 Section
 
-Hall = Finney Field | FREE admission
+Hall = Finney Field | FREE ADMISSION
 Datetime = May 28, 2016 20:00
 
 Section

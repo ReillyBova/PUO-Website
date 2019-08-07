@@ -27,7 +27,7 @@ Subtitle = Ruth Ochs, Conductor
 
 Section
 
-Hall = Finney Field | FREE admission
+Hall = Finney Field | FREE ADMISSION
 Datetime = June 02, 2018 20:00
 
 Section

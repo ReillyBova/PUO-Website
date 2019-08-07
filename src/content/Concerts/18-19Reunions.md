@@ -27,7 +27,7 @@ Subtitle = Michael Pratt, Conductor
 
 Section
 
-Hall = Finney Field | FREE admission
+Hall = Finney Field | FREE ADMISSION
 Datetime = June 01, 2019 20:00
 
 Section
