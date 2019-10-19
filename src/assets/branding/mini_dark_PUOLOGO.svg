@@ -14,9 +14,9 @@
    width="3000"
    height="1316.6285"
    viewBox="0 0 3000 1316.6285"
-   sodipodi:docname="smallPUO_LOGO_onWhite.svg"
+   sodipodi:docname="mini_dark_PUOLOGO.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   inkscape:export-filename="/Users/rbova/iCloud Drive (Archive)/Documents/PUO/media/PUO_LOGO_onWhite2.png"
+   inkscape:export-filename="/Users/rbova/GithubProjects/PUO-Website/src/assets/branding/mini_dark_PUOLOGO.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <metadata
@@ -27,7 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46,9 +46,9 @@
      inkscape:window-height="852"
      id="namedview6388"
      showgrid="true"
-     inkscape:zoom="0.19963982"
-     inkscape:cx="1601.8253"
-     inkscape:cy="57.61833"
+     inkscape:zoom="7.4067078"
+     inkscape:cx="799.06491"
+     inkscape:cy="528.051"
      inkscape:window-x="114"
      inkscape:window-y="22"
      inkscape:window-maximized="0"
@@ -84,7 +84,7 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccccc" />
   <path
-     style="opacity:1;fill:#221e20;fill-opacity:1;fill-rule:nonzero;stroke:#f2f2f2;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="opacity:1;fill:#221e20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 798.31636,50.329735 A 1298,1198 0 0 0 528.79878,225.20278 L 820.39839,516.93521 C 874.98714,470.4394 935.4009,430.95376 1000,399.12857 Z"
      id="path1281"
      inkscape:connector-curvature="0" />
@@ -96,7 +96,9 @@
   <path
      style="opacity:1;fill:#221e20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 1617.0159,1199.1285 A 117.01589,117.01589 0 0 1 1500,1316.1444 117.01589,117.01589 0 0 1 1382.9841,1199.1285 117.01589,117.01589 0 0 1 1500,1082.1126 a 117.01589,117.01589 0 0 1 117.0159,117.0159 z"
-     id="conductor" />
+     id="conductor"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#221e20;stroke-width:16;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 0,1199.1286 H 3000"
@@ -104,7 +106,7 @@
      inkscape:connector-curvature="0" />
   <path
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#221e20;stroke-width:8;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 1499.0876,400.8157 C 1201.3703,401.20685 928.61369,547.62275 770.84574,780.63425 L 1065.5026,948.0824 c 93.1922,-137.39911 257.8606,-221.72372 433.5584,-221.95383 v 0 z"
+     d="M 1499.0876,400.8157 C 1201.3703,401.20685 928.30647,547.54594 770.53852,780.55744 L 1065.5026,948.0824 c 93.1922,-137.39911 257.8606,-221.72372 433.5584,-221.95383 v 0 z"
      id="path1585"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccc" />

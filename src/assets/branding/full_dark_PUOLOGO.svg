@@ -14,9 +14,9 @@
    width="3000"
    height="2000"
    viewBox="0 0 3000 2000"
-   sodipodi:docname="PUO_LOGO_onWhite.svg"
+   sodipodi:docname="full_dark_PUOLOGO.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   inkscape:export-filename="/Users/rbova/iCloud Drive (Archive)/Documents/PUO/media/PUO_LOGO_onWhite2.png"
+   inkscape:export-filename="/Users/rbova/GithubProjects/PUO-Website/src/assets/branding/full_dark_PUOLOGO.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <metadata
@@ -46,10 +46,10 @@
      inkscape:window-height="852"
      id="namedview6388"
      showgrid="true"
-     inkscape:zoom="0.39927963"
-     inkscape:cx="1145.6746"
-     inkscape:cy="1206.765"
-     inkscape:window-x="103"
+     inkscape:zoom="10.224"
+     inkscape:cx="787.95579"
+     inkscape:cy="1208.2791"
+     inkscape:window-x="142"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg6386">
@@ -338,13 +338,12 @@
        inkscape:connector-curvature="0" />
   </g>
   <circle
-     style="opacity:1;fill:#221e20;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.96821362;stroke-opacity:1"
+     style="opacity:1;fill:#221e20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.96821362;stroke-opacity:1"
      id="conductor"
      cx="1500"
      cy="1200"
      r="117.01589"
-     inkscape:label="#conductor"
-     sodipodi:insensitive="true" />
+     inkscape:label="#conductor" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#221e20;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="M 0,1200 H 3000"
@@ -352,7 +351,7 @@
      inkscape:connector-curvature="0" />
   <path
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#221e20;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 1499.0876,401.68713 C 1201.3703,402.07828 927.50684,546.94459 769.73889,779.95609 L 1065.5026,948.95383 C 1158.6948,811.55472 1323.3632,727.23011 1499.061,727 v 0 z"
+     d="M 1499.0876,401.68713 C 1201.3703,402.07828 927.31122,546.89569 769.54327,779.90719 L 1065.5026,948.95383 C 1158.6948,811.55472 1323.3632,727.23011 1499.061,727 v 0 z"
      id="path1585"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccc" />
