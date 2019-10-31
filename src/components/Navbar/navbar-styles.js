@@ -494,6 +494,14 @@ const navbarStyles = makeStyles((theme) => ({
         '@media screen and (min-width: 701px)': {
             display: 'none !important',
         },
+
+        // Add padding to last element
+        '&>div:last-child>div:last-child': {
+            marginBottom: 32
+        },
+        '&>a:last-child>div:last-child': {
+            marginBottom: 32
+        },
     },
     mobileMenuLinkWrapper: {
         height: 36,
