@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // Project imports
-import { addUTCDays } from 'utils';
+import { addUTCDays, longestWord } from 'utils';
 // Local imports
 import concertCardStyles from './concert_card-styles';
 import {
@@ -22,7 +22,7 @@ import {
     ConcertTitle,
     ConcertWork,
     HistoryButtons,
-    UpcomingButtons
+    UpcomingButtons,
 } from './subcomponents';
 
 // Card element for concert guides
@@ -43,7 +43,15 @@ const ConcertCardContainer = ({
      * plus a one week (7 day) grace period
      */
     const oneWeekAfterConcert = addUTCDays(new Date(date), 7);
-    const isUpcoming = oneWeekAfterConcert.getTime() > (new Date()).getTime();
+    const isUpcoming = oneWeekAfterConcert.getTime() > new Date().getTime();
+
+    /* Compute custom min-width for concerNameCard boxes based on concertName
+     * Explanation: absolute min is 150px, with an extra 10px for every character
+     *              in the longest word beyond its 7th character
+     */
+    const nameCardMinWidth = (
+        80 + (10 * Math.max(7, longestWord(concertName).length))
+    );
 
     // CSS classes with props
     const {
@@ -55,8 +63,8 @@ const ConcertCardContainer = ({
         buttonWrapper,
         buttonIcon,
         largeBreak,
-        smallBreak
-    } = concertCardStyles({ isRTL });
+        smallBreak,
+    } = concertCardStyles({ isRTL, nameCardMinWidth });
 
     // Util function for mapping keys to JSX Component
     const mapKeyToComponent = ({ key, content }, i) => {
@@ -88,10 +96,9 @@ const ConcertCardContainer = ({
     };
 
     // Props for button links
-    const buttonLinks = ((isUpcoming)?
-        { calendar, tickets, stream, buttonIcon }
-        : { youtube, spotify, buttonIcon }
-    );
+    const buttonLinks = isUpcoming
+        ? { calendar, tickets, stream, buttonIcon }
+        : { youtube, spotify, buttonIcon };
 
     // Card JSX as list for easy reversal
     const concertCard = [
@@ -103,13 +110,16 @@ const ConcertCardContainer = ({
                 {contentByKey.map(mapKeyToComponent).filter((node) => !!node)}
             </CardContent>
             <CardActions disableSpacing className={buttonWrapper}>
-                { (isUpcoming)?
+                {isUpcoming ? (
                     <UpcomingButtons {...buttonLinks} />
-                    : <HistoryButtons {...buttonLinks} />
-                }
+                ) : (
+                    <HistoryButtons {...buttonLinks} />
+                )}
             </CardActions>
         </div>,
-        fluidPoster && <Image key={2} className={posterStyle} fluid={fluidPoster} />
+        fluidPoster && (
+            <Image key={2} className={posterStyle} fluid={fluidPoster} />
+        ),
     ];
 
     if (!isRTL) {
@@ -136,6 +146,5 @@ ConcertCardContainer.propTypes = {
     youtube: PropTypes.string, // Link to concert youtube video (playlist)
     spotify: PropTypes.string, // Link to concert spotify album
 };
-
 
 export default ConcertCardContainer;

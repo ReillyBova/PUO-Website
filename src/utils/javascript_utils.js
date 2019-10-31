@@ -27,9 +27,9 @@ export const WEEKDAY = [
 
 // Add Ndays to provided date
 export const addUTCDays = (date, Ndays) => {
-  const result = new Date(date);
-  result.setUTCDate(result.getUTCDate() + Ndays);
-  return result;
+    const result = new Date(date);
+    result.setUTCDate(result.getUTCDate() + Ndays);
+    return result;
 };
 
 // Map month value to full month string
@@ -38,6 +38,25 @@ export const dateToUTCFullMonthName = (dateTime) =>
 
 // Map weekday value to full weekday name string
 export const dateToUTCWeekdayName = (dateTime) => WEEKDAY[dateTime.getUTCDay()];
+
+// Return the (first) longest word from a string
+export const longestWord = (str) => {
+    if (!str || !str.length) {
+        return "";
+    }
+
+    const words = str.split(" ");
+    const winner = {longestWord: words[0], maxLength: words[0].length};
+    words.forEach((word) => {
+        if (word.length > winner.maxLength) {
+            winner.longestWord = word;
+            winner.maxLength = word.length;
+        }
+    });
+
+    return winner.longestWord;
+};
+
 
 // Shuffle the items in an array
 export const shuffleArray = (array) => {
