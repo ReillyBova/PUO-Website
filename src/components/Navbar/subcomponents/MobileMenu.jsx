@@ -62,15 +62,25 @@ const MobileMenu = ({
         } else {
             // Generate dropdown
             const listLinks = navItem.sections.map((section, j) => {
-                const sectionURL = (navItem.type === "OnePageOnly")? (
-                    `#${urlify(section)}`
-                ) : (
-                    `/${urlify(section)}`
-                );
+                const sectionURL =
+                    navItem.type === 'OnePageOnly'
+                        ? `#${urlify(section)}`
+                        : `/${urlify(section)}`;
                 const fullURL = `${baseURL}${sectionURL}`;
-                const activationCallback = (navItem.type === "OnePageOnly")?
-                    ({ location }) => activeHash(sectionURL, location.hash, mobileMenuDropdownLink)
-                    : ({ location }) => activePath(`/${fullURL}`, location.pathname, mobileMenuDropdownLink);
+                const activationCallback =
+                    navItem.type === 'OnePageOnly'
+                        ? ({ location }) =>
+                              activeHash(
+                                  sectionURL,
+                                  location.hash,
+                                  mobileMenuDropdownLink
+                              )
+                        : ({ location }) =>
+                              activePath(
+                                  `/${fullURL}`,
+                                  location.pathname,
+                                  mobileMenuDropdownLink
+                              );
                 return (
                     <Link
                         to={`/${baseURL}${sectionURL}`}

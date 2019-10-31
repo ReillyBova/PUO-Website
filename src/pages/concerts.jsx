@@ -63,9 +63,11 @@ function Concerts({ data }) {
 
     // Corner case
     if (!concertData.length) {
-        // Return 404
-        navigate('/404');
-        return null;
+        if (typeof window !== 'undefined') {
+            // Return 404
+            navigate('/404');
+            return null;
+        }
     }
 
     // Take first season name in array to be current season
@@ -120,9 +122,9 @@ export const pageQuery = graphql`
     query {
         posters: allFile(
             filter: {
-                sourceInstanceName: {eq: "images"},
-                relativeDirectory: {eq: "posters"},
-                ext: {eq: ".jpg"}
+                sourceInstanceName: { eq: "images" }
+                relativeDirectory: { eq: "posters" }
+                ext: { eq: ".jpg" }
             }
         ) {
             nodes {
@@ -132,31 +134,31 @@ export const pageQuery = graphql`
         test: file(relativePath: { eq: "poster.jpg" }) {
             ...fluidImage2
         }
-        concerts: allFile(
+
+        concerts: allMarkdownRemark(
             filter: {
-                sourceInstanceName: { eq: "content" }
-                relativeDirectory: { eq: "Concerts" }
-                childMarkdownRemark: {
-                    frontmatter: { current: { eq: "true" } }
-                }
-            }
-            sort: { fields: childMarkdownRemark___frontmatter___date }
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
+                frontmatter: {current: {eq: "true"}}
+            },
+            sort: {fields: frontmatter___date}
         ) {
             nodes {
-                name
-                childMarkdownRemark {
-                    html
-                    frontmatter {
-                        concertName
-                        colorTheme
-                        date
-                        season
-                        poster
-                        calendar
-                        tickets
-                        stream
-                        youtube
-                        spotify
+                html
+                frontmatter {
+                    concertName
+                    colorTheme
+                    date
+                    season
+                    poster
+                    calendar
+                    tickets
+                    stream
+                    youtube
+                    spotify
+                }
+                parent {
+                    ... on File {
+                      name
                     }
                 }
             }

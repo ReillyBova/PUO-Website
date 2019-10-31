@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Element to render general concert dates for concert card
 const ConcertDatetime = ({ text }) => (
-    <Typography variant="subtitle2" color="textSecondary" >
+    <Typography variant="subtitle2" color="textSecondary">
         {text}
     </Typography>
 );

@@ -73,25 +73,32 @@ module.exports = [
     {
         resolve: 'gatsby-plugin-offline',
         options: {
-            runtimeCaching: [
-                {
-                    // Default: Use cacheFirst since these don't need to be
-                    // revalidated
-                    // CHANGED: exclude static.*.mp4 files because they follow a different rule
-                    urlPattern: /(\.js$|\.css$|static\/^[^.]+$|\.(?!(mp4)$)([^.]+$))/,
-                    handler: `cacheFirst`,
-                },
-                {
-                    // Default: Add runtime caching of various other page resources
-                    urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-                    handler: `staleWhileRevalidate`,
-                },
-                {
-                    // Default: Google Fonts CSS (doesn't end in .css so we need to specify it)
-                    urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-                    handler: `staleWhileRevalidate`,
-                },
-            ],
+            workboxConfig: {
+                runtimeCaching: [
+                    {
+                        // Default: Use cacheFirst since these don't need to be
+                        // revalidated
+                        // CHANGED: exclude static.*.mp4 files because they follow a different rule
+                        urlPattern: /(\.js$|\.css$|static\/^[^.]+$|\.(?!(mp4)$)([^.]+$))/,
+                        handler: `CacheFirst`,
+                    },
+                    {
+                        // Default: page-data.json files are not content hashed
+                        urlPattern: /^https?:.*\page-data\/.*\/page-data\.json/,
+                        handler: `NetworkFirst`,
+                    },
+                    {
+                        // Default: Add runtime caching of various other page resources
+                        urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+                        handler: `StaleWhileRevalidate`,
+                    },
+                    {
+                        // Default: Google Fonts CSS (doesn't end in .css so we need to specify it)
+                        urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+                        handler: `StaleWhileRevalidate`,
+                    },
+                ],
+            },
         },
     },
     // Custom workbox caching for videos to work with Safari

@@ -13,7 +13,11 @@ import {
     Sheet,
     ImageBanner,
 } from 'components';
-import { preprocessConcerts, preprocessPosters, groupConcertsBySeason } from 'utils';
+import {
+    preprocessConcerts,
+    preprocessPosters,
+    groupConcertsBySeason,
+} from 'utils';
 
 // Styling for homepage elements
 const concertStyles = makeStyles((theme) => ({
@@ -63,14 +67,18 @@ function PastSeasons({ data }) {
 
     // Corner case
     if (!concertData.length) {
-        // Return 404
-        navigate('/404');
-        return null;
+        if (typeof window !== 'undefined') {
+            // Return 404
+            navigate('/404');
+            return null;
+        }
     }
 
     // Seperate by season
     const dataBySeason = groupConcertsBySeason(concertData);
-    const seasons = Object.keys(dataBySeason).sort().reverse();
+    const seasons = Object.keys(dataBySeason)
+        .sort()
+        .reverse();
 
     // CSS classes for styling
     const { concertSheet, subheader, seasonSection } = concertStyles();
@@ -80,24 +88,24 @@ function PastSeasons({ data }) {
                 <ImageBanner fluid={data.test.childImageSharp.fluid} />
             </Parallax>
             <Sheet className={concertSheet}>
-                    {seasons.map((season) => {
-                        const concerts = dataBySeason[season];
-                        // Sort concerts by date
-                        concerts.sort((a, b) => a.date.localeCompare(b.date));
-                        // Build season
-                        return (
-                            <div className={seasonSection} key={season}>
-                                <Paper elevation={4} className={subheader}>
-                                    <Typography variant="h3">
-                                        {`The ${season} Season`}
-                                    </Typography>
-                                </Paper>
-                                    {concerts.map((props, i) => (
-                                        <ConcertCard key={i} id={i} {...props} />
-                                    ))}
-                            </div>
-                        );
-                    })}
+                {seasons.map((season) => {
+                    const concerts = dataBySeason[season];
+                    // Sort concerts by date
+                    concerts.sort((a, b) => a.date.localeCompare(b.date));
+                    // Build season
+                    return (
+                        <div className={seasonSection} key={season}>
+                            <Paper elevation={4} className={subheader}>
+                                <Typography variant="h3">
+                                    {`The ${season} Season`}
+                                </Typography>
+                            </Paper>
+                            {concerts.map((props, i) => (
+                                <ConcertCard key={i} id={i} {...props} />
+                            ))}
+                        </div>
+                    );
+                })}
             </Sheet>
         </PageLayout>
     );
@@ -129,9 +137,9 @@ export const pageQuery = graphql`
     query {
         posters: allFile(
             filter: {
-                sourceInstanceName: {eq: "images"},
-                relativeDirectory: {eq: "posters"},
-                ext: {eq: ".jpg"}
+                sourceInstanceName: { eq: "images" }
+                relativeDirectory: { eq: "posters" }
+                ext: { eq: ".jpg" }
             }
         ) {
             nodes {
@@ -141,31 +149,31 @@ export const pageQuery = graphql`
         test: file(relativePath: { eq: "poster.jpg" }) {
             ...fluidImage2
         }
-        concerts: allFile(
+        
+        concerts: allMarkdownRemark(
             filter: {
-                sourceInstanceName: { eq: "content" }
-                relativeDirectory: { eq: "Concerts" }
-                childMarkdownRemark: {
-                    frontmatter: { current: { eq: "false" } }
-                }
-            }
-            sort: { fields: childMarkdownRemark___frontmatter___date }
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
+                frontmatter: {current: {eq: "false"}}
+            },
+            sort: {fields: frontmatter___date}
         ) {
             nodes {
-                name
-                childMarkdownRemark {
-                    html
-                    frontmatter {
-                        concertName
-                        colorTheme
-                        date
-                        season
-                        poster
-                        calendar
-                        tickets
-                        stream
-                        youtube
-                        spotify
+                html
+                frontmatter {
+                    concertName
+                    colorTheme
+                    date
+                    season
+                    poster
+                    calendar
+                    tickets
+                    stream
+                    youtube
+                    spotify
+                }
+                parent {
+                    ... on File {
+                      name
                     }
                 }
             }

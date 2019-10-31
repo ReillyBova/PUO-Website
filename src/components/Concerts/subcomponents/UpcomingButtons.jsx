@@ -12,33 +12,33 @@ const UpcomingButtons = ({ calendar, tickets, stream, buttonIcon }) => (
     <Fragment>
         <Button
             disabled={!calendar}
-            color={"primary"}
+            color={'primary'}
             href={calendar}
-            target={"_blank"}
-            aria-label={"Add to Calendar"}
-            nofollow={""}
+            target={'_blank'}
+            aria-label={'Add to Calendar'}
+            nofollow={''}
         >
             <CalendarPlusIcon className={buttonIcon} />
             {'Add to Calendar'}
         </Button>
         <Button
             disabled={!tickets}
-            color={"primary"}
+            color={'primary'}
             href={tickets}
-            target={"_blank"}
-            aria-label={"Get Tickets"}
-            nofollow={""}
+            target={'_blank'}
+            aria-label={'Get Tickets'}
+            nofollow={''}
         >
             <TicketIcon className={buttonIcon} />
             {'Get Tickets'}
         </Button>
         <Button
             disabled={!stream}
-            color={"primary"}
+            color={'primary'}
             href={stream}
-            target={"_blank"}
-            aria-label={"Go To Livestream"}
-            nofollow={""}
+            target={'_blank'}
+            aria-label={'Go To Livestream'}
+            nofollow={''}
         >
             <LiveTvIcon className={buttonIcon} />
             {'Livestream'}

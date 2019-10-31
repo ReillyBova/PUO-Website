@@ -34,15 +34,17 @@ const DesktopLinks = ({ classes, navigation }) => {
         } else {
             // Generate dropdown
             const listLinks = navItem.sections.map((section, j) => {
-                const sectionURL = (navItem.type === "OnePageOnly")? (
-                    `#${urlify(section)}`
-                ) : (
-                    `/${urlify(section)}`
-                );
+                const sectionURL =
+                    navItem.type === 'OnePageOnly'
+                        ? `#${urlify(section)}`
+                        : `/${urlify(section)}`;
                 const fullURL = `${baseURL}${sectionURL}`;
-                const activationCallback = (navItem.type === "OnePageOnly")?
-                    ({ location }) => activeHash(sectionURL, location.hash)
-                    : ({ location }) => activePath(`/${fullURL}`, location.pathname);
+                const activationCallback =
+                    navItem.type === 'OnePageOnly'
+                        ? ({ location }) =>
+                              activeHash(sectionURL, location.hash)
+                        : ({ location }) =>
+                              activePath(`/${fullURL}`, location.pathname);
                 return (
                     <div className={desktopDropdownLink} key={j}>
                         <Link

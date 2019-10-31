@@ -13,9 +13,10 @@ const ConcertDatetime = ({ text }) => {
 
     // Extract time information
     let hourValue = dateTime_UTC.getUTCHours() % 12;
-    hourValue = (hourValue === 0)? 12 :  hourValue; // 0am => 12am
+    hourValue = hourValue === 0 ? 12 : hourValue; // 0am => 12am
     const minuteValue = dateTime_UTC.getUTCMinutes();
-    const minuteString = (minuteValue < 10)? `0${minuteValue}` : `${minuteValue}`;
+    const minuteString =
+        minuteValue < 10 ? `0${minuteValue}` : `${minuteValue}`;
     const meridianSuffix = dateTime_UTC.getUTCHours() < 12 ? 'AM' : 'PM';
     const timeString = `${hourValue}:${minuteString}${meridianSuffix}`;
 

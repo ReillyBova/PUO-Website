@@ -19,7 +19,12 @@ const ConcertSubtitle = ({ text }) => {
     const { thin } = subtitleStyles();
     // Render
     return (
-        <Typography className={thin} variant="subtitle1" color="textSecondary" gutterBottom>
+        <Typography
+            className={thin}
+            variant="subtitle1"
+            color="textSecondary"
+            gutterBottom
+        >
             <span dangerouslySetInnerHTML={{ __html: text }} />
         </Typography>
     );

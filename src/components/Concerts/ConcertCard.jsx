@@ -15,11 +15,11 @@ function ConcertCard({
     concertName = 'Concert',
     colorTheme = '#f58025',
     date = null,
-    calendar = "",
-    tickets = "",
-    stream = "",
-    youtube = "",
-    spotify = "",
+    calendar = '',
+    tickets = '',
+    stream = '',
+    youtube = '',
+    spotify = '',
     id = 0,
 }) {
     /*
@@ -44,7 +44,17 @@ function ConcertCard({
     });
 
     // Render direction based on order
-    const cardProps = { contentByKey, fluidPoster, concertName, date, calendar, tickets, stream, youtube, spotify };
+    const cardProps = {
+        contentByKey,
+        fluidPoster,
+        concertName,
+        date,
+        calendar,
+        tickets,
+        stream,
+        youtube,
+        spotify,
+    };
     return (
         <ThemeProvider theme={(theme) => recolorMuiTheme(theme, colorTheme)}>
             <ConcertCardContainer isRTL={!(id % 2)} {...cardProps} />

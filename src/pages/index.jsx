@@ -20,7 +20,7 @@ const homepageStyles = makeStyles(() => ({
     },
 }));
 
-function HomePage({data}) {
+function HomePage({ data }) {
     // Preprocess season string (NB: this uses an en-dash, not a hyphen)
     const currentSeason = data.site.siteMetadata.currentSeason;
     const currentSeasonString = `${currentSeason - 1} – ${currentSeason}`;
