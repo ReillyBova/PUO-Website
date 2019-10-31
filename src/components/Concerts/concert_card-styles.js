@@ -14,7 +14,7 @@ const concertCardStyles = makeStyles((theme) => ({
         marginRight: isRTL ? 'unset' : 75,
     }),
     // Styling for floating concert name paper element
-    concertNameCard: ({ isRTL, nameCardMinWidth }) => ({
+    concertNameCard: ({ isRTL }) => ({
         // Color
         color: 'white',
         background: theme.palette.primary.main,
@@ -28,7 +28,6 @@ const concertCardStyles = makeStyles((theme) => ({
 
         // Width
         width: '15vw',
-        minWidth: nameCardMinWidth,
         maxWidth: 200,
 
         // Height

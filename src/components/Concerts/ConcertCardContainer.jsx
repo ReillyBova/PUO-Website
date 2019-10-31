@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 // UI imports
@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // Project imports
-import { addUTCDays, longestWord } from 'utils';
+import { addUTCDays } from 'utils';
 // Local imports
 import concertCardStyles from './concert_card-styles';
 import {
@@ -38,6 +38,13 @@ const ConcertCardContainer = ({
     youtube,
     spotify,
 }) => {
+    // Hook for setting concertNameCard width
+    const [concertNameCardWidth, setconcertNameCardWidth] = useState(150);
+
+    // Ref for keeping track of the black triangle polygon element
+    const concertNameWrapper = useRef();// Ref for keeping track of the black triangle polygon element
+    const concertNameText = useRef();
+
     /*
      * Use date to determine if we have already passed the concert
      * plus a one week (7 day) grace period
@@ -45,13 +52,46 @@ const ConcertCardContainer = ({
     const oneWeekAfterConcert = addUTCDays(new Date(date), 7);
     const isUpcoming = oneWeekAfterConcert.getTime() > new Date().getTime();
 
-    /* Compute custom min-width for concerNameCard boxes based on concertName
-     * Explanation: absolute min is 150px, with an extra 10px for every character
-     *              in the longest word beyond its 7th character
-     */
-    const nameCardMinWidth = (
-        80 + (10 * Math.max(7, longestWord(concertName).length))
-    );
+    console.log(concertNameCardWidth);
+    // If "Concert" isn't the longest word in concertName, we might need to resize
+    useEffect(() => {
+        // closure variable to keep track of event listener removals
+        let exited = false;
+
+        // Event handler cleanup
+        function cleanup() {
+            if (!exited) {
+                exited = true;
+                console.log('bye!')
+                window.removeEventListener('resize', handleResize);
+            }
+        }
+
+        // Resize handler
+        function handleResize() {
+            const outerWidth = concertNameWrapper.current.clientWidth;
+            const innerWidth = concertNameText.current.clientWidth;
+            const difference = outerWidth - innerWidth;
+
+            // 16px margin spacing on either side gives 32px difference
+            if (difference < 32) {
+                setconcertNameCardWidth(concertNameCardWidth + difference);
+                cleanup();
+            } else if (outerWidth === 150) {
+                cleanup();
+            }
+        }
+
+        // Register event handlers on component mount
+        window.addEventListener('resize', handleResize, false);
+        // Invoke resize to start
+        handleResize();
+
+        // Cleanup event handlers on unmount
+        return cleanup;
+    }, [
+        /* Empty update-on array ensures useEffect only runs on mount */
+    ]);
 
     // CSS classes with props
     const {
@@ -64,7 +104,7 @@ const ConcertCardContainer = ({
         buttonIcon,
         largeBreak,
         smallBreak,
-    } = concertCardStyles({ isRTL, nameCardMinWidth });
+    } = concertCardStyles({ isRTL });
 
     // Util function for mapping keys to JSX Component
     const mapKeyToComponent = ({ key, content }, i) => {
@@ -102,8 +142,14 @@ const ConcertCardContainer = ({
 
     // Card JSX as list for easy reversal
     const concertCard = [
-        <Paper key={0} elevation={2} className={concertNameCard}>
-            <Typography variant="h4">{concertName}</Typography>
+        <Paper
+            key={0}
+            elevation={2}
+            ref={concertNameWrapper}
+            className={concertNameCard}
+            style={{minWidth: concertNameCardWidth}}
+        >
+            <Typography ref={concertNameText} variant="h4">{concertName}</Typography>
         </Paper>,
         <div key={1} className={concertDetails}>
             <CardContent className={programContent}>
