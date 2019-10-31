@@ -34,7 +34,7 @@ body {
 
 }
 
-body.mobile-menu {
+body.scroll-freeze {
     overflow-y: hidden;
 }
 

@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 // Project imports
-import { activeHash, activePath, urlify } from 'utils';
+import { activeHash, activePath, scrollTop, urlify } from 'utils';
 // Local imports
 import { MobileDropdown } from './';
 
@@ -21,15 +21,32 @@ const MobileMenu = ({
     // Block scrolling behavior when menu is active
     useLayoutEffect(() => {
         // Block body element scrolling if menu is active
-        if (isMobileMode && menuIsActive) {
-            document.body.classList.add('mobile-menu');
-        } else {
-            document.body.classList.remove('mobile-menu');
+        let fixedScroll = 0;
+        function handleScroll() {
+            const currentScroll = scrollTop();
+            if (currentScroll !== fixedScroll) {
+                window.scrollBy(0, fixedScroll - currentScroll);
+            }
+        }
+
+        function cleanup() {
+            document.body.classList.remove('scroll-freeze');
+            window.removeEventListener('scroll', handleScroll);
             // Remove class property altogether if no more classes
             if (document.body.classList.length === 0) {
                 document.body.removeAttribute('class');
             }
         }
+
+        if (isMobileMode && menuIsActive) {
+            document.body.classList.add('scroll-freeze');
+            window.addEventListener('scroll', handleScroll, false);
+            fixedScroll = scrollTop();
+        } else {
+            cleanup();
+        }
+
+        return cleanup;
     }, [isMobileMode, menuIsActive]);
 
     // Function for generating navbar elements from site navigation configuration
