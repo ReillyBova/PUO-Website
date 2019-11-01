@@ -10,7 +10,7 @@ season: "2004/05"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "mozart"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = The Magic Fire and the Farewell
+Title = The Magic Fire & the Farewell
 Subtitle = Michael Pratt, Conductor
 
 Section
@@ -36,5 +36,5 @@ Overline = Program
 Work = W. A. Mozart ~ Symphony No. 39 in E-flat major, K. 543
 Work = Alfred Schnittke ~ Concerto for Viola and Orchestra ~ David Aaron Carpenter, Viola
 Break = --- Intermission ---
-Work = Richard Wagner ~ "Wotan's Farewell" from *Die Walküre*, WWV. 86B ~ Jonathan Prescott, Bass-baritone
-Work = Richard Wagner ~ "Magic Fire Music" from *Die Walküre*, WWV. 86B ~ Jonathan Prescott, Bass-baritone
+Work = Richard Wagner ~ "Wotan's Farewell" from *Die Walküre* (The Valkyrie), WWV. 86B ~ Jonathan Prescott, Bass-baritone
+Work = Richard Wagner ~ "Magic Fire Music" from *Die Walküre* (The Valkyrie), WWV. 86B ~ Jonathan Prescott, Bass-baritone

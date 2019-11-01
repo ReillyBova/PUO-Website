@@ -10,7 +10,7 @@ season: "2005/06"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "wager"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -33,4 +33,4 @@ Datetime = March 9, 2006 19:30
 Section
 
 Overline = Program
-Work = W. A. Mozart ~ Act I of *Die Walküre* (The Valkyrie), WWV. 86B
+Work = Richard Wagner ~ Act I of *Die Walküre* (The Valkyrie), WWV. 86B

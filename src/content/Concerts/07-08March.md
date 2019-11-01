@@ -10,7 +10,7 @@ season: "2007/08"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "ravel"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = The Mother Goose Suite
+Title = Mother Goose
 Subtitle = Michael Pratt, Conductor
 
 Section

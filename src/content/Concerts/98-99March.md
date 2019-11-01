@@ -33,6 +33,6 @@ Generaltime = March 1999
 Section
 
 Overline = Program
-Work = W. A. Mozart ~ Concerto for Two pianos in E-flat major, K. 365/316a
+Work = W. A. Mozart ~ Concerto for Two Pianos in E-flat major, K. 365/316a
 Break = --- Intermission ---
 Work = Gustav Mahler ~ Symphony No. 1 in D major

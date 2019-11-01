@@ -10,7 +10,7 @@ season: "2013/14"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "mozart"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Prauge and Scotland
+Title = Prauge & Scotland
 Subtitle = Michael Pratt, Conductor
 
 Section

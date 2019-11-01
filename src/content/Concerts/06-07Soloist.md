@@ -10,7 +10,7 @@ season: "2006/07"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "dvorak"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = The Violin and Cello
+Title = The Violin & Cello
 Subtitle = Michael Pratt, Conductor
 
 Section
