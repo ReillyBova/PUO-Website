@@ -52,7 +52,6 @@ const ConcertCardContainer = ({
     const oneWeekAfterConcert = addUTCDays(new Date(date), 7);
     const isUpcoming = oneWeekAfterConcert.getTime() > new Date().getTime();
 
-    console.log(concertNameCardWidth);
     // If "Concert" isn't the longest word in concertName, we might need to resize
     useEffect(() => {
         // closure variable to keep track of event listener removals
@@ -62,7 +61,6 @@ const ConcertCardContainer = ({
         function cleanup() {
             if (!exited) {
                 exited = true;
-                console.log('bye!')
                 window.removeEventListener('resize', handleResize);
             }
         }
