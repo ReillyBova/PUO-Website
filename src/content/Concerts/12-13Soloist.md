@@ -24,8 +24,6 @@ spotify: ""
 ---
 Title = Tristan und Isolde
 Subtitle = Michael Pratt, Conductor
-Subtitle = Ruth Ochs, Guest Conductor
-Section
 
 Hall = Richardson Auditorium in Alexander Hall
 Datetime = March 8, 2013 19:30
