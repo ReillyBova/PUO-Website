@@ -20,18 +20,8 @@ const MobileMenu = ({
 }) => {
     // Block scrolling behavior when menu is active
     useLayoutEffect(() => {
-        // Block body element scrolling if menu is active
-        let fixedScroll = 0;
-        function handleScroll() {
-            const currentScroll = scrollTop();
-            if (currentScroll !== fixedScroll) {
-                window.scrollBy(0, fixedScroll - currentScroll);
-            }
-        }
-
         function cleanup() {
             document.body.classList.remove('scroll-freeze');
-            window.removeEventListener('scroll', handleScroll);
             // Remove class property altogether if no more classes
             if (document.body.classList.length === 0) {
                 document.body.removeAttribute('class');
@@ -40,8 +30,6 @@ const MobileMenu = ({
 
         if (isMobileMode && menuIsActive) {
             document.body.classList.add('scroll-freeze');
-            window.addEventListener('scroll', handleScroll, false);
-            fixedScroll = scrollTop();
         } else {
             cleanup();
         }
