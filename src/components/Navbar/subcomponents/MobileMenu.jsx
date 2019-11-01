@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 // Project imports
-import { activeHash, activePath, scrollTop, urlify } from 'utils';
+import { activeHash, activePath, urlify } from 'utils';
 // Local imports
 import { MobileDropdown } from './';
 
