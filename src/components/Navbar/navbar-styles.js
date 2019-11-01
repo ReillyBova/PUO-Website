@@ -497,10 +497,10 @@ const navbarStyles = makeStyles((theme) => ({
 
         // Add padding to last element
         '&>div:last-child>div:last-child': {
-            marginBottom: 32
+            marginBottom: 128
         },
         '&>a:last-child>div:last-child': {
-            marginBottom: 32
+            marginBottom: 128
         },
     },
     mobileMenuLinkWrapper: {
