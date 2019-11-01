@@ -25,6 +25,8 @@ spotify: ""
 Title = Tristan und Isolde
 Subtitle = Michael Pratt, Conductor
 
+Section
+
 Hall = Richardson Auditorium in Alexander Hall
 Datetime = March 8, 2013 19:30
 Datetime = March 9, 2013 19:30
