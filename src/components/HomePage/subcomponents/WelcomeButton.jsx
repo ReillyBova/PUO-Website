@@ -45,6 +45,12 @@ const buttonStyles = makeStyles((theme) => ({
         // Text default properties
         fontFamily: 'Roboto, Open Sans, Roboto, Helvetica, Arial, sans-serif',
         fontSize: '18px !important',
+        '@media screen and (max-width: 400px)': {
+            fontSize: '15px !important',
+            '@media screen and (max-width: 350px)': {
+                fontSize: '12px !important',
+            },
+        },
         // Button default properties
         borderRadius: '2px !important',
         border: '2px solid white !important',
@@ -79,6 +85,13 @@ const buttonStyles = makeStyles((theme) => ({
                 animation:
                     '$pressDown 550ms cubic-bezier(0.4, 0, 0.2, 1) !important',
             },
+        },
+        // Margins to match sheets
+        marginRight: theme.spacing(4),
+        marginLeft: theme.spacing(4),
+        [theme.breakpoints.down('xs')]: {
+            marginRight: theme.spacing(2),
+            marginLeft: theme.spacing(2),
         },
     },
 }));
