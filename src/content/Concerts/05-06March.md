@@ -10,7 +10,7 @@ season: "2005/06"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "wager"
+poster: "wagner"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Die Walkure
+Title = Die Walküre
 Subtitle = Michael Pratt, Conductor
 
 Section

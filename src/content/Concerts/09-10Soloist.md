@@ -28,6 +28,7 @@ Subtitle = Michael Pratt, Conductor
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
+Datetime = March 5, 2010 19:30
 Datetime = March 6, 2010 19:30
 
 
