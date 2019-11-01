@@ -2,7 +2,7 @@
 export const preprocessConcerts = (concerts, posterData) =>
     concerts.map(({ html, frontmatter, parent }) => ({
         fileName: parent && parent.name,
-        fluidPoster: frontmatter.poster
+        fluidPoster: frontmatter && frontmatter.poster
             ? posterData[frontmatter.poster]
             : posterData[parent && parent.name],
         rawHTML: html,
