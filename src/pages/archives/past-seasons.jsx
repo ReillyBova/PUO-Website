@@ -149,11 +149,11 @@ export const pageQuery = graphql`
         test: file(relativePath: { eq: "poster.jpg" }) {
             ...fluidImage2
         }
-        
+
         concerts: allMarkdownRemark(
             filter: {
                 fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
-                frontmatter: {current: {eq: "false"}}
+                frontmatter: {current: {eq: "true"}}
             },
             sort: {fields: frontmatter___date}
         ) {
