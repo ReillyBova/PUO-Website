@@ -10,7 +10,7 @@ season: "2010/11"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "sibelius"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Dancigers of the Electric Guitar
+Title = Rocking Richardson
 Subtitle = Michael Pratt, Conductor
 
 Section
@@ -36,6 +36,6 @@ Section
 
 Overline = Program
 Work = Yngwie Malmsteen ~ Concerto Suite for Electric Guitar and Orchestra ~ Mark Dancigers, Electric Guitar
-Work = W. A. Mozart ~ Flute Concerto No. 2 in D Major, K. 314/ 285d ~ Jessica Anastasio ’11, Flute
+Work = W. A. Mozart ~ Flute Concerto No. 2 in D Major, K. 314/285d ~ Jessica Anastasio ’11, Flute
 Break = --- Intermission ---
 Work = Jean Sibelius ~ Violin Concerto in D minor, op. 47 ~ Yoon Won Song ’11, Violin

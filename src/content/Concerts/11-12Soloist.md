@@ -10,7 +10,7 @@ season: "2011/12"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "rachmanioff"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = The Symphonic Dances
+Title = Chopin & Rachmaninoff
 Subtitle = Michael Pratt, Conductor
 
 Section

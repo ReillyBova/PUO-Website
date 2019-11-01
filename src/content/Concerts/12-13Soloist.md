@@ -10,7 +10,7 @@ season: "2012/13"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "wagner"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -24,7 +24,7 @@ spotify: ""
 ---
 Title = Tristan und Isolde
 Subtitle = Michael Pratt, Conductor
-
+Subtitle = Ruth Ochs, Guest Conductor
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
@@ -34,7 +34,7 @@ Datetime = March 9, 2013 19:30
 Section
 
 Overline = Program
-Work = J. S. Bach ~ Piano Concerto No. 5 in F minor, DWV. 1056 ~ Ruth Ochs, Guest Conductor ~ Paul von Autenreid ’16, Piano
+Work = J. S. Bach ~ Piano Concerto No. 5 in F minor, DWV. 1056 ~ Paul von Autenreid ’16, Piano ~ Ruth Ochs, Conductor
 Work = Antonio Vivaldi ~ Bassoon Concerto in E minor, RV. 484 ~ Louisa Slosar ’15, Bassoon
 Break = --- Intermission ---
 Work = Ludwig van Beethoven ~ Piano Concerto No. 1 in C major, op. 15 ~ Jeff Li ’13, Piano

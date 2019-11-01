@@ -10,7 +10,7 @@ season: "2008/09"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "gershwin"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)

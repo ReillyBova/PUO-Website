@@ -10,7 +10,7 @@ season: "2000/01"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: ""
+poster: "vaughn-williams"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -36,5 +36,5 @@ Overline = Program
 Work = Ludwig van Beethoven ~ *Leonore Overture No. 3*, op. 72a
 Work = Ralph Vaughan Williams ~ *Fantasia on a Theme by Thomas Tallis*
 Break = --- Intermission ---
-Work = W. A. Mozart ~ Bassoon Concerto in B-flat major, K.191/186e
+Work = W. A. Mozart ~ Bassoon Concerto in B-flat major, K. 191/186e
 Work = Sergei Prokofiev ~ Piano Concerto No. 3 in C major, op. 26

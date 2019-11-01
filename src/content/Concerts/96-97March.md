@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = The Stravinsky Concert
+Title = A Stravinsky Concert
 Subtitle = Michael Pratt, Conductor
 Subtitle = Princeton University Glee Club
 
