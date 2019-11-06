@@ -22,12 +22,12 @@ import {
 } from './subcomponents';
 
 // Constant for minimum background image opacity in mobile mode
-const MIN_OPACITY = 0.08;
+const MIN_OPACITY = 0.05;
 /*
  * Constant for determining the min pixels from the top at which mobile
  * background posters no longer change their opacity
  */
-const LOWER_BOUND = 100;
+const LOWER_BOUND = 120;
 
 // Card element for rendering the concert programs/posters
 const ConcertCardCore = ({
