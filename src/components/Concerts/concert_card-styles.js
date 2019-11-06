@@ -4,7 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 // Styling for concert card elements
 const concertCardStyles = makeStyles((theme) => ({
     // Styling for background image
-    backgroundStyle: {
+    backgroundImageStyle: {
+        position: "unset !important",
+    },
+    backgroundImageWrapper: {
         // Covering
         objectFit: 'cover',
         objectPosition: 'center center',

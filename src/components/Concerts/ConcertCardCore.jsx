@@ -23,6 +23,11 @@ import {
 
 // Constant for minimum background image opacity in mobile mode
 const MIN_OPACITY = 0.08;
+/*
+ * Constant for determining the min pixels from the top at which mobile
+ * background posters no longer change their opacity
+ */
+const LOWER_BOUND = 100;
 
 // Card element for rendering the concert programs/posters
 const ConcertCardCore = ({
@@ -39,12 +44,27 @@ const ConcertCardCore = ({
     spotify,
 }) => {
     // Hook for keeping track of card visibility
-    const [isVisible, setVisibility] = useState(true);
+    const [isVisible, setVisibility] = useState(false);
 
     // Ref for mobile intersection observer
     const cardRef = useRef();
     // Ref for mobile background poster
     const backgroundPosterRef = useRef();
+
+    // Helper function for setting mobile background poster default opacities
+    const setDefaultOpacity = () => {
+        // Force opacity to clamped value in case events weren't finished
+        if (!backgroundPosterRef.current) {
+            return;
+        }
+
+        // Compute proportion of the changing-range already scrolled through
+        if (backgroundPosterRef.current.getBoundingClientRect().top < LOWER_BOUND) {
+            backgroundPosterRef.current.style.opacity = MIN_OPACITY;
+        } else {
+            backgroundPosterRef.current.style.opacity = 1.0;
+        }
+    };
 
     // Controller for animating poster image opacity for mobile layout
     useEffect(() => {
@@ -52,33 +72,26 @@ const ConcertCardCore = ({
             return;
         }
 
-        if (
-            !backgroundPosterRef.current ||
-            !backgroundPosterRef.current.imageRef ||
-            !backgroundPosterRef.current.imageRef.current
-        ) {
+        if (!backgroundPosterRef.current) {
             return;
         }
 
-        // The all-important reference to the image DOM element
-        const imageRef = backgroundPosterRef.current.imageRef;
         /*
          * Define the range of offset locations relative to the top of the
          * browser in which the opacity changes. Units are pixels
          */
-        let upperBound = window.innerHeight - imageRef.current.offsetHeight / 2;
-        const lowerBound = 100;
-        let totalRange = upperBound - lowerBound;
+        let upperBound;
+        let totalRange;
 
         // Scroll handler
         function handleScroll() {
-            if (!imageRef || !imageRef.current) {
+            if (!backgroundPosterRef.current) {
                 return;
             }
 
             // Compute proportion of the changing-range already scrolled through
             const distanceRemaining =
-                imageRef.current.getBoundingClientRect().top - lowerBound;
+                backgroundPosterRef.current.getBoundingClientRect().top - LOWER_BOUND;
             const proportionRemaining = distanceRemaining / totalRange;
 
             // Smooth out transition into a parabola: 1 - (1-x)^2
@@ -86,7 +99,7 @@ const ConcertCardCore = ({
             const smoothedResult = 1 - inversion * inversion;
 
             // Set opacity clamped to range [0.08, 1]
-            imageRef.current.style.opacity = Math.max(
+            backgroundPosterRef.current.style.opacity = Math.max(
                 MIN_OPACITY,
                 Math.min(1, smoothedResult)
             );
@@ -94,40 +107,30 @@ const ConcertCardCore = ({
 
         // Resize handler
         function handleResize() {
-            if (!imageRef || !imageRef.current) {
+            if (!backgroundPosterRef.current) {
                 return;
             }
 
             // Recompute bounds
-            upperBound = window.innerHeight - imageRef.current.offsetHeight / 2;
-            totalRange = upperBound - lowerBound;
+            upperBound = window.innerHeight - backgroundPosterRef.current.offsetHeight / 2;
+            totalRange = upperBound - LOWER_BOUND;
 
             // Re-execute opacity handler
             handleScroll();
         }
+        // Invoke resize to start
+        handleResize();
 
         // Register event handlers on component mount
         window.addEventListener('scroll', handleScroll, false);
         window.addEventListener('resize', handleResize, false);
-        // Invoke resize to start
-        handleResize();
 
         // Cleanup event handlers on unmount or visibility change
         return function cleanup() {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
 
-            // Force opacity to clamped value in case events weren't finished
-            if (!imageRef || !imageRef.current) {
-                return;
-            }
-
-            // Compute proportion of the changing-range already scrolled through
-            if (imageRef.current.getBoundingClientRect().top < lowerBound) {
-                imageRef.current.style.opacity = MIN_OPACITY;
-            } else {
-                imageRef.current.style.opacity = 1.0;
-            }
+            setDefaultOpacity();
         };
     }, [isVisible]);
 
@@ -135,21 +138,20 @@ const ConcertCardCore = ({
     useEffect(() => {
         // Ensure this only executes for mobile layouts
         if (cardLayoutIndex !== 0) {
-            setVisibility(false);
+            setVisibility(false); // To return to base state
             return;
+        } else {
+            setDefaultOpacity();
         }
 
         // Ensure Intersection Observer support
         if (!CAN_USE_IO) {
-            if (
-                !backgroundPosterRef.current ||
-                !backgroundPosterRef.current.imageRef ||
-                !backgroundPosterRef.current.imageRef.current
-            ) {
+            if (!backgroundPosterRef.current) {
                 return;
             }
+
             // Need to set all background to transparent
-            backgroundPosterRef.current.imageRef.current.style.opacity = MIN_OPACITY;
+            backgroundPosterRef.current.style.opacity = MIN_OPACITY;
             return;
         }
 
@@ -176,14 +178,15 @@ const ConcertCardCore = ({
         return function cleanup() {
             // Stop watching the card's intersection
             intersectionObserver.disconnect();
-            setVisibility(true);
         };
     }, [cardLayoutIndex]);
+
 
     // CSS classes with props
     const classes = concertCardStyles({ isRTL });
     const {
-        backgroundStyle,
+        backgroundImageStyle,
+        backgroundImageWrapper,
         card,
         concertNameCard,
         posterStyle,
@@ -274,12 +277,16 @@ const ConcertCardCore = ({
         } else {
             // Background poster (mobile layout only)
             concertCard.push(
-                <Image
+                <div
                     key={'background-image'}
                     ref={backgroundPosterRef}
-                    className={backgroundStyle}
-                    fluid={fluidPoster}
-                />
+                    className={backgroundImageWrapper}
+                >
+                    <Image
+                        className={backgroundImageStyle}
+                        fluid={fluidPoster}
+                    />
+                </div>
             );
         }
     }
