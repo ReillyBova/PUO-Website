@@ -1,3 +1,10 @@
+// Global variable indicating if browser has Intersection Observer support
+export const CAN_USE_IO =
+    typeof window !== 'undefined' &&
+    'IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype;
+
 // Add video resource to cache
 export async function addToVideoCache(url) {
     const cache = await caches.open('gatsby-plugin-cache-video');

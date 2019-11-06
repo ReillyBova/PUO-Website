@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 // UI imports
 import Card from '@material-ui/core/Card';
 // Project imports
-import { addUTCDays } from 'utils';
+import { addUTCDays, CAN_USE_IO } from 'utils';
 // Local imports
 import concertCardStyles from './concert_card-styles';
 import {
@@ -136,6 +136,20 @@ const ConcertCardCore = ({
         // Ensure this only executes for mobile layouts
         if (cardLayoutIndex !== 0) {
             setVisibility(false);
+            return;
+        }
+
+        // Ensure Intersection Observer support
+        if (!CAN_USE_IO) {
+            if (
+                !backgroundPosterRef.current ||
+                !backgroundPosterRef.current.imageRef ||
+                !backgroundPosterRef.current.imageRef.current
+            ) {
+                return;
+            }
+            // Need to set all background to transparent
+            backgroundPosterRef.current.imageRef.current.style.opacity = MIN_OPACITY;
             return;
         }
 
