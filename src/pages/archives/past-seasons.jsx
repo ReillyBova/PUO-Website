@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql, navigate } from 'gatsby';
 // UI imports
 import { makeStyles } from '@material-ui/styles';
@@ -17,6 +17,7 @@ import {
     preprocessConcerts,
     preprocessPosters,
     groupConcertsBySeason,
+    winWidth,
 } from 'utils';
 
 // Styling for homepage elements
@@ -74,6 +75,38 @@ function PastSeasons({ data }) {
         }
     }
 
+    // Hook for toggle mobile mode on window resize
+    const [cardLayoutIndex, setCardLayoutIndex] = useState(2);
+
+    // Browser event controller
+    useEffect(() => {
+        // Resize handler
+        function handleResize() {
+            // Set mobile mode if necessary
+            const width = winWidth();
+            if (width < 960) {
+                if (width <= 700) {
+                    setCardLayoutIndex(0);
+                } else {
+                    setCardLayoutIndex(1);
+                }
+            } else {
+                setCardLayoutIndex(2);
+            }
+        }
+
+        // Register event handlers on component mount
+        window.addEventListener('resize', handleResize, false);
+        // Invoke resize to start
+        handleResize();
+        // Cleanup event handlers on unmount
+        return function cleanup() {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [
+        /* Empty update-on array ensures useEffect only runs on mount */
+    ]);
+
     // Seperate by season
     const dataBySeason = groupConcertsBySeason(concertData);
     const seasons = Object.keys(dataBySeason)
@@ -101,7 +134,12 @@ function PastSeasons({ data }) {
                                 </Typography>
                             </Paper>
                             {concerts.map((props, i) => (
-                                <ConcertCard key={i} id={i} {...props} />
+                                <ConcertCard
+                                    key={i}
+                                    cardLayoutIndex={cardLayoutIndex}
+                                    id={i}
+                                    {...props}
+                                />
                             ))}
                         </div>
                     );

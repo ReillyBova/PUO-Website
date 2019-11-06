@@ -8,5 +8,9 @@ export { default as ConcertSoloist } from './ConcertSoloist.jsx';
 export { default as ConcertSubtitle } from './ConcertSubtitle.jsx';
 export { default as ConcertTitle } from './ConcertTitle.jsx';
 export { default as ConcertWork } from './ConcertWork.jsx';
+
+export { default as DesktopConcertName } from './DesktopConcertName.jsx';
+export { default as Program } from './Program.jsx';
+
 export { default as HistoryButtons } from './HistoryButtons.jsx';
 export { default as UpcomingButtons } from './UpcomingButtons.jsx';

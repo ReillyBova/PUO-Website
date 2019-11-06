@@ -1,12 +1,10 @@
 // Library imports
 import React from 'react';
 import PropTypes from 'prop-types';
-// UI imports
-import { ThemeProvider } from '@material-ui/styles';
 // Project imports
-import { recolorMuiTheme } from 'utils';
+import { Retheme } from 'components';
 // Local imports
-import ConcertCardContainer from './ConcertCardContainer.jsx';
+import ConcertCardCore from './ConcertCardCore.jsx';
 
 // Card element for concert guides
 function ConcertCard({
@@ -21,6 +19,7 @@ function ConcertCard({
     youtube = '',
     spotify = '',
     id = 0,
+    cardLayoutIndex = 2,
 }) {
     /*
      * Extract content (we need to look at HTML to handle bold/italics)
@@ -54,11 +53,13 @@ function ConcertCard({
         stream,
         youtube,
         spotify,
+        cardLayoutIndex,
     };
+
     return (
-        <ThemeProvider theme={(theme) => recolorMuiTheme(theme, colorTheme)}>
-            <ConcertCardContainer isRTL={!(id % 2)} {...cardProps} />
-        </ThemeProvider>
+        <Retheme newColor={colorTheme}>
+            <ConcertCardCore isRTL={!(id % 2)} {...cardProps} />
+        </Retheme>
     );
 }
 
@@ -74,6 +75,7 @@ ConcertCard.propTypes = {
     youtube: PropTypes.string, // Link to concert youtube video (playlist)
     spotify: PropTypes.string, // Link to concert spotify album
     id: PropTypes.number, // Ordering of concert within larger list
+    cardLayoutIndex: PropTypes.number, // In range [0,2]; indicates screen width
 };
 
 export default ConcertCard;
