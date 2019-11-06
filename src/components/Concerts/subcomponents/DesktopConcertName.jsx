@@ -17,12 +17,12 @@ const DesktopConcertName = ({ concertName, concertNameCardClass }) => {
     // On desktop display, need to prevent the concert name from overflowing box
     useEffect(() => {
         // closure variable to keep track of event listener removals
-        let exited = false;
+        let finished = false;
 
         // Event handler cleanup (prevents double remove)
         function cleanup() {
-            if (!exited) {
-                exited = true;
+            if (!finished) {
+                finished = true;
                 window.removeEventListener('resize', handleResize);
             }
         }
@@ -62,7 +62,6 @@ const DesktopConcertName = ({ concertName, concertNameCardClass }) => {
 
     return (
         <Paper
-            key={'desktop-name'}
             elevation={2}
             ref={concertNameWrapper}
             className={concertNameCardClass}

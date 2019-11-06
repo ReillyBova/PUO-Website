@@ -6,6 +6,9 @@ const concertCardStyles = makeStyles((theme) => ({
     // Styling for background image
     backgroundImageStyle: {
         position: "unset !important",
+        '& > div:first-child': {
+            paddingBottom: 'unset !important'
+        }
     },
     backgroundImageWrapper: {
         // Covering

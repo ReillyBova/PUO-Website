@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 // UI imports
 import Card from '@material-ui/core/Card';
 // Project imports
-import { addUTCDays, CAN_USE_IO } from 'utils';
+import { addUTCDays, CAN_USE_IO, winHeight } from 'utils';
 // Local imports
 import concertCardStyles from './concert_card-styles';
 import {
@@ -112,7 +112,7 @@ const ConcertCardCore = ({
             }
 
             // Recompute bounds
-            upperBound = window.innerHeight - backgroundPosterRef.current.offsetHeight / 2;
+            upperBound = winHeight() - backgroundPosterRef.current.offsetHeight / 2;
             totalRange = upperBound - LOWER_BOUND;
 
             // Re-execute opacity handler
@@ -144,8 +144,8 @@ const ConcertCardCore = ({
             setDefaultOpacity();
         }
 
-        // Ensure Intersection Observer support
-        if (!CAN_USE_IO) {
+        // Ensure Intersection Observer support and DOM access via refs
+        if (!CAN_USE_IO || !cardRef.current) {
             if (!backgroundPosterRef.current) {
                 return;
             }
@@ -256,6 +256,7 @@ const ConcertCardCore = ({
     if (cardLayoutIndex === 2) {
         concertCard.push(
             <DesktopConcertName
+                key={'desktop-name'}
                 concertName={concertName}
                 concertNameCardClass={concertNameCard}
             />
