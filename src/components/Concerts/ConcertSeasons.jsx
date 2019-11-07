@@ -115,6 +115,9 @@ function ConcertSeasons({ concerts, posters }) {
         // Register event handlers on component mount
         window.addEventListener('resize', handleResize, false);
 
+        // Invoke to start (shouldn't be necessary here, but iOS bug w/o)
+        handleResize();
+
         // Cleanup event handlers on unmount
         return function cleanup() {
             window.removeEventListener('resize', handleResize);
