@@ -98,11 +98,11 @@ const ConcertCardCore = ({
             const inversion = 1 - proportionRemaining;
             const smoothedResult = 1 - inversion * inversion;
 
-            // Set opacity clamped to range [0.08, 1]
-            backgroundPosterRef.current.style.opacity = Math.max(
-                MIN_OPACITY,
-                Math.min(1, smoothedResult)
-            );
+            // Set opacity clamped to range [0.08, 1] and rounded to reduce refreshes
+            const result = Math.max(MIN_OPACITY, Math.min(1, smoothedResult)).toFixed(2);
+            if (result !== backgroundPosterRef.current.style.opacity) {
+                backgroundPosterRef.current.style.opacity = result;
+            }
         }
 
         // Resize handler
