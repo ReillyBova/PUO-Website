@@ -81,32 +81,32 @@ function ConcertSeasons({ concerts, posters }) {
     const dataBySeason = useMemo(() => groupConcertsBySeason(concertData), [concertData]);
     const seasons = useMemo(() => Object.keys(dataBySeason).sort().reverse(), [dataBySeason]);
 
-    // Helper for computing the appropriate layout state
-    const computeLayout = () => {
-        // Set mobile mode if necessary
-        const width = winWidth();
-        if (width < 960) {
-            if (width <= 700) {
-                return 0;
-            } else {
-                return 1;
-            }
-        } else {
-            return 2;
-        }
-    };
-
     // Ref to track last element lazy rendered
     const lastSeasonRenderedRef = useRef();
 
     // Hook for lazy rendering
     const [numRendered, setNumRendered] = useState(Math.min(LAZY_RENDER_BUFF_SIZE, seasons.length));
 
-    // Hook for toggle mobile mode on window resize
-    const [cardLayoutIndex, setCardLayoutIndex] = useState(computeLayout());
+    // Hook for toggle mobile mode on window resize: init to invalid value bc SSR issues
+    const [cardLayoutIndex, setCardLayoutIndex] = useState(-1);
 
     // Browser event controller for setting layout on resize
     useEffect(() => {
+        // Helper for computing the appropriate layout state
+        const computeLayout = () => {
+            // Set mobile mode if necessary
+            const width = winWidth();
+            if (width < 960) {
+                if (width <= 700) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            } else {
+                return 2;
+            }
+        };
+
         // Resize handler
         function handleResize() {
             setCardLayoutIndex(computeLayout());
@@ -114,6 +114,9 @@ function ConcertSeasons({ concerts, posters }) {
 
         // Register event handlers on component mount
         window.addEventListener('resize', handleResize, false);
+
+        // Invoke to start
+        handleResize();
 
         // Cleanup event handlers on unmount
         return function cleanup() {
@@ -205,9 +208,16 @@ function ConcertSeasons({ concerts, posters }) {
 
     // Extract seasons for lazy rendering
     const seasonsToRender = seasons.slice(0, numRendered);
-    console.log(cardLayoutIndex)
+
     // CSS classes for styling
     const { subheader, seasonSection, lazyLoadingWrapper } = concertStyles();
+
+    // Prevent SSR in order to be platform agnostic
+    if (cardLayoutIndex < 0) {
+        return null;
+    }
+
+    // Normal Render
     return (
         <Fragment>
             {seasonsToRender.map((season, i) => {

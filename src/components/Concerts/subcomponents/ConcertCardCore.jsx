@@ -293,7 +293,6 @@ const ConcertCardCore = ({
             );
         }
     }
-    console.log(concertCard)
 
     // Alternating RTL behavior
     if (!isRTL && cardLayoutIndex > 0) {
