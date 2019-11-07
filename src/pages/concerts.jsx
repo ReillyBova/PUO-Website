@@ -1,133 +1,24 @@
 // Library imports
-import React, { useEffect, useState } from 'react';
-import { graphql, navigate } from 'gatsby';
-// UI imports
-import { makeStyles } from '@material-ui/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React from 'react';
+import { graphql } from 'gatsby';
 // Project imports
 import {
-    ConcertCard,
+    ConcertSeasons,
     PageLayout,
     Parallax,
     Sheet,
     ImageBanner,
 } from 'components';
-import { preprocessConcerts, preprocessPosters, winWidth } from 'utils';
-
-// Styling for homepage elements
-const concertStyles = makeStyles((theme) => ({
-    // Shift sheet upwards to suggest scrolling
-    concertSheet: {
-        marginTop: 'calc(-65vh + 120px)',
-    },
-    subheader: {
-        position: 'relative',
-        zIndex: 4,
-        width: 'fit-content',
-        padding: theme.spacing(2),
-        marginBottom: theme.spacing(4),
-        marginLeft: -theme.spacing(6),
-        background: theme.palette.primary.main,
-        color: 'white',
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(1),
-            marginBottom: theme.spacing(2),
-            marginLeft: -theme.spacing(3),
-        },
-    },
-    seasonSection: {
-        // Padding below each season
-        '&:not(:last-of-type)': {
-            paddingBottom: theme.spacing(8),
-            [theme.breakpoints.down('xs')]: {
-                paddingBottom: theme.spacing(4),
-            },
-        },
-        '& > div:not(:last-child)': {
-            // Margin below each card
-            marginBottom: theme.spacing(4),
-            [theme.breakpoints.down('xs')]: {
-                marginBottom: theme.spacing(2),
-            },
-        },
-    },
-}));
 
 function Concerts({ data }) {
-    // Preprocess posters in object organized by fileName
-    const posterData = preprocessPosters(data.posters.nodes);
-
-    // Preprocess concert info into managable object
-    const concertData = preprocessConcerts(data.concerts.nodes, posterData);
-
-    // Corner case
-    if (!concertData.length) {
-        if (typeof window !== 'undefined') {
-            // Return 404
-            navigate('/404');
-            return null;
-        }
-    }
-
-    // Hook for toggle mobile mode on window resize
-    const [cardLayoutIndex, setCardLayoutIndex] = useState(2);
-
-    // Browser event controller
-    useEffect(() => {
-        // Resize handler
-        function handleResize() {
-            // Set mobile mode if necessary
-            const width = winWidth();
-            if (width < 960) {
-                if (width <= 700) {
-                    setCardLayoutIndex(0);
-                } else {
-                    setCardLayoutIndex(1);
-                }
-            } else {
-                setCardLayoutIndex(2);
-            }
-        }
-
-        // Register event handlers on component mount
-        window.addEventListener('resize', handleResize, false);
-        // Invoke resize to start
-        handleResize();
-        // Cleanup event handlers on unmount
-        return function cleanup() {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [
-        /* Empty update-on array ensures useEffect only runs on mount */
-    ]);
-
-    // Take first season name in array to be current season
-    const currentSeason = concertData[0].season;
-
-    // CSS classes for styling
-    const { concertSheet, subheader, seasonSection } = concertStyles();
+    // Render
     return (
         <PageLayout title="Concerts">
             <Parallax>
                 <ImageBanner fluid={data.test.childImageSharp.fluid} />
             </Parallax>
-            <Sheet className={concertSheet}>
-                <div className={seasonSection}>
-                    <Paper elevation={4} className={subheader}>
-                        <Typography variant="h3">
-                            {`The ${currentSeason} Season`}
-                        </Typography>
-                    </Paper>
-                    {concertData.map((props, i) => (
-                        <ConcertCard
-                            key={i}
-                            id={i}
-                            cardLayoutIndex={cardLayoutIndex}
-                            {...props}
-                        />
-                    ))}
-                </div>
+            <Sheet hinting={"visible"}>
+                <ConcertSeasons concerts={data.concerts.nodes} posters={data.posters.nodes} />
             </Sheet>
         </PageLayout>
     );

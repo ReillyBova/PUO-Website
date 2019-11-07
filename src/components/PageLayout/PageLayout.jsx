@@ -10,6 +10,7 @@ import Seo from './Seo.jsx';
 const pageStyles = makeStyles(() => ({
     layout: {
         marginTop: 70,
+        position: 'relative',
     },
 }));
 

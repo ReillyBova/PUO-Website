@@ -1,1 +1,1 @@
-export { default as ConcertCard } from './ConcertCard.jsx';
+export { default as ConcertSeasons } from './ConcertSeasons.jsx';

@@ -11,6 +11,7 @@ const sheetStyles = makeStyles((theme) => ({
         // Centering/positioning element
         position: 'relative',
         zIndex: 3,
+        marginTop: ({ marginOffset }) => marginOffset,
         marginRight: theme.spacing(4),
         marginLeft: theme.spacing(4),
         [theme.breakpoints.down('xs')]: {
@@ -31,18 +32,25 @@ const sheetStyles = makeStyles((theme) => ({
     },
 }));
 
+// Constant mapping from hinting string to margin offset
+const HINT_MAP = {
+    'peek': '-20px',
+    'visible': 'calc(-65vh + 120px)',
+};
+
 // A container styled like a paper sheet
 const Sheet = ({
     children,
     elevation = 24,
     component = 'section',
     maxWidth = '1200px',
-    className = '',
+    hinting = ''
 }) => {
     // CSS classes for styling with prop
-    const { wrapper, sheet } = sheetStyles({ maxWidth: maxWidth });
+    const marginOffset = HINT_MAP[hinting];
+    const { wrapper, sheet } = sheetStyles({ maxWidth, marginOffset });
     return (
-        <div className={`${wrapper} ${className}`}>
+        <div className={wrapper}>
             <Paper
                 className={sheet}
                 elevation={elevation}
@@ -59,7 +67,7 @@ Sheet.propTypes = {
     elevation: PropTypes.number, // Element elevation (i.e. shadow depth). In range [0, 24)
     component: PropTypes.string, // HTML component to use for rendering
     maxWidth: PropTypes.string, // Maximum width of sheet (in pixels)
-    className: PropTypes.string, // Extra styling classes for sheet
+    hinting: PropTypes.string, // Description of margin offset
 };
 
 export default Sheet;

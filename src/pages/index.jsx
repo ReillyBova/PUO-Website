@@ -1,8 +1,6 @@
 // Library imports
 import React from 'react';
 import { graphql } from 'gatsby';
-// UI imports
-import { makeStyles } from '@material-ui/core/styles';
 // Project imports
 import {
     PageLayout,
@@ -12,20 +10,12 @@ import {
     WelcomeVideo,
 } from 'components';
 
-// Styling for homepage elements
-const homepageStyles = makeStyles(() => ({
-    // Shift sheet upwards to suggest scrolling
-    homeSheet: {
-        marginTop: -20,
-    },
-}));
-
 function HomePage({ data }) {
     // Preprocess season string (NB: this uses an en-dash, not a hyphen)
     const currentSeason = data.site.siteMetadata.currentSeason;
     const currentSeasonString = `${currentSeason - 1} – ${currentSeason}`;
-    // CSS classes for styling
-    const { homeSheet } = homepageStyles();
+
+    // Render
     return (
         <PageLayout>
             <Parallax>
@@ -34,7 +24,7 @@ function HomePage({ data }) {
                     {`Explore Our ${currentSeasonString} Season`}
                 </WelcomeOverlay>
             </Parallax>
-            <Sheet className={homeSheet}>
+            <Sheet hinting={"peek"}>
                 <div style={{ height: 5000, backgroundColor: 'red' }}>
                     {`This is just me tesrting :)
                 This is just me tesrting :)

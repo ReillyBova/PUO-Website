@@ -1,5 +1,5 @@
 // Library imports
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,18 +18,25 @@ const parallaxStyles = makeStyles(() => ({
 
 // A container that wraps children in a parallax scrolling effect
 function Parallax({ distance = 3.0, children }) {
+    // Hook for keeping track of banner's offset from the page's top
+    const parallaxRef = useRef();
     // Hook for applying parallax effect through CSS 3D translations
     const [translation, translate] = useState();
+
     // Function for setting correct parallax translation
-    const resetTransform = () => {
-        translate(`translate3d(0,${scrollTop() / distance}px,0)`);
+    const resetTransform = (offset) => {
+        translate(`translate3d(0,${(scrollTop() - offset) / distance}px,0)`);
     };
 
     // Browser event controller
     useEffect(() => {
         // Scroll handler
         function handleScroll() {
-            resetTransform();
+            if (!parallaxRef.current) {
+                return;
+            }
+
+            resetTransform(parallaxRef.current.offsetTop);
         }
 
         // Register event handler on component mount
@@ -47,7 +54,7 @@ function Parallax({ distance = 3.0, children }) {
     const { parallax } = parallaxStyles();
     // Render
     return (
-        <div className={parallax} style={{ transform: translation }}>
+        <div className={parallax} ref={parallaxRef} style={{ transform: translation }}>
             {children}
         </div>
     );

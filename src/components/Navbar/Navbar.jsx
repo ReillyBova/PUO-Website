@@ -117,6 +117,7 @@ function Navbar({ children }) {
         y2: '1.5',
         strokeWidth: '4px',
     };
+
     // Render
     return (
         <Fragment>

@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 // Project imports
 import { addUTCDays, CAN_USE_IO, winHeight } from 'utils';
 // Local imports
-import concertCardStyles from './concert_card-styles';
+import concertCardCoreStyles from './concert_card_core-styles';
 import {
     ConcertBreak,
     ConcertDatetime,
@@ -19,7 +19,7 @@ import {
     ConcertWork,
     DesktopConcertName,
     Program,
-} from './subcomponents';
+} from './ConcertCardInternals';
 
 // Constant for minimum background image opacity in mobile mode
 const MIN_OPACITY = 0.05;
@@ -183,7 +183,7 @@ const ConcertCardCore = ({
 
 
     // CSS classes with props
-    const classes = concertCardStyles({ isRTL });
+    const classes = concertCardCoreStyles({ isRTL });
     const {
         backgroundImageStyle,
         backgroundImageWrapper,
