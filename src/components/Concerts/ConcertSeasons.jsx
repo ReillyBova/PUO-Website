@@ -205,6 +205,7 @@ function ConcertSeasons({ concerts, posters }) {
 
     // Extract seasons for lazy rendering
     const seasonsToRender = seasons.slice(0, numRendered);
+    console.log(cardLayoutIndex)
     // CSS classes for styling
     const { subheader, seasonSection, lazyLoadingWrapper } = concertStyles();
     return (
