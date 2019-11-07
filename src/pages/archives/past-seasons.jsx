@@ -261,7 +261,7 @@ export const fluidImage = graphql`
         name
         childImageSharp {
             fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid_withWebp_noBase64
             }
         }
     }
@@ -272,7 +272,7 @@ export const fluidImage2 = graphql`
         name
         childImageSharp {
             fluid(quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid_withWebp_noBase64
             }
         }
     }
