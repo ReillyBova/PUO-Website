@@ -50,7 +50,7 @@ export const pageQuery = graphql`
         concerts: allMarkdownRemark(
             filter: {
                 fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
-                frontmatter: {current: {eq: "false"}}
+                frontmatter: {current: {eq: "true"}}
             },
             sort: {fields: frontmatter___date}
         ) {
