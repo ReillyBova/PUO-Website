@@ -2,7 +2,7 @@ require('./src/styles/styles.css');
 
 exports.onClientEntry = () => {
     // Load Roboto font to support Material Design
-    const pathRoboto = 'https://fonts.googleapis.com/css?family=Roboto:500';
+    const pathRoboto = 'https://fonts.googleapis.com/css?family=Roboto:500,700';
     const linkRoboto = document.createElement('link');
     linkRoboto.setAttribute('rel', 'stylesheet');
     linkRoboto.setAttribute('href', pathRoboto);

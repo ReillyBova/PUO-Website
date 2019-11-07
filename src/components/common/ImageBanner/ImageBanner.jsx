@@ -1,5 +1,6 @@
 // Library imports
 import React from 'react';
+import  { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,5 +31,17 @@ function ImageBanner({ fluid }) {
         </div>
     );
 }
+
+// Common query fragment for image bannners
+export const imageBannerFragment = graphql`
+    fragment ImageBannerFragment on File {
+        name
+        childImageSharp {
+            fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+        }
+    }
+`;
 
 export default ImageBanner;

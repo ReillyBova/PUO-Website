@@ -1,6 +1,6 @@
 // Library imports
 import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
-import { navigate } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 // UI imports
 import { makeStyles } from '@material-ui/styles';
@@ -242,6 +242,42 @@ function ConcertSeasons({ concerts, posters }) {
         </Fragment>
     );
 }
+
+// Query fragment for posters
+export const concertPosterFragment = graphql`
+    fragment ConcertPosterFragment on File {
+        name
+        childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+        }
+    }
+`;
+
+// Query fragment for concert data
+export const concertDataFragment = graphql`
+    fragment ConcertDataFragment on MarkdownRemark {
+        html
+        frontmatter {
+            concertName
+            colorTheme
+            date
+            season
+            poster
+            calendar
+            tickets
+            stream
+            youtube
+            spotify
+        }
+        parent {
+            ... on File {
+              name
+            }
+        }
+    }
+`;
 
 ConcertSeasons.propTypes = {
     concerts: PropTypes.array, // List of concert data

@@ -15,7 +15,7 @@ function PastSeasons({ data }) {
     return (
         <PageLayout title="Past Seasons">
             <Parallax>
-                <ImageBanner fluid={data.test.childImageSharp.fluid} />
+                <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
             <Sheet hinting={"visible"}>
                 <ConcertSeasons concerts={data.concerts.nodes} posters={data.posters.nodes} />
@@ -24,30 +24,17 @@ function PastSeasons({ data }) {
     );
 }
 
-export const fluidImage = graphql`
-    fragment fluidImage on File {
-        name
-        childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-        }
-    }
-`;
-
-export const fluidImage2 = graphql`
-    fragment fluidImage2 on File {
-        name
-        childImageSharp {
-            fluid(quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-        }
-    }
-`;
-
+// Fetch data for page
 export const pageQuery = graphql`
     query {
+        banner: file(
+            sourceInstanceName: {eq: "images"},
+            relativeDirectory: {eq: "banners"},
+            name: {eq: "past-seasons"}
+        ) {
+            ...ImageBannerFragment
+        }
+
         posters: allFile(
             filter: {
                 sourceInstanceName: { eq: "images" }
@@ -56,11 +43,8 @@ export const pageQuery = graphql`
             }
         ) {
             nodes {
-                ...fluidImage
+                ...ConcertPosterFragment
             }
-        }
-        test: file(relativePath: { eq: "poster.jpg" }) {
-            ...fluidImage2
         }
 
         concerts: allMarkdownRemark(
@@ -71,24 +55,7 @@ export const pageQuery = graphql`
             sort: {fields: frontmatter___date}
         ) {
             nodes {
-                html
-                frontmatter {
-                    concertName
-                    colorTheme
-                    date
-                    season
-                    poster
-                    calendar
-                    tickets
-                    stream
-                    youtube
-                    spotify
-                }
-                parent {
-                    ... on File {
-                      name
-                    }
-                }
+                ...ConcertDataFragment
             }
         }
     }
