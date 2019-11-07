@@ -28,6 +28,8 @@ const MIN_OPACITY = 0.05;
  * background posters no longer change their opacity
  */
 const LOWER_BOUND = 120;
+// Constant for program key strings based on cardLayoutIndex
+const PROGRAM_LAYOUT_NAMES = ['mobile-program', 'tablet-program', 'desktop-program'];
 
 // Card element for rendering the concert programs/posters
 const ConcertCardCore = ({
@@ -263,7 +265,7 @@ const ConcertCardCore = ({
         );
     }
     // Program JSX (all layouts)
-    concertCard.push(<Program {...programProps} />);
+    concertCard.push(<Program key={PROGRAM_LAYOUT_NAMES[cardLayoutIndex]} {...programProps} />);
     // Image JSX (all layouts, if poster is provided)
     if (fluidPoster) {
         if (cardLayoutIndex > 0) {

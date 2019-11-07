@@ -8,9 +8,6 @@ import Typography from '@material-ui/core/Typography';
 // Local imports
 import { HistoryButtons, UpcomingButtons } from './';
 
-// Key strings for program type based on cardLayoutIndex
-const LAYOUT_NAMES = ['mobile-program', 'tablet-program', 'desktop-program'];
-
 // Returns the architecture of the program based on cardLayoutIndex
 const Program = ({
     buttonLinks,
@@ -27,10 +24,9 @@ const Program = ({
         mobileConcertNameRibbon,
         programContent,
     } = classes;
-    const keyString = LAYOUT_NAMES[cardLayoutIndex];
 
     return (
-        <div key={keyString} className={concertDetails}>
+        <div className={concertDetails}>
             {cardLayoutIndex === 1 && (
                 // Special tablet ribbon for layering under spaced mobile ribbon
                 <div className={mobileConcertNameRibbon}>
