@@ -69,6 +69,8 @@ module.exports = [
             path: `${__dirname}/src/assets/images`,
         },
     },
+    // Generate _headers file for Netlify
+    'gatsby-plugin-netlify',
     // Caching site locally
     {
         resolve: 'gatsby-plugin-offline',

@@ -36,6 +36,7 @@
     "gatsby-plugin-manifest": "^2.2.26",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-module-resolver": "^1.0.3",
+    "gatsby-plugin-netlify": "^2.1.23",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.36",
