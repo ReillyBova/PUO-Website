@@ -87,8 +87,8 @@ function ConcertSeasons({ concerts, posters }) {
     // Hook for lazy rendering
     const [numRendered, setNumRendered] = useState(Math.min(LAZY_RENDER_BUFF_SIZE, seasons.length));
 
-    // Hook for toggle mobile mode on window resize: init to invalid value bc SSR issues
-    const [cardLayoutIndex, setCardLayoutIndex] = useState(-1);
+    // Hook for toggle mobile mode on window resize: init to invalid to force rerender due to SSR issues
+    const [cardLayoutIndex, setCardLayoutIndex] = useState(3);
 
     // Browser event controller for setting layout on resize
     useEffect(() => {
@@ -211,11 +211,6 @@ function ConcertSeasons({ concerts, posters }) {
 
     // CSS classes for styling
     const { subheader, seasonSection, lazyLoadingWrapper } = concertStyles();
-
-    // Prevent SSR in order to be platform agnostic
-    if (cardLayoutIndex < 0) {
-        return null;
-    }
 
     // Normal Render
     return (
