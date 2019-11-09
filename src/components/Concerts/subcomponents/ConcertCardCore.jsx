@@ -255,7 +255,7 @@ const ConcertCardCore = ({
     };
     const concertCard = [];
     // Desktop Concert Name JSX (desktop layout only)
-    if (cardLayoutIndex === 2) {
+    if (cardLayoutIndex > 1) {
         concertCard.push(
             <DesktopConcertName
                 key={'desktop-name'}
