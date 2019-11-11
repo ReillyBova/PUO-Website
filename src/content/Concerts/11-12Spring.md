@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#7E57C2"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2012-04-27"
 # Season
-season: "2014/15"
+season: "2011/12"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "stravinsky"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,19 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = Musical Modernism
+Subtitle = *Stuart B. Mindlin Memorial Concerts*
 Subtitle = Michael Pratt, Conductor
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = April 27, 2012 19:30
+Datetime = April 28, 2012 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
+Work = Alban Berg ~ Three Fragments from *Wozzeck*, op. 7 ~ Sarah Pelletier, Soprano
 Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Igor Stravinsky ~ *Le Sacre du printemps* (The Rite of Spring)

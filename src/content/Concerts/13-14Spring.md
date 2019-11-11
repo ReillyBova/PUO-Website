@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#7E57C2"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2014-04-25"
 # Season
-season: "2014/15"
+season: "2013/14"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "mahler-young"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,19 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = What Mahler Hears
+Subtitle = *Stuart B. Mindlin Memorial Concerts*
 Subtitle = Michael Pratt, Conductor
+Subtitle = Women of the Princeton University Glee Club
+Subtitle = American Boychoir
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = April 25, 2014 19:30
+Datetime = April 26, 2014 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
-Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Gustav Mahler ~ Symphony No. 3 ~ Barbara Rearick, Mezzo-soprano

@@ -4,7 +4,7 @@ concertName: "Soloist Spotlight"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#8AC44A"
 # Date YY-MM-DD (for sorting)
-date: "2013-03-09"
+date: "2013-03-08"
 # Season
 season: "2012/13"
 # Is current season?

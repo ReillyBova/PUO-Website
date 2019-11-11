@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#7E57C2"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2011-04-15"
 # Season
-season: "2014/15"
+season: "2010/11"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "r-strauss"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,20 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = Also Sprach Zarathustra
+Subtitle = *Stuart B. Mindlin Memorial Concerts*
 Subtitle = Michael Pratt, Conductor
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = April 15, 2011 19:30
+Datetime = April 16, 2011 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
+Work = Ludwig van Beethoven ~ Leonore Overture No. 3, op. 72a
+Work = Gustav Mahler ~ *Rückert-Lieder* (Five Songs to Poems by Friedrich Rückert) ~ Barbara Rearick, Mezzo-soprano
 Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Richard Strauss ~ *Also sprach Zarathustra* (Thus Spake Zarathustra), op. 30

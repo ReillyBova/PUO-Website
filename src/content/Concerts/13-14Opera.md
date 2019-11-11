@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Opera Night"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#221E20"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2014-01-10"
 # Season
-season: "2014/15"
+season: "2013/14"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "monteverdi"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,17 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = The Coronation of Poppea
 Subtitle = Michael Pratt, Conductor
+Subtitle = Ethan Heard, Director
+Subtitle = Princeton University Opera Theater
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = January 10, 2014 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
-Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Claudio Monteverdi ~ *L'incoronazione di Poppea* (The Coronation of Poppea), SV. 308

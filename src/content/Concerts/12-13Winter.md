@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#00B0FF"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2012-12-08"
 # Season
-season: "2014/15"
+season: "2012/13"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "copland"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,20 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = A Musical Melting Pot
 Subtitle = Michael Pratt, Conductor
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = December 07, 2012 19:30
+Datetime = December 08, 2012 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
+Work = Gilad Cohen ~ *Dragon Mother* ~ Martha Elliot '82, Soprano ~ World Premiere
+Work = Richard Strauss ~ Horn Concerto No. 1 in E-flat major, op. 11 ~ Max Jacobson '13, French Horn ~ Ruth Ochs, Conductor
 Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Béla Bartók ~ Violin Concerto No. 2, BB. 117 ~ Caitlin Wood '15, Violin
+Work = Aaron Copland ~ *El Salón México*

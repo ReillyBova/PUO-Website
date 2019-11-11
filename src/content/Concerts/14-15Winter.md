@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#00B0FF"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2014-12-04"
 # Season
 season: "2014/15"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "mahler-young"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,18 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = A Child's Vision of Heaven
 Subtitle = Michael Pratt, Conductor
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = December 04, 2014 19:30
+Datetime = December 05, 2014 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
+Work = Dan Trueman / Donnacha Dennehy ~ Four Sean-nós Songs for Voice and Orchestra ~ Iarla Ó Lionáird, Vocalist
 Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Gustav Mahler ~ Symphony No. 4 in G major ~ Katherine Buzard '14, Soprano

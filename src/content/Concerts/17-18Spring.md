@@ -23,7 +23,7 @@ youtube: ""
 spotify: ""
 ---
 Title = War Requiem
-Subtitle = *Stuart B. Mindlin Memorial Concert*
+Subtitle = *Stuart B. Mindlin Memorial Concerts*
 Subtitle = Michael Pratt, Conductor
 Subtitle = Princeton University Glee Club
 Subtitle = Princeton Pro Musica

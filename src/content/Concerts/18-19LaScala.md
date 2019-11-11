@@ -23,7 +23,7 @@ youtube: ""
 spotify: ""
 ---
 Title = Fischer & La Scala
-Subtitle = *The Princeton University Orchestra Presents: Orchestra of the Accademia Teatro Alla Scala*
+Subtitle = *Princeton University Orchestra Presents: Orchestra of the Accademia Teatro Alla Scala*
 Subtitle = Iván Fischer, Conductor
 
 Section

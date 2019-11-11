@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Reunions"
 # Concert Color theme (use hex form of sRGB to find)
 colorTheme: "#F58025"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2015-05-30"
 # Season
 season: "2014/15"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "reunions"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,15 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
+Title = Reunions Fireworks Concert
 Subtitle = Michael Pratt, Conductor
 
 Section
 
-Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Hall = Finney Field | FREE ADMISSION
+Datetime = May 30, 2015 20:00
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
-Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Subtitle = Featuring popular music and classic American tunes!

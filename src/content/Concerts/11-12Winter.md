@@ -1,16 +1,16 @@
 ---
 # Concert Name (e.g. "Fall Concert")
-concertName: "Fall Concert"
+concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#F58025"
+colorTheme: "#00B0FF"
 # Date YY-MM-DD (for sorting)
-date: "2014-10-00"
+date: "2011-12-09"
 # Season
-season: "2014/15"
+season: "2011/12"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: "brahms-old"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,20 +22,20 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Carnival
-Subtitle = Michael Pratt, Conductor
+Title = Brahms Symphony No. 3
+Subtitle = Hobart Earle ’83, Conductor
 
 Section
 
 Hall = Richardson Auditorium in Alexander Hall
-Datetime = October 17, 2014 19:30
-Datetime = October 18, 2014 19:30
+Datetime = December 09, 2011 19:30
+Datetime = December 10, 2011 19:30
 
 Section
 
 Overline = Program
-Work = George Gershwin ~ *Cuban Overture*
-Work = Jonathan Russell ~ Concerto for Bass Clarinet ~ Jonathan Russell GS, Bass Clarinet ~ World Premiere
+Work = Edvard Grieg ~ Suite No. 2, op. 55, from *Peer Gynt*
+Work = Edvard Grieg ~ Suite No. 1, op. 46, from *Peer Gynt*
+Work = Erik Satie / Arr. Claude Debussy ~ *Gymnopédies*
 Break = --- Intermission ---
-Work = Edvard Grieg ~  Piano Concerto in A minor, op. 16 ~ March Fishman '17, Piano
-Work = Antonín Dvořák ~ *Carnival Overture*, op. 92
+Work = Johannes Brahms ~ Symphony No. 3 in F minor, op. 90
