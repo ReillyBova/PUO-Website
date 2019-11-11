@@ -29,6 +29,7 @@ Section
 
 Hall = Richardson Auditorium in Alexander Hall
 Datetime = March 7, 2008 19:30
+Datetime = March 8, 2008 19:30
 
 Section
 

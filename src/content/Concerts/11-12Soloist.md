@@ -10,7 +10,7 @@ season: "2011/12"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "rachmanioff"
+poster: "rachmaninoff"
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -29,10 +29,11 @@ Section
 
 Hall = Richardson Auditorium in Alexander Hall
 Datetime = March 9, 2012 19:30
+Datetime = March 10, 2012 19:30
 
 Section
 
 Overline = Program
-Work = Frédéric Chopin ~ Piano Concerto No. 1 in E minor, op. 11 ~ Darya Koltunyuk ’15, Piano
+Work = Frédéric Chopin ~ Piano Concerto No. 1 in E minor, op. 11 ~ Dasha Koltunyuk ’15, Piano
 Break = --- Intermission ---
 Work = Sergei Rachmaninoff ~ *Symphonic Dances*, op. 45

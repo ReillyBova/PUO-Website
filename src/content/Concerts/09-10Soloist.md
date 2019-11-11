@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Beethoven Symphony No. 2
+Title = Beethoven Symphony No. 8
 Subtitle = Michael Pratt, Conductor
 
 Section
@@ -36,7 +36,7 @@ Section
 
 Overline = Program
 Work = Maurice Ravel ~ *Tzigane* ~ Tiffany Lu ’10, Violin
-Work = Aaron Copland ~ Clarinet Concert ~ Leo Kim ’11, Clarinet
-Break = --- Intermission ---
 Work = Maurice Ravel ~ Piano Concerto in G major ~ Kendra Nealon ’13, Piano
-Work = Ludwig van Beethoven ~ Symphony No. 2 in D major, op. 36
+Break = --- Intermission ---
+Work = Aaron Copland ~ Clarinet Concert ~ Leo Kim ’11, Clarinet
+Work = Ludwig van Beethoven ~ Symphony No. 8 in F major, op. 93

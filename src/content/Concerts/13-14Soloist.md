@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Prauge & Scotland
+Title = Prague & Scotland
 Subtitle = Michael Pratt, Conductor
 
 Section

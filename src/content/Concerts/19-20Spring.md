@@ -23,7 +23,7 @@ youtube: ""
 spotify: ""
 ---
 Title = Destiny Arrives All the Same
-Subtitle = *Stuart B. Mindlin Memorial Concert*
+Subtitle = *Stuart B. Mindlin Memorial Concerts*
 Subtitle = Michael Pratt, Conductor
 
 Section

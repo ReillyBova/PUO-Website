@@ -18,7 +18,7 @@ tickets: ""
 # Livestream link (if applicable)
 stream: ""
 # Youtube link (if applicable)
-youtube: ""
+youtube: "https://www.youtube.com/watch?v=gD7Ntm5r0lA"
 # Spotify link (if applicable)
 spotify: ""
 ---

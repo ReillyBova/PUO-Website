@@ -35,7 +35,7 @@ Datetime = March 5, 2011 19:30
 Section
 
 Overline = Program
-Work = Yngwie Malmsteen ~ Concerto Suite for Electric Guitar and Orchestra ~ Mark Dancigers, Electric Guitar
+Work = Yngwie Malmsteen ~ Concerto Suite for Electric Guitar and Orchestra ~ Mark Dancigers GS, Electric Guitar
 Work = W. A. Mozart ~ Flute Concerto No. 2 in D Major, K. 314/285d ~ Jessica Anastasio ’11, Flute
 Break = --- Intermission ---
 Work = Jean Sibelius ~ Violin Concerto in D minor, op. 47 ~ Yoon Won Song ’11, Violin
