@@ -54,7 +54,11 @@ function Parallax({ distance = 3.0, children }) {
     const { parallax } = parallaxStyles();
     // Render
     return (
-        <div className={parallax} ref={parallaxRef} style={{ transform: translation }}>
+        <div
+            className={parallax}
+            ref={parallaxRef}
+            style={{ transform: translation }}
+        >
             {children}
         </div>
     );

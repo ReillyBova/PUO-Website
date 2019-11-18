@@ -1,7 +1,6 @@
 // Library imports
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 // Project imports
 import { scrollTop, winHeight, winWidth } from 'utils';
@@ -18,7 +17,7 @@ import {
 const WINDOW_DIMS = {};
 
 // A Navbar that sits above the web-app
-function Navbar({ children }) {
+function Navbar() {
     // Query navbar settings from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -120,42 +119,35 @@ function Navbar({ children }) {
 
     // Render
     return (
-        <Fragment>
-            <header className={navbarHeader}>
-                <div className={clsx(navbarMain, isMinified ? 'mini' : 'full')}>
-                    {/* Logo */}
-                    <Brand {...menuProps} />
-                    {/* Desktop Navbar */}
-                    {!isMobileMode && (
-                        <DesktopLinks
-                            classes={classes}
-                            navigation={navigation}
-                        />
-                    )}
-                    {/* Mobile Navbar */}
-                    {isMobileMode && <HamburgerMenu {...menuProps} />}
-                    <MobileMenu
-                        isMinified={isMinified}
-                        navigation={navigation}
-                        {...menuProps}
-                    />
-                </div>
-                {/* Curtain Element */}
-                <svg className={clsx(navbarTriangle, 'black')}>
-                    <polygon ref={blackTriangle} {...curtainProps} />
-                </svg>
-                <svg className={clsx(navbarTriangle, 'orange')}>
-                    <polygon ref={whiteTriangle} {...curtainProps} />
-                    <line ref={orangeLine} {...lineProps} />
-                </svg>
-            </header>
-            {children}
-        </Fragment>
+        <header className={navbarHeader}>
+            <div className={clsx(navbarMain, isMinified ? 'mini' : 'full')}>
+                {/* Logo */}
+                <Brand {...menuProps} />
+                {/* Desktop Navbar */}
+                {!isMobileMode && (
+                    <DesktopLinks classes={classes} navigation={navigation} />
+                )}
+                {/* Mobile Navbar */}
+                {isMobileMode && <HamburgerMenu {...menuProps} />}
+                <MobileMenu
+                    isMinified={isMinified}
+                    navigation={navigation}
+                    {...menuProps}
+                />
+            </div>
+            {/* Curtain Element */}
+            <svg className={clsx(navbarTriangle, 'black')}>
+                <polygon ref={blackTriangle} {...curtainProps} />
+            </svg>
+            <svg className={clsx(navbarTriangle, 'orange')}>
+                <polygon ref={whiteTriangle} {...curtainProps} />
+                <line ref={orangeLine} {...lineProps} />
+            </svg>
+        </header>
     );
 }
 
-Navbar.propTypes = {
-    children: PropTypes.node, // The rest of the web-page
-};
+// No props!
+Navbar.propTypes = {};
 
 export default Navbar;

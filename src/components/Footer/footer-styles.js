@@ -2,38 +2,52 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 // Styling for navbar elements
-const navbarStyles = makeStyles((theme) => ({
-    // Animations
-    '@keyframes fadein': {
-        // General opacity fade
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    },
-    '@keyframes fadeDownInline': {
-        // For brand text (beside logo)
-        '0%': { opacity: 0, transform: 'translateY(-50px)' },
-        '25%': { opacity: 0, transform: 'translateY(-50px)' },
-        '100%': { opacity: 1, transform: 'translateY(0)' },
-    },
-    '@keyframes fadeDownBelow': {
-        // For brand text (below logo)
-        '0%': { opacity: 0, transform: 'translateY(-12px)' },
-        '25%': { opacity: 0, transform: 'translateY(-12px)' },
-        '100%': { opacity: 1, transform: 'translateY(0)' },
-    },
+const footerStyles = makeStyles((theme) => ({
     // Classes
-    navbarHeader: {
+    footerWrapper: {
         // Allocate space in UI
         width: '100%',
-        position: 'fixed',
-        top: 0,
-        // Elevate material
-        zIndex: theme.zIndex.appBar,
+        height: 250,
+
+        marginTop: `calc(4px - ${theme.spacing(8)}px)`,
+        paddingTop: theme.spacing(9),
+        paddingRight: theme.spacing(4),
+        paddingBottom: theme.spacing(4),
+        paddingLeft: theme.spacing(4),
+        [theme.breakpoints.down('xs')]: {
+            marginTop: `calc(4px - ${theme.spacing(6)}px)`,
+            paddingTop: theme.spacing(7),
+            paddingRight: theme.spacing(2),
+            paddingBottom: theme.spacing(2),
+            paddingLeft: theme.spacing(2),
+        },
         // Color background
-        backgroundColor: theme.palette.background.paper,
-        // Allow in to scroll off small interfaces
-        '@media screen and (min-width: 600px) and (max-height: 500px)': {
-            position: 'absolute',
+        backgroundColor: theme.palette.secondary.main,
+        borderTop: `4px solid ${theme.palette.primary.main}`,
+    },
+    dividerStyle: {
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    },
+    // Custom styling for button; messy because overrides Material UI
+    button: {
+        // Text default properties
+        fontFamily: 'Roboto, Open Sans, Roboto, Helvetica, Arial, sans-serif',
+        fontSize: '18px !important',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '15px !important',
+            [theme.breakpoints.down('xs')]: {
+                fontSize: '12px !important',
+            },
+        },
+        // Ensure all interactive content is the link
+        padding: '0 !important',
+        // Style link element
+        '& a': {
+            padding: `${theme.spacing(0.75)}px ${theme.spacing(1)}px`,
+            transition: 'color 250ms',
+        },
+        '&:not(:hover) a': {
+            color: 'white',
         },
     },
     navbarMain: {
@@ -139,9 +153,7 @@ const navbarStyles = makeStyles((theme) => ({
             // Mini scaling for dropdown elements
             '& $desktopDropdownLink': {
                 fontSize: 14,
-                '& a': {
-                    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
-                },
+                '& a': { padding: 14 },
             },
 
             '@media screen and (min-width: 1251px)': {
@@ -312,24 +324,14 @@ const navbarStyles = makeStyles((theme) => ({
         },
     },
     desktopDropdownLink: {
-        // Font enforcement (inside button)
         fontSize: 18,
-        lineHeight: '24px',
-        fontWeight: 500,
-        fontFamily: 'Roboto, Open Sans, Helvetica, Arial, sans-serif',
-        textTransform: 'none',
+        width: '100%',
         transition: 'font-size 0.5s ease',
 
-        // Stretch to fill
-        width: '100%',
-
-        // Special coloring/spacing
         '& a': {
             color: theme.palette.secondary.main,
             display: 'block',
-
-            // Padding
-            padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+            padding: 18,
             transition: 'padding 0.5s ease, color 0.2s ease',
         },
         '& a.active': {
@@ -438,12 +440,6 @@ const navbarStyles = makeStyles((theme) => ({
         },
         '&>div:last-of-type': {
             backgroundColor: theme.palette.primary.main,
-            boxShadow: `inset 0px 3px 4px -1px rgba(0,0,0,0.2),
-                        inset 0px 6px 5px 0px rgba(0,0,0,0.14),
-                        inset 0px 1.5px 10px 0px rgba(0,0,0,0.12),
-                        inset 0px -1px 4px -1px rgba(0,0,0,0.2),
-                        inset 0px -2px 5px 0px rgba(0,0,0,0.14),
-                        inset 0px -0.5px 10px 0px rgba(0,0,0,0.12)`,
         },
     },
     mobileDropdownChevron: {
@@ -457,9 +453,7 @@ const navbarStyles = makeStyles((theme) => ({
     },
     mobileDropdownDetails: {
         display: 'block !important',
-        padding: `${theme.spacing(0.5)}px 0 ${theme.spacing(
-            0.5
-        )}px 0 !important`,
+        padding: '0 0 8px 0 !important',
     },
     mobileDropdownHoverCapture: {
         width: '100%',
@@ -622,4 +616,4 @@ const navbarStyles = makeStyles((theme) => ({
     },
 }));
 
-export default navbarStyles;
+export default footerStyles;

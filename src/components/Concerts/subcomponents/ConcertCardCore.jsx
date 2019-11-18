@@ -23,13 +23,20 @@ import {
 
 // Constant for minimum background image opacity in mobile mode
 const MIN_OPACITY = 0.05;
+// Constant for number of possible opacity values per 100
+const ROUNDING_FACTOR = 80;
 /*
  * Constant for determining the min pixels from the top at which mobile
  * background posters no longer change their opacity
  */
 const LOWER_BOUND = 120;
 // Constant for program key strings based on cardLayoutIndex
-const PROGRAM_LAYOUT_NAMES = ['mobile-program', 'tablet-program', 'desktop-program'];
+const PROGRAM_LAYOUT_NAMES = [
+    'mobile-program',
+    'tablet-program',
+    'desktop-program',
+    'prerender-program',
+];
 
 // Card element for rendering the concert programs/posters
 const ConcertCardCore = ({
@@ -61,7 +68,10 @@ const ConcertCardCore = ({
         }
 
         // Compute proportion of the changing-range already scrolled through
-        if (backgroundPosterRef.current.getBoundingClientRect().top < LOWER_BOUND) {
+        if (
+            backgroundPosterRef.current.getBoundingClientRect().top <
+            LOWER_BOUND
+        ) {
             backgroundPosterRef.current.style.opacity = MIN_OPACITY;
         } else {
             backgroundPosterRef.current.style.opacity = 1.0;
@@ -85,6 +95,9 @@ const ConcertCardCore = ({
         let upperBound;
         let totalRange;
 
+        // Keep track of current background opacity
+        let backgroundOpacity = 1;
+
         // Scroll handler
         function handleScroll() {
             if (!backgroundPosterRef.current) {
@@ -93,17 +106,24 @@ const ConcertCardCore = ({
 
             // Compute proportion of the changing-range already scrolled through
             const distanceRemaining =
-                backgroundPosterRef.current.getBoundingClientRect().top - LOWER_BOUND;
+                backgroundPosterRef.current.getBoundingClientRect().top -
+                LOWER_BOUND;
             const proportionRemaining = distanceRemaining / totalRange;
 
             // Smooth out transition into a parabola: 1 - (1-x)^2
             const inversion = 1 - proportionRemaining;
             const smoothedResult = 1 - inversion * inversion;
+            const roundedResult =
+                Math.round(smoothedResult * ROUNDING_FACTOR) / ROUNDING_FACTOR;
 
-            // Set opacity clamped to range [0.08, 1] and rounded to reduce refreshes
-            const result = Math.max(MIN_OPACITY, Math.min(1, smoothedResult)).toFixed(2);
-            if (result !== backgroundPosterRef.current.style.opacity) {
+            // Set opacity clamped to range [MIN_OPACITY], 1] and rounded to reduce refreshes
+            const result = Math.max(
+                MIN_OPACITY,
+                Math.min(1, roundedResult)
+            ).toFixed(2);
+            if (result !== backgroundOpacity) {
                 backgroundPosterRef.current.style.opacity = result;
+                backgroundOpacity = result;
             }
         }
 
@@ -114,7 +134,8 @@ const ConcertCardCore = ({
             }
 
             // Recompute bounds
-            upperBound = winHeight() - backgroundPosterRef.current.offsetHeight / 2;
+            upperBound =
+                winHeight() - backgroundPosterRef.current.offsetHeight / 2;
             totalRange = upperBound - LOWER_BOUND;
 
             // Re-execute opacity handler
@@ -182,7 +203,6 @@ const ConcertCardCore = ({
             intersectionObserver.disconnect();
         };
     }, [cardLayoutIndex]);
-
 
     // CSS classes with props
     const classes = concertCardCoreStyles({ isRTL });
@@ -265,7 +285,12 @@ const ConcertCardCore = ({
         );
     }
     // Program JSX (all layouts)
-    concertCard.push(<Program key={PROGRAM_LAYOUT_NAMES[cardLayoutIndex]} {...programProps} />);
+    concertCard.push(
+        <Program
+            key={PROGRAM_LAYOUT_NAMES[cardLayoutIndex]}
+            {...programProps}
+        />
+    );
     // Image JSX (all layouts, if poster is provided)
     if (fluidPoster) {
         if (cardLayoutIndex > 0) {

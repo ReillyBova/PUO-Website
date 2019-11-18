@@ -34,8 +34,8 @@ const sheetStyles = makeStyles((theme) => ({
 
 // Constant mapping from hinting string to margin offset
 const HINT_MAP = {
-    'peek': '-20px',
-    'visible': 'calc(-65vh + 120px)',
+    peek: '-20px',
+    visible: 'calc(-65vh + 120px)',
 };
 
 // A container styled like a paper sheet
@@ -44,7 +44,7 @@ const Sheet = ({
     elevation = 24,
     component = 'section',
     maxWidth = '1200px',
-    hinting = ''
+    hinting = '',
 }) => {
     // CSS classes for styling with prop
     const marginOffset = HINT_MAP[hinting];

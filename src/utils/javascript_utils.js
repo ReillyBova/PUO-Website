@@ -46,3 +46,18 @@ export const shuffleArray = (array) => {
         [array[i], array[j]] = [array[j], array[i]]; // eslint-disable-line no-param-reassign
     }
 };
+
+// Smooth step function based on http://en.wikipedia.org/wiki/Smoothstep
+export const smoothStep = (start, end, point) => {
+    // Corner cases
+    if (point <= start) {
+        return 0;
+    }
+    if (point >= end) {
+        return 1;
+    }
+
+    // Interpolate and return
+    const x = (point - start) / (end - start);
+    return x * x * (3 - 2 * x);
+};

@@ -1,6 +1,6 @@
 // Library imports
 import React from 'react';
-import  { graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';

@@ -1,14 +1,19 @@
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 
+// Global constant alpha hexes for rgba injection workaroud
+const ALPHA_ONE = Math.round(0.3 * 255).toString(16);
+const ALPHA_TWO = Math.round(0.2 * 255).toString(16);
+const ALPHA_THREE = Math.round(0.1 * 255).toString(16);
+
 // Styling for concert card elements
 const concertCardStyles = makeStyles((theme) => ({
     // Styling for background image
     backgroundImageStyle: {
-        position: "unset !important",
+        position: 'unset !important',
         '& > div:first-child': {
-            paddingBottom: 'unset !important'
-        }
+            paddingBottom: 'unset !important',
+        },
     },
     backgroundImageWrapper: {
         // Covering
@@ -37,6 +42,7 @@ const concertCardStyles = makeStyles((theme) => ({
         '@media screen and (max-width: 959px)': {
             marginLeft: 'unset',
             marginRight: 'unset',
+            overflow: 'hidden',
         },
     }),
     // Styling for floating concert name paper element
@@ -118,15 +124,20 @@ const concertCardStyles = makeStyles((theme) => ({
     mobileConcertName: {
         // Text
         color: 'white',
+        // Coloring
+        background: theme.palette.primary.main,
         '@media screen and (max-width: 700px)': {
-            background: theme.palette.primary.main,
             textAlign: 'center',
-            boxShadow: `0px 8px 12px -1px rgba(0,0,0,0.18),
-                        0px 1px 6px -1px rgba(0,0,0,0.14),
-                        0px 3px 8px -1px rgba(0,0,0,0.12),
-                        0px -1px 3px -1px rgba(0,0,0,.16),
-                        0px -3px 6px -1px rgba(0,0,0,0.12),
-                        0px -6px 12px -1px rgba(0,0,0,0.08)`,
+            boxShadow: `0px 16px 16px -16px ${theme.palette.primary.main +
+                ALPHA_ONE},
+                        0px 6px 20px 0px ${theme.palette.primary.main +
+                            ALPHA_TWO},
+                        0px 8px 8px -4px #000000${ALPHA_THREE},
+                        0px -3px 5px -3px ${theme.palette.primary.main +
+                            ALPHA_ONE},
+                        0px -1px 10px 0px ${theme.palette.primary.main +
+                            ALPHA_TWO},
+                        0px -2px 6px -2px #000000${ALPHA_TWO}`,
         },
 
         // Positioning
@@ -150,12 +161,13 @@ const concertCardStyles = makeStyles((theme) => ({
         left: isRTL ? 0 : 'unset',
         right: !isRTL ? 0 : 'unset',
         padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
-        boxShadow: `0px 8px 12px -1px rgba(0,0,0,0.18),
-                    0px 1px 6px -1px rgba(0,0,0,0.14),
-                    0px 3px 8px -1px rgba(0,0,0,0.12),
-                    0px -1px 3px -1px rgba(0,0,0,.16),
-                    0px -3px 6px -1px rgba(0,0,0,0.12),
-                    0px -6px 12px -1px rgba(0,0,0,0.08)`,
+        boxShadow: `0px 16px 16px -16px ${theme.palette.primary.main +
+            ALPHA_ONE},
+                    0px 6px 20px 0px ${theme.palette.primary.main + ALPHA_TWO},
+                    0px 8px 8px -4px #000000${ALPHA_THREE},
+                    0px -3px 5px -3px ${theme.palette.primary.main + ALPHA_ONE},
+                    0px -1px 10px 0px ${theme.palette.primary.main + ALPHA_TWO},
+                    0px -2px 6px -2px #000000${ALPHA_TWO}`,
     }),
     // Wrapper for mobile concert cards
     mobileWrapper: {

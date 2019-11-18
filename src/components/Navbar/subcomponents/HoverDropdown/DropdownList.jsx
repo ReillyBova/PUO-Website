@@ -2,9 +2,9 @@
 import React, { useState, useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 // UI imports
-import Paper from '@material-ui/core/Paper';
-import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 // Project imports
 import { winWidth } from 'utils';
 
@@ -17,6 +17,7 @@ const dropdownStyles = makeStyles((theme) => ({
         right: extendRight ? `${extendRight}px` : 'unset',
     }),
     menuWrapper: {
+        padding: theme.spacing(1),
         marginTop: 5,
         fontSize: 18,
         borderTop: `2px solid ${theme.palette.primary.main}`,
@@ -43,20 +44,24 @@ const dropdownStyles = makeStyles((theme) => ({
             borderStyle: 'solid',
         },
     }),
+    listWrapper: {
+        padding: 0,
+        margin: 0,
+    },
     listItem: {
-        padding: '0 !important',
+        display: 'block',
         maxWidth: 225,
-        color: `${theme.palette.secondary.main} !important`,
+        padding: '0 !important',
+        transition: 'background-color 0.2s ease, box-shadow 0.2s ease',
+
         '&:hover': {
-            backgroundColor: 'rgb(0, 0, 0, 0.05) !important',
             '& a': {
                 color: `${theme.palette.primary.main} !important`,
             },
         },
-
-        '&>div:first-of-type': {
-            position: 'relative',
-            zIndex: 1,
+        '&:not(:hover)': {
+            backgroundColor: 'unset',
+            boxShadow: 'unset',
         },
     },
 }));
@@ -120,7 +125,13 @@ const DropdownList = ({ list, headerRef, style }) => {
     }, []);
 
     // CSS classes with props
-    const { arrow, listItem, menuWrapper, positioner } = dropdownStyles({
+    const {
+        arrow,
+        listItem,
+        listWrapper,
+        menuWrapper,
+        positioner,
+    } = dropdownStyles({
         extendRight,
     });
     // Render
@@ -128,21 +139,23 @@ const DropdownList = ({ list, headerRef, style }) => {
         <div className={positioner} style={style}>
             <Paper className={menuWrapper}>
                 <span className={arrow} />
-                <div ref={dropdownRef}>
+                <ul className={listWrapper} ref={dropdownRef}>
                     {list &&
                         list.map((item, i) => {
                             return (
-                                <ListItem
+                                <Button
                                     className={listItem}
-                                    button
-                                    divider
+                                    variant="contained"
+                                    color="secondary"
+                                    disableGutters
+                                    component={'li'}
                                     key={i}
                                 >
                                     {item}
-                                </ListItem>
+                                </Button>
                             );
                         })}
-                </div>
+                </ul>
             </Paper>
         </div>
     );

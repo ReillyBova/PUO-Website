@@ -9,17 +9,17 @@ import ConcertCardCore from './ConcertCardCore.jsx';
 // Card element for concert guides
 function ConcertCard({
     fluidPoster,
-    rawHTML = '',
-    concertName = 'Concert',
-    colorTheme = '#f58025',
-    date = null,
-    calendar = '',
-    tickets = '',
-    stream = '',
-    youtube = '',
-    spotify = '',
-    id = 0,
-    cardLayoutIndex = 2,
+    rawHTML,
+    concertName,
+    colorTheme,
+    date,
+    calendar,
+    tickets,
+    stream,
+    youtube,
+    spotify,
+    id,
+    cardLayoutIndex,
 }) {
     /*
      * Extract content (we need to look at HTML to handle bold/italics)
@@ -62,6 +62,20 @@ function ConcertCard({
         </Retheme>
     );
 }
+
+ConcertCard.defaultProps = {
+    rawHTML: '',
+    concertName: 'Concert',
+    colorTheme: '#f58025',
+    date: null,
+    calendar: '',
+    tickets: '',
+    stream: '',
+    youtube: '',
+    spotify: '',
+    id: 0,
+    cardLayoutIndex: 2,
+};
 
 ConcertCard.propTypes = {
     fluidPoster: PropTypes.object, // Fluid image-sharp from Gatsby

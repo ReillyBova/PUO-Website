@@ -66,7 +66,10 @@ function ConcertSeasons({ concerts, posters }) {
     const posterData = preprocessPosters(posters);
 
     // Preprocess concert info into managable object
-    const concertData = useMemo(() => preprocessConcerts(concerts, posterData), [concerts, posters]);
+    const concertData = useMemo(
+        () => preprocessConcerts(concerts, posterData),
+        [concerts, posters]
+    );
 
     // Corner case
     if (!concertData.length) {
@@ -78,14 +81,24 @@ function ConcertSeasons({ concerts, posters }) {
     }
 
     // Seperate by season
-    const dataBySeason = useMemo(() => groupConcertsBySeason(concertData), [concertData]);
-    const seasons = useMemo(() => Object.keys(dataBySeason).sort().reverse(), [dataBySeason]);
+    const dataBySeason = useMemo(() => groupConcertsBySeason(concertData), [
+        concertData,
+    ]);
+    const seasons = useMemo(
+        () =>
+            Object.keys(dataBySeason)
+                .sort()
+                .reverse(),
+        [dataBySeason]
+    );
 
     // Ref to track last element lazy rendered
     const lastSeasonRenderedRef = useRef();
 
     // Hook for lazy rendering
-    const [numRendered, setNumRendered] = useState(Math.min(LAZY_RENDER_BUFF_SIZE, seasons.length));
+    const [numRendered, setNumRendered] = useState(
+        Math.min(LAZY_RENDER_BUFF_SIZE, seasons.length)
+    );
 
     // Hook for toggle mobile mode on window resize: init to invalid to force rerender due to SSR issues
     const [cardLayoutIndex, setCardLayoutIndex] = useState(3);
@@ -151,8 +164,16 @@ function ConcertSeasons({ concerts, posters }) {
                     return;
                 }
 
-                if (lastSeasonRenderedRef.current.getBoundingClientRect().top < threshold) {
-                    setNumRendered(Math.min(numRendered + LAZY_RENDER_BUFF_SIZE, seasons.length));
+                if (
+                    lastSeasonRenderedRef.current.getBoundingClientRect().top <
+                    threshold
+                ) {
+                    setNumRendered(
+                        Math.min(
+                            numRendered + LAZY_RENDER_BUFF_SIZE,
+                            seasons.length
+                        )
+                    );
                     finished = true;
                 }
             };
@@ -187,14 +208,21 @@ function ConcertSeasons({ concerts, posters }) {
         const visibilityCallback = (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting && !finished) {
-                    setNumRendered(Math.min(numRendered + LAZY_RENDER_BUFF_SIZE, seasons.length));
+                    setNumRendered(
+                        Math.min(
+                            numRendered + LAZY_RENDER_BUFF_SIZE,
+                            seasons.length
+                        )
+                    );
                     finished = true;
                 }
             });
         };
 
         // Trigger callback when half of the card scrolls into view
-        const intersectionObserver = new IntersectionObserver(visibilityCallback);
+        const intersectionObserver = new IntersectionObserver(
+            visibilityCallback
+        );
 
         // Watch the card's intersection
         intersectionObserver.observe(lastSeasonRenderedRef.current);
@@ -217,12 +245,16 @@ function ConcertSeasons({ concerts, posters }) {
         <Fragment>
             {seasonsToRender.map((season, i) => {
                 const concerts = dataBySeason[season];
-                const isLast = (i === seasonsToRender.length - 1);
+                const isLast = i === seasonsToRender.length - 1;
                 // Sort concerts by date
                 concerts.sort((a, b) => a.date.localeCompare(b.date));
                 // Build season
                 return (
-                    <div className={seasonSection} key={season} ref={(isLast) ? lastSeasonRenderedRef : null}>
+                    <div
+                        className={seasonSection}
+                        key={season}
+                        ref={isLast ? lastSeasonRenderedRef : null}
+                    >
                         <Paper elevation={4} className={subheader}>
                             <Typography variant="h3">
                                 {`The ${season} Season`}
@@ -239,7 +271,7 @@ function ConcertSeasons({ concerts, posters }) {
                     </div>
                 );
             })}
-            {(seasons.length !== numRendered) && (
+            {seasons.length !== numRendered && (
                 <div className={lazyLoadingWrapper}>
                     <CircularProgress />
                 </div>
@@ -278,7 +310,7 @@ export const concertDataFragment = graphql`
         }
         parent {
             ... on File {
-              name
+                name
             }
         }
     }

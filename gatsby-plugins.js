@@ -34,7 +34,9 @@ module.exports = [
     {
         resolve: `gatsby-plugin-layout`,
         options: {
-            component: require.resolve(`./src/components/Navbar/Navbar.jsx`),
+            component: require.resolve(
+                `./src/components/SiteLayout/SiteLayout.jsx`
+            ),
         },
     },
     // Markdown support

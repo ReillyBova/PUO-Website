@@ -3,4 +3,4 @@ export * from './ImageBanner';
 export * from './Parallax';
 export * from './Retheme';
 export * from './Sheet';
-export * from './StyledLink';
+export * from './InternalLink';
