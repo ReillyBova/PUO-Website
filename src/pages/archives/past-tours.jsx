@@ -1,8 +1,6 @@
 // Library imports
 import React from 'react';
 import { graphql } from 'gatsby';
-// UI imports
-import { makeStyles } from '@material-ui/core/styles';
 // Project imports
 import {
     ConcertSeasons,
@@ -10,42 +8,17 @@ import {
     Parallax,
     Sheet,
     ImageBanner,
-    InternalButtonLink
 } from 'components';
 
-
-// Styling for homepage elements
-const concertPageStyles = makeStyles((theme) => ({
-    buttonWrapper: {
-        margin: 'auto',
-        width: 'fit-content',
-        marginTop: -theme.spacing(4),
-        [theme.breakpoints.down('xs')]: {
-            marginTop: -theme.spacing(2),
-        },
-    },
-}));
-
-function Concerts({ data }) {
-    // CSS classes
-    const { buttonWrapper } = concertPageStyles();
-
+function PastSeasons({ data }) {
     // Render
     return (
-        <PageLayout title="Concerts">
+        <PageLayout title="Past Seasons">
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
             <Sheet hinting={'visible'}>
-                <ConcertSeasons
-                    concerts={data.concerts.nodes}
-                    posters={data.posters.nodes}
-                />
-                <div className={buttonWrapper}>
-                    <InternalButtonLink color="primary" variant="outlined" to={`/archives/past-seasons`}>
-                        Explore Past Seasons
-                    </InternalButtonLink>
-                </div>
+                GAGAGAGGAGA
             </Sheet>
         </PageLayout>
     );
@@ -57,7 +30,7 @@ export const pageQuery = graphql`
         banner: file(
             sourceInstanceName: {eq: "images"},
             relativeDirectory: {eq: "banners"},
-            name: {eq: "concerts"}
+            name: {eq: "past-seasons"}
         ) {
             ...ImageBannerFragment
         }
@@ -77,7 +50,7 @@ export const pageQuery = graphql`
         concerts: allMarkdownRemark(
             filter: {
                 fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
-                frontmatter: {current: {eq: "true"}}
+                frontmatter: {current: {eq: "false"}}
             },
             sort: {fields: frontmatter___date}
         ) {
@@ -88,4 +61,4 @@ export const pageQuery = graphql`
     }
 `;
 
-export default Concerts;
+export default PastSeasons;

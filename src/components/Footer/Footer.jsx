@@ -1,17 +1,39 @@
 // Library imports
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { Fragment } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 // UI imports
-import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 // Project imports
-import { smoothScroll } from 'utils';
+import { computeCurrentLocation } from 'utils';
 // Local imports
 import footerStyles from './footer-styles';
+import { SubNavigation } from './subcomponents';
 
 // A Navbar that sits above the web-app
-function Footer() {
+function Footer({ location }) {
+    // Query navigation settings from site configuration
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        navigation {
+                            page
+                            type
+                            sections
+                        }
+                    }
+                }
+            }
+        `
+    );
+
+    // Identify this page and extract its subsections
+    const siteSkeleton = site.siteMetadata.navigation;
+    const currentLocation = computeCurrentLocation(location, siteSkeleton);
+    const { subSections } = currentLocation;
+
     // CSS classes for styling
     const classes = footerStyles();
     const { dividerStyle, footerWrapper, button } = classes;
@@ -25,45 +47,17 @@ function Footer() {
                 alignItems={'center'}
                 spacing={2}
             >
-                <Grid
-                    container
-                    item
-                    xs={12}
-                    justify={'space-evenly'}
-                    alignItems={'center'}
-                >
-                    <Grid item>
-                        <Button
-                            className={button}
-                            disableGutters
-                            color="primary"
-                            onClick={() => smoothScroll(0, 1000)}
-                        >
-                            <a> Past Seasons </a>
-                        </Button>
-                    </Grid>
-                    <Grid item>
-                        <Button
-                            className={button}
-                            disableGutters
-                            color="primary"
-                        >
-                            <Link to={`/concerts`}>Past Tours</Link>
-                        </Button>
-                    </Grid>
-                    <Grid item>
-                        <Button
-                            className={button}
-                            disableGutters
-                            color="primary"
-                        >
-                            <Link to={`/concerts`}>Past Orchestras</Link>
-                        </Button>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12}>
-                    <Divider className={dividerStyle} />
-                </Grid>
+                {subSections.length > 0 && (
+                    <Fragment>
+                        <SubNavigation
+                            classes={{button}}
+                            currentLocation={currentLocation}
+                        />
+                        <Grid item xs={12}>
+                            <Divider className={dividerStyle} />
+                        </Grid>
+                    </Fragment>
+                )}
             </Grid>
         </footer>
     );

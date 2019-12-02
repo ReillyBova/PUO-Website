@@ -23,7 +23,7 @@ const MobileDropdown = ({ classes, header, list, baseURL, menuIsActive }) => {
     } = classes;
     // Render
     return (
-        <Match path={baseURL}>
+        <Match path={`${baseURL}/*`}>
             {({ match }) => (
                 <ExpansionPanel
                     defaultExpanded={match && menuIsActive}

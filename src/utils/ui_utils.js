@@ -1,7 +1,9 @@
+// Library imports
+import { navigate } from '@reach/router';
 // UI imports
 import { createMuiTheme } from '@material-ui/core/styles';
 // Project imports
-import { scrollTop, smoothStep } from 'utils';
+import { scrollTop, smoothStep, urlify } from 'utils';
 
 // Generate a new theme from an existing one with different colors
 export const recolorMuiTheme = (
@@ -106,4 +108,38 @@ export const smoothScroll = (targetScroll, durationMS) => {
         // Initiate the animation process
         window.requestAnimationFrame(animateScroll);
     });
+};
+
+// Scroll window to sectionID hash and set window.hash
+export const scrollToHash = (sectionID, currentPage) => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+        return;
+    }
+
+    // Use hash to find element
+    const targetElement = document.getElementById(sectionID);
+    const targetLink = `/${urlify(currentPage)}#${sectionID}`;
+    if (targetElement === null) {
+        // Didn't find element (and maybe we can jump to it if browser is smart)
+        navigate(targetLink);
+        return;
+    }
+
+    // Function to track when scrolling ends
+    let isScrolling;
+    const onScrollEnd = () => {
+        window.removeEventListener("scroll", handleScroll);
+        // Update URL
+        navigate(targetLink);
+    };
+    const handleScroll = () => {
+        // Reset timeout
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(onScrollEnd, 100);
+    };
+
+    // Smoothly scroll to the target
+    targetElement.scrollIntoView({behavior: "smooth"});
+    isScrolling = setTimeout(onScrollEnd, 100);
+    window.addEventListener("scroll", handleScroll, false);
 };

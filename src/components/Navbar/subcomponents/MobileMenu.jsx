@@ -2,10 +2,11 @@
 import React, { useLayoutEffect } from 'react';
 import { Link } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
+import { Location } from '@reach/router';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 // Project imports
-import { activeHash, activePath, urlify } from 'utils';
+import { urlify } from 'utils';
 // Local imports
 import { MobileDropdown } from './';
 
@@ -38,7 +39,7 @@ const MobileMenu = ({
     }, [isMobileMode, menuIsActive]);
 
     // Function for generating navbar elements from site navigation configuration
-    const makeLinkAndDropdown = (navItem, i) => {
+    const makeLinkAndDropdown = (navItem, i, location) => {
         // Make Header JSX
         const baseURL = navItem.specialLink
             ? navItem.link
@@ -67,36 +68,36 @@ const MobileMenu = ({
         } else {
             // Generate dropdown
             const listLinks = navItem.sections.map((section, j) => {
-                const sectionURL =
-                    navItem.type === 'OnePageOnly'
-                        ? `#${urlify(section)}`
-                        : `/${urlify(section)}`;
-                const fullURL = `${baseURL}${sectionURL}`;
-                const activationCallback =
-                    navItem.type === 'OnePageOnly'
-                        ? ({ location }) =>
-                              activeHash(
-                                  sectionURL,
-                                  location.hash,
-                                  mobileMenuDropdownLink
-                              )
-                        : ({ location }) =>
-                              activePath(
-                                  `/${fullURL}`,
-                                  location.pathname,
-                                  mobileMenuDropdownLink
-                              );
-                return (
-                    <Link
-                        to={`/${baseURL}${sectionURL}`}
-                        key={j}
-                        onClick={() => setMenuState(false)}
-                        getProps={activationCallback}
-                    >
-                        <span>{'>'}</span>
-                        <div>{section}</div>
-                    </Link>
-                );
+                const sectionURL = urlify(section);
+                if (navItem.type === 'OnePageOnly') {
+                    const sectionAnchor = `#${sectionURL}`;
+                    const isActive = (sectionAnchor === location.hash);
+                    return (
+                        <Link
+                            to={`/${baseURL}${sectionAnchor}`}
+                            key={j}
+                            onClick={() => setMenuState(false)}
+                            className={clsx(mobileMenuDropdownLink, isActive && 'active')}
+                        >
+                            <span>{'>'}</span>
+                            <div>{section}</div>
+                        </Link>
+                    );
+                } else {
+                    const fullURL = `/${baseURL}/${sectionURL}`;
+                    const isActive = (fullURL === location.pathname);
+                    return (
+                        <Link
+                            to={fullURL}
+                            key={j}
+                            onClick={() => setMenuState(false)}
+                            className={clsx(mobileMenuDropdownLink, isActive && 'active')}
+                        >
+                            <span>{'>'}</span>
+                            <div>{section}</div>
+                        </Link>
+                    );
+                }
             });
             // Return dropdown
             return (
@@ -135,9 +136,14 @@ const MobileMenu = ({
                 <nav className={mobileMenu}>
                     {makeLinkAndDropdown(
                         { page: 'Home', specialLink: true, link: '' },
-                        -1
+                        -1,
+                        {}
                     )}
-                    {navigation.map(makeLinkAndDropdown)}
+                    <Location>
+                        {({ location }) => (
+                            navigation.map((navItem, i) => makeLinkAndDropdown(navItem, i, location))
+                        )}
+                    </Location>
                 </nav>
             </CSSTransition>
         </div>

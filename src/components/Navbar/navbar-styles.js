@@ -139,8 +139,8 @@ const navbarStyles = makeStyles((theme) => ({
             // Mini scaling for dropdown elements
             '& $desktopDropdownLink': {
                 fontSize: 14,
-                '& a': {
-                    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
+                '& a, span': {
+                    padding: `${theme.spacing(.75)}px ${theme.spacing(1.5)}px`,
                 },
             },
 
@@ -324,15 +324,15 @@ const navbarStyles = makeStyles((theme) => ({
         width: '100%',
 
         // Special coloring/spacing
-        '& a': {
+        '& a, span': {
             color: theme.palette.secondary.main,
             display: 'block',
 
             // Padding
-            padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+            padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
             transition: 'padding 0.5s ease, color 0.2s ease',
         },
-        '& a.active': {
+        '& a.active, span.active': {
             color: theme.palette.primary.main,
         },
     },

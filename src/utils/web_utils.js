@@ -44,10 +44,3 @@ export const winWidth = () => {
         );
     }
 };
-
-// Map string to URL
-export const urlify = (string) =>
-    string
-        .replace(/\s+/g, '-')
-        .replace(/’/g, '')
-        .toLowerCase();
