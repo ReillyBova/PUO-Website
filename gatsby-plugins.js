@@ -88,18 +88,23 @@ module.exports = [
         resolve: 'gatsby-plugin-offline',
         options: {
             workboxConfig: {
+                dontCacheBustURLsMatching: /(\.js$|\.mp4$|\.css$|static\/)/,
                 runtimeCaching: [
-                    {
-                        // Default: Use cacheFirst since these don't need to be
-                        // revalidated
-                        // CHANGED: exclude static.*.mp4 files because they follow a different rule
-                        urlPattern: /(\.js$|\.css$|static\/^[^.]+$|\.(?!(mp4)$)([^.]+$))/,
-                        handler: `CacheFirst`,
-                    },
                     {
                         // Default: page-data.json files are not content hashed
                         urlPattern: /^https?:.*\page-data\/.*\/page-data\.json/,
                         handler: `NetworkFirst`,
+                    },
+                    {
+                        // Custom: app-data.json file is not content hashed
+                        urlPattern: /^https?:.*\page-data\/.*\/app-data\.json/,
+                        handler: `NetworkFirst`,
+                    },
+                    {
+                        // Default: Use cacheFirst since these don't need to be revalidated
+                        // CHANGED: exclude static.*.mp4 files because they follow a different rule
+                        urlPattern: /(\.js$|\.mp4$|\.css$|static\/)/,
+                        handler: `CacheFirst`,
                     },
                     {
                         // Default: Add runtime caching of various other page resources
