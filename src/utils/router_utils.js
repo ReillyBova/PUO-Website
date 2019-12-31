@@ -3,6 +3,16 @@
  * window current location
  */
 export const computeCurrentLocation = (location, siteSkeleton) => {
+    // Corner case: check to see if we are on the homepage
+    if (location.pathname === "/" || location.pathname === "") {
+        return {
+            currentPage: "Home",
+            currentSection: "",
+            pageType: "",
+            subSections: []
+        };
+    }
+
     // Compute current page
     const currentNavPath = location.pathname.split('#')[0].split('/');
     const currentNavPage = currentNavPath[1];

@@ -15,8 +15,10 @@ const Seo = ({ title, description, lang, meta }) => {
                         title
                         siteUrl
                         description
-                        twitter
                         author
+                        socialMedia {
+                            twitter
+                        }
                         card {
                             image
                             width
@@ -83,7 +85,7 @@ const Seo = ({ title, description, lang, meta }) => {
                 },
                 {
                     name: `twitter:site`,
-                    content: site.siteMetadata.twitter,
+                    content: `@${site.siteMetadata.socialMedia.twitter}`,
                 },
                 {
                     name: `twitter:creator`,

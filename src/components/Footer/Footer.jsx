@@ -1,5 +1,5 @@
 // Library imports
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 // UI imports
 import Divider from '@material-ui/core/Divider';
@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import { computeCurrentLocation } from 'utils';
 // Local imports
 import footerStyles from './footer-styles';
-import { SubNavigation } from './subcomponents';
+import { FooterNavigation, SocialMedia, SubsectionNavigation } from './subcomponents';
 
 // A Navbar that sits above the web-app
 function Footer({ location }) {
@@ -18,6 +18,16 @@ function Footer({ location }) {
             query {
                 site {
                     siteMetadata {
+                        socialMedia {
+                            facebook
+                            twitter
+                            instagram
+                            youtube
+                        }
+                        relatedLinks {
+                            department
+                            university
+                        }
                         navigation {
                             page
                             type
@@ -36,7 +46,7 @@ function Footer({ location }) {
 
     // CSS classes for styling
     const classes = footerStyles();
-    const { dividerStyle, footerWrapper, button } = classes;
+    const { dividerStyle, footerWrapper, footerNavLink, button, buttonIcon } = classes;
 
     // Render
     return (
@@ -48,16 +58,22 @@ function Footer({ location }) {
                 spacing={2}
             >
                 {subSections.length > 0 && (
-                    <Fragment>
-                        <SubNavigation
-                            classes={{button}}
-                            currentLocation={currentLocation}
-                        />
-                        <Grid item xs={12}>
-                            <Divider className={dividerStyle} />
-                        </Grid>
-                    </Fragment>
+                    <SubsectionNavigation
+                        classes={{button}}
+                        currentLocation={currentLocation}
+                    />
                 )}
+                <FooterNavigation
+                    classes={{footerNavLink}} currentLocation={currentLocation} siteSkeleton={siteSkeleton}
+                />
+                <Grid item xs={12}>
+                    <Divider className={dividerStyle} />
+                </Grid>
+                <SocialMedia
+                    classes={{button, buttonIcon}}
+                    mediaLinks={site.siteMetadata.socialMedia}
+                    relatedLinks={site.siteMetadata.relatedLinks}
+                />
             </Grid>
         </footer>
     );

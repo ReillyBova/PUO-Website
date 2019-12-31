@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://orchestra.princeton.edu">
-    <img alt="PUO" src="src/assets/branding/material_dark_PUOLOGO.svg" width="250" />
+    <img alt="PUO" src="src/assets/branding/puo/material_dark_PUOLOGO.svg" width="250" />
   </a>
 </p>
 <h1 align="center">
@@ -16,13 +16,13 @@ _Need help? Found a bug? Submit an issue and/or reach out to the original develo
 1.  **Clone this repository**
 
     You will need to download this repository locally before you can begin development. Make sure you already have [git installed](https://git-scm.com/downloads).
-    
+
     ```sh
     # Download the repository to the current directory on the local machine
     git clone https://github.com/ReillyBova/PUO-Website.git
     cd ./PUO-Website
     ```
-    
+
 2.  **Install Node package manager (npm).**
 
     Node allows you to manage and update the development libraries this website depends on. Instructions for installing node may be found on [their website](https://nodejs.org/en/download/).
@@ -76,14 +76,14 @@ Here is a quick look at the top-level files and directories in a Gatsby project 
     ├── package.json
     ├── README.md
 
-  1.  **`.cache`**: You may or may not see this folder. It is a temporary directory for caching build files for the project. 
-  
+  1.  **`.cache`**: You may or may not see this folder. It is a temporary directory for caching build files for the project.
+
   2.  **`.git`**: This file connects your copy of the project to GitHub's copy. Do not modify it!
- 
+
   3.  **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed. You populated this directory when you ran `npm install`.
- 
+
   4.  **`/plugins`**: The directory where custom Gatsby plugins for this repository live. This plugins add functionality to the building process, or to the website as a whole, that is not itself provided through exisiting Gatsby or node plugins.
- 
+
   5.  **`/public`**: You may or may not see this folder. It is the directory where the production build of the site is placed when `npm run build` is executed.
 
   6.  **`/src`**: This is the most important directory in the project: it contains all of the _code_ related to what you see on the front-end of your site (i.e. what you see in the browser), such as the Navbar, and the video. “src” is a shorthand convention for “source code”. Note that this folder does not generally contain the core text bodies of the website.

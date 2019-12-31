@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100mm" height="100mm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-100 -100)" fill="currentColor">
+  <path transform="scale(.26458)" d="m661.42 653.86v102.05h94.488v-102.05z"/>
+  <path transform="scale(.26458)" d="m513.78 653.86 49.213 94.488 7.875-2e-3 49.213-94.486z"/>
+  <path transform="scale(.26458)" d="m377.95 653.86v102.05h94.488v-102.05z"/>
+  <path transform="scale(.26458)" d="m661.42 612.29v34.014h94.488v-34.014z"/>
+  <path transform="scale(.26458)" d="m492.13 612.29 17.717 34.016 114.17-2e-3 17.717-34.014z"/>
+  <path transform="scale(.26458)" d="m377.95 612.29v34.016h94.488v-34.016z"/>
+  <path transform="scale(.26458)" d="m377.95 570.71v34.016h94.488v-30.238l15.748 30.238 157.48-2e-3 15.748-30.236v30.236h94.488v-34.014z"/>
+  <path transform="scale(.26458)" d="m377.95 529.13v34.016h377.95v-34.016h-173.23l-15.748 30.234-15.748-30.234z"/>
+  <path transform="scale(.26458)" d="m604.33 487.56-17.717 34.014h169.29v-34.014z"/>
+  <path transform="scale(.26458)" d="m377.95 487.56v34.016h169.29l-17.717-34.016z"/>
+  <path transform="scale(.26458)" d="m661.42 377.95-53.15 102.05h147.64v-102.05z"/>
+  <path transform="scale(.26458)" d="m377.95 377.95v102.05h147.64l-53.15-102.05z"/>
+ </g>
+</svg>

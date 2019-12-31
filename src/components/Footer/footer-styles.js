@@ -7,7 +7,7 @@ const footerStyles = makeStyles((theme) => ({
     footerWrapper: {
         // Allocate space in UI
         width: '100%',
-        height: 250,
+        minHeight: 250,
 
         // Positioning
         position: 'relative',
@@ -49,10 +49,55 @@ const footerStyles = makeStyles((theme) => ({
         '& span': {
             transition: 'color 250ms',
         },
-        '&:not(.active):not(:hover) span': {
+        '&:not(.active):not(:hover):not(.Mui-disabled) span': {
             color: 'white',
         },
+        '&.Mui-disabled span': {
+            color: 'rgba(255, 255, 255, 0.26)',
+        },
     },
+    buttonIcon: {
+        // Spacing
+        '&:not(.circle)': {
+            marginRight: theme.spacing(0.5),
+        },
+
+        // Sizing
+        display: 'inline-block',
+        fontSize: 20,
+        width: '1em',
+        height: '1em',
+        flexShrink: 0,
+
+        // Coloring
+        fill: 'currentColor',
+        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+
+        // Behavior
+        userSelect: 'none',
+    },
+    footerNavLink: {
+        padding: theme.spacing(0.5),
+        fontSize: '18px !important',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '15px !important',
+            [theme.breakpoints.down('xs')]: {
+                fontSize: '12px !important',
+            },
+        },
+
+        // Coloring
+        color: `${theme.palette.primary.main} !important`,
+        '&:not(.active):not(:hover)': {
+            color: 'white !important',
+        },
+
+        // Additional hover behaviors
+        '&:hover': {
+            cursor: 'pointer',
+            textDecoration: 'underline'
+        }
+    }
 }));
 
 export default footerStyles;

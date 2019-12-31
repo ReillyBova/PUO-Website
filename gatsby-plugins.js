@@ -23,7 +23,8 @@ module.exports = [
             root: './src', // <- will be used as a root dir
             aliases: {
                 branding: './assets/branding', // <- will become ./src/assets/branding
-                videos: './assets/videos', // <- will become ./src/assets/branding
+                icons: './assets/icons', // <- will become ./src/assets/icons
+                videos: './assets/videos', // <- will become ./src/assets/videos
                 components: './components', // <- will become ./src/components
                 content: './content', // <- will become ./src/content
                 utils: './utils', // <- will become ./src/utils
@@ -70,6 +71,15 @@ module.exports = [
             name: `images`,
             path: `${__dirname}/src/assets/images`,
         },
+    },
+    // Inline SVG support
+    {
+        resolve: 'gatsby-plugin-react-svg',
+        options: {
+            rule: {
+              include: /icons/
+            }
+        }
     },
     // Generate _headers file for Netlify
     'gatsby-plugin-netlify',

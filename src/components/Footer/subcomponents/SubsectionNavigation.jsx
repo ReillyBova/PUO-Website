@@ -9,8 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import { InternalButtonLink } from 'components';
 import { arrayToURL, scrollToHash, smoothScroll, urlify } from 'utils';
 
-// A Navbar that sits above the web-app
-function SubNavigation({ classes, currentLocation}) {
+// Renders quick-links to subsections of current page at the top of the footer
+function SubsectionNavigation({ classes, currentLocation}) {
     // Current location information
     const { currentPage, currentSection, pageType, subSections } = currentLocation;
 
@@ -87,9 +87,9 @@ function SubNavigation({ classes, currentLocation}) {
 }
 
 // Proptypes
-SubNavigation.propTypes = {
+SubsectionNavigation.propTypes = {
     classes: PropTypes.object, // Styling classes
     currentLocation: PropTypes.object, // Location info from computeCurrentLocation()
 };
 
-export default SubNavigation;
+export default SubsectionNavigation;

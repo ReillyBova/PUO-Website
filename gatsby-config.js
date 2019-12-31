@@ -7,7 +7,6 @@ module.exports = {
         siteUrl: 'https://orchestra.princeton.edu',
         description:
             'Founded in 1896, the Princeton University Orchestra is a highly-acclaimed, internationally-touring symphony comprised of over 100 Princeton students.',
-        twitter: '@PrincetonUOrch',
         author: 'ReillyBova',
         card: {
             image: 'https://orchestra.princeton.edu/card.jpg',
@@ -22,6 +21,17 @@ module.exports = {
             'University',
             'Classical Music',
         ],
+        socialMedia: {
+            facebook: 'PUOrchestra',
+            youtube: 'PrincetonUniversityOrchestra',
+            instagram: 'princetonuorch',
+            twitter: 'PUMusicDept',
+            // TODO: Add spotify
+        },
+        relatedLinks: {
+            department: 'music.princeton.edu',
+            university: 'princeton.edu',
+        },
         navigation: [
             { page: 'Concerts' },
             { page: 'Members' },
