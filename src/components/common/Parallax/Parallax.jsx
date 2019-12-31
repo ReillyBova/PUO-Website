@@ -29,27 +29,30 @@ function Parallax({ distance = 3.0, children }) {
     };
 
     // Browser event controller
-    useEffect(() => {
-        // Scroll handler
-        function handleScroll() {
-            if (!parallaxRef.current) {
-                return;
+    useEffect(
+        () => {
+            // Scroll handler
+            function handleScroll() {
+                if (!parallaxRef.current) {
+                    return;
+                }
+
+                resetTransform(parallaxRef.current.offsetTop);
             }
 
-            resetTransform(parallaxRef.current.offsetTop);
-        }
-
-        // Register event handler on component mount
-        window.addEventListener('scroll', handleScroll, false);
-        // Invoke scroll to start
-        handleScroll();
-        // Cleanup event handler on unmount
-        return function cleanup() {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [
-        /* Empty update-on array ensures useEffect only runs on mount */
-    ]);
+            // Register event handler on component mount
+            window.addEventListener('scroll', handleScroll, false);
+            // Invoke scroll to start
+            handleScroll();
+            // Cleanup event handler on unmount
+            return function cleanup() {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        },
+        [
+            /* Empty update-on array ensures useEffect only runs on mount */
+        ]
+    );
     // CSS classes for styling
     const { parallax } = parallaxStyles();
     // Render

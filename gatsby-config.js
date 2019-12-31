@@ -31,6 +31,8 @@ module.exports = {
         relatedLinks: {
             department: 'music.princeton.edu',
             university: 'princeton.edu',
+            copyright: 'princeton.edu/meet-princeton/copyright-infringement',
+            privacy: 'princeton.edu/privacy-notice',
         },
         navigation: [
             { page: 'Concerts' },

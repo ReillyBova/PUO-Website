@@ -4,12 +4,12 @@
  */
 export const computeCurrentLocation = (location, siteSkeleton) => {
     // Corner case: check to see if we are on the homepage
-    if (location.pathname === "/" || location.pathname === "") {
+    if (location.pathname === '/' || location.pathname === '') {
         return {
-            currentPage: "Home",
-            currentSection: "",
-            pageType: "",
-            subSections: []
+            currentPage: 'Home',
+            currentSection: '',
+            pageType: '',
+            subSections: [],
         };
     }
 
@@ -18,20 +18,22 @@ export const computeCurrentLocation = (location, siteSkeleton) => {
     const currentNavPage = currentNavPath[1];
 
     // Compute current section (if it exists)
-    let currentNavSection = (currentNavPath.length > 2) ? currentNavPath[2] : "";
-    if (currentNavSection === "" && location.hash !== "") {
+    let currentNavSection = currentNavPath.length > 2 ? currentNavPath[2] : '';
+    if (currentNavSection === '' && location.hash !== '') {
         // Use the hash as the section instead
         currentNavSection = location.hash.substr(1);
     }
 
     // Match page
     for (const pageDetails of siteSkeleton) {
-        const processedPageName = (pageDetails.page) ? urlify(pageDetails.page) : "";
+        const processedPageName = pageDetails.page
+            ? urlify(pageDetails.page)
+            : '';
         if (currentNavPage === processedPageName) {
             // Page matches, now match section if necessary
-            let currentSection = "";
+            let currentSection = '';
 
-            if (pageDetails.sections && (pageDetails.sections.length > 0)) {
+            if (pageDetails.sections && pageDetails.sections.length > 0) {
                 // Match section
                 for (const sectionName of pageDetails.sections) {
                     const processedSectionName = urlify(sectionName);
@@ -45,29 +47,26 @@ export const computeCurrentLocation = (location, siteSkeleton) => {
 
             // Return matching
             return {
-                currentPage: pageDetails.page || "",
-                currentSection: currentSection || "",
-                pageType: pageDetails.type || "",
-                subSections: pageDetails.sections || []
+                currentPage: pageDetails.page || '',
+                currentSection: currentSection || '',
+                pageType: pageDetails.type || '',
+                subSections: pageDetails.sections || [],
             };
         }
     }
 
     // Could not find page! Return empty data
     return {
-        currentPage: "",
-        currentSection: "",
-        pageType: "",
-        subSections: []
+        currentPage: '',
+        currentSection: '',
+        pageType: '',
+        subSections: [],
     };
 };
 
 // Convert an array of strings into a URL
 export const arrayToURL = (arr) =>
-    arr.reduce(
-        (url, entry) => (url + urlify(entry) + "/"),
-        "/"
-    );
+    arr.reduce((url, entry) => url + urlify(entry) + '/', '/');
 
 // Map string to URL
 export const urlify = (string) =>

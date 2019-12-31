@@ -14,9 +14,9 @@ const UpcomingButtons = ({ calendar, tickets, stream, buttonIcon }) => (
             disabled={!calendar}
             color={'primary'}
             href={calendar}
-            target={'_blank'}
             aria-label={'Add to Calendar'}
-            nofollow={''}
+            target={'_blank'}
+            rel="nofollow noopener noreferrer"
         >
             <CalendarPlusIcon className={buttonIcon} />
             {'Add to Calendar'}
@@ -25,9 +25,9 @@ const UpcomingButtons = ({ calendar, tickets, stream, buttonIcon }) => (
             disabled={!tickets}
             color={'primary'}
             href={tickets}
-            target={'_blank'}
             aria-label={'Get Tickets'}
-            nofollow={''}
+            target={'_blank'}
+            rel="noopener noreferrer"
         >
             <TicketIcon className={buttonIcon} />
             {'Get Tickets'}
@@ -36,9 +36,9 @@ const UpcomingButtons = ({ calendar, tickets, stream, buttonIcon }) => (
             disabled={!stream}
             color={'primary'}
             href={stream}
-            target={'_blank'}
             aria-label={'Go To Livestream'}
-            nofollow={''}
+            target={'_blank'}
+            rel="noopener noreferrer"
         >
             <LiveTvIcon className={buttonIcon} />
             {'Livestream'}

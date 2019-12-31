@@ -140,7 +140,7 @@ const navbarStyles = makeStyles((theme) => ({
             '& $desktopDropdownLink': {
                 fontSize: 14,
                 '& a, span': {
-                    padding: `${theme.spacing(.75)}px ${theme.spacing(1.5)}px`,
+                    padding: `${theme.spacing(0.75)}px ${theme.spacing(1.5)}px`,
                 },
             },
 

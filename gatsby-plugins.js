@@ -77,9 +77,9 @@ module.exports = [
         resolve: 'gatsby-plugin-react-svg',
         options: {
             rule: {
-              include: /icons/
-            }
-        }
+                include: /icons/,
+            },
+        },
     },
     // Generate _headers file for Netlify
     'gatsby-plugin-netlify',

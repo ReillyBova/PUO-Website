@@ -128,7 +128,7 @@ export const scrollToHash = (sectionID, currentPage) => {
     // Function to track when scrolling ends
     let isScrolling;
     const onScrollEnd = () => {
-        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener('scroll', handleScroll);
         // Update URL
         navigate(targetLink);
     };
@@ -139,7 +139,7 @@ export const scrollToHash = (sectionID, currentPage) => {
     };
 
     // Smoothly scroll to the target
-    targetElement.scrollIntoView({behavior: "smooth"});
+    targetElement.scrollIntoView({ behavior: 'smooth' });
     isScrolling = setTimeout(onScrollEnd, 100);
-    window.addEventListener("scroll", handleScroll, false);
+    window.addEventListener('scroll', handleScroll, false);
 };

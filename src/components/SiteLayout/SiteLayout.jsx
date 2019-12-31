@@ -14,9 +14,7 @@ function SiteLayout({ children }) {
             <Navbar />
             {children}
             <Location>
-                {({ location }) => (
-                    <Footer location={location} />
-                )}
+                {({ location }) => <Footer location={location} />}
             </Location>
         </Fragment>
     );

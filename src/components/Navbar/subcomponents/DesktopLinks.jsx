@@ -15,13 +15,9 @@ const DesktopLinks = ({ classes, navigation }) => {
     const makeLinkAndDropdown = (navItem, i, location) => {
         // Make Header JSX
         const baseURL = urlify(navItem.page);
-        const isCurrentPage = (baseURL === location.pathname.split("/")[1]);
+        const isCurrentPage = baseURL === location.pathname.split('/')[1];
         const headerLink = (
-            <Link
-                to={`/${baseURL}`}
-                activeClassName={'active'}
-                partiallyActive
-            >
+            <Link to={`/${baseURL}`} activeClassName={'active'} partiallyActive>
                 {navItem.page}
             </Link>
         );
@@ -40,14 +36,16 @@ const DesktopLinks = ({ classes, navigation }) => {
                 const sectionURL = urlify(section);
                 if (navItem.type === 'OnePageOnly') {
                     const sectionAnchor = `#${sectionURL}`;
-                    const isActive = (sectionAnchor === location.hash);
+                    const isActive = sectionAnchor === location.hash;
                     if (isCurrentPage) {
                         // Smooth Scrolling alternative
                         return (
                             <div className={desktopDropdownLink} key={j}>
                                 <span
                                     className={clsx(isActive && 'active')}
-                                    onClick={() => scrollToHash(sectionURL, navItem.page)}
+                                    onClick={() =>
+                                        scrollToHash(sectionURL, navItem.page)
+                                    }
                                 >
                                     {section}
                                 </span>
@@ -67,7 +65,7 @@ const DesktopLinks = ({ classes, navigation }) => {
                     }
                 } else {
                     const fullURL = `/${baseURL}/${sectionURL}`;
-                    const isActive = (fullURL === location.pathname);
+                    const isActive = fullURL === location.pathname;
                     return (
                         <div className={desktopDropdownLink} key={j}>
                             <Link
@@ -97,9 +95,11 @@ const DesktopLinks = ({ classes, navigation }) => {
     return (
         <nav className={desktopLinks}>
             <Location>
-                {({ location }) => (
-                    navigation.map((navItem, i) => makeLinkAndDropdown(navItem, i, location))
-                )}
+                {({ location }) =>
+                    navigation.map((navItem, i) =>
+                        makeLinkAndDropdown(navItem, i, location)
+                    )
+                }
             </Location>
         </nav>
     );

@@ -9,15 +9,15 @@ import { InternalLink } from 'components';
 import { smoothScroll, urlify } from 'utils';
 
 // Lists major navigation pages in the footer
-function FooterNavigation({ classes, currentLocation, siteSkeleton}) {
-    // Current location information
-    const { currentPage } = currentLocation;
-
+function FooterNavigation({ classes, currentLocation, siteSkeleton }) {
     // CSS classes for styling
     const { footerNavLink } = classes;
 
+    // Current location information
+    const { currentPage } = currentLocation;
+
     // Boolean to determine whether the current page is the home page (not in site skeleton)
-    const isHomepageActive = currentPage === "Home";
+    const isHomepageActive = currentPage === 'Home';
 
     // Links route to different page
     return (
@@ -28,21 +28,18 @@ function FooterNavigation({ classes, currentLocation, siteSkeleton}) {
             justify={'space-evenly'}
             alignItems={'center'}
         >
-            { (isHomepageActive) ?
+            {isHomepageActive ? (
                 <span
                     className={clsx(footerNavLink, 'active')}
                     onClick={() => smoothScroll(0, 1000)}
                 >
-                    {"Home"}
+                    {'Home'}
                 </span>
-                :
-                <InternalLink
-                    className={footerNavLink}
-                    to={"/"}
-                >
-                    {"Home"}
+            ) : (
+                <InternalLink className={footerNavLink} to={'/'}>
+                    {'Home'}
                 </InternalLink>
-            }
+            )}
             {siteSkeleton.map(({ page }, i) => {
                 // Corner case for matching section
                 if (page === currentPage) {

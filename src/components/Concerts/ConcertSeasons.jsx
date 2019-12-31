@@ -104,40 +104,43 @@ function ConcertSeasons({ concerts, posters }) {
     const [cardLayoutIndex, setCardLayoutIndex] = useState(3);
 
     // Browser event controller for setting layout on resize
-    useEffect(() => {
-        // Helper for computing the appropriate layout state
-        const computeLayout = () => {
-            // Set mobile mode if necessary
-            const width = winWidth();
-            if (width < 960) {
-                if (width <= 700) {
-                    return 0;
+    useEffect(
+        () => {
+            // Helper for computing the appropriate layout state
+            const computeLayout = () => {
+                // Set mobile mode if necessary
+                const width = winWidth();
+                if (width < 960) {
+                    if (width <= 700) {
+                        return 0;
+                    } else {
+                        return 1;
+                    }
                 } else {
-                    return 1;
+                    return 2;
                 }
-            } else {
-                return 2;
+            };
+
+            // Resize handler
+            function handleResize() {
+                setCardLayoutIndex(computeLayout());
             }
-        };
 
-        // Resize handler
-        function handleResize() {
-            setCardLayoutIndex(computeLayout());
-        }
+            // Register event handlers on component mount
+            window.addEventListener('resize', handleResize, false);
 
-        // Register event handlers on component mount
-        window.addEventListener('resize', handleResize, false);
+            // Invoke to start
+            handleResize();
 
-        // Invoke to start
-        handleResize();
-
-        // Cleanup event handlers on unmount
-        return function cleanup() {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [
-        /* Empty update-on array ensures useEffect only runs on mount */
-    ]);
+            // Cleanup event handlers on unmount
+            return function cleanup() {
+                window.removeEventListener('resize', handleResize);
+            };
+        },
+        [
+            /* Empty update-on array ensures useEffect only runs on mount */
+        ]
+    );
 
     // Intersection observer for handling lazy rendering
     useEffect(() => {

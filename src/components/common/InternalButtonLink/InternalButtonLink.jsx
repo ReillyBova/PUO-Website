@@ -17,7 +17,14 @@ const InternalButtonLink = React.forwardRef(function Link(props, ref) {
     // CSS classes
     const { button } = buttonStyles();
 
-    return <MuiButton className={button} component={GatsbyLink} ref={ref} {...props} />;
+    return (
+        <MuiButton
+            className={button}
+            component={GatsbyLink}
+            ref={ref}
+            {...props}
+        />
+    );
 });
 
 export default InternalButtonLink;

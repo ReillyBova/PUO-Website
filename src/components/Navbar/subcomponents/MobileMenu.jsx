@@ -71,13 +71,16 @@ const MobileMenu = ({
                 const sectionURL = urlify(section);
                 if (navItem.type === 'OnePageOnly') {
                     const sectionAnchor = `#${sectionURL}`;
-                    const isActive = (sectionAnchor === location.hash);
+                    const isActive = sectionAnchor === location.hash;
                     return (
                         <Link
                             to={`/${baseURL}${sectionAnchor}`}
                             key={j}
                             onClick={() => setMenuState(false)}
-                            className={clsx(mobileMenuDropdownLink, isActive && 'active')}
+                            className={clsx(
+                                mobileMenuDropdownLink,
+                                isActive && 'active'
+                            )}
                         >
                             <span>{'>'}</span>
                             <div>{section}</div>
@@ -85,13 +88,16 @@ const MobileMenu = ({
                     );
                 } else {
                     const fullURL = `/${baseURL}/${sectionURL}`;
-                    const isActive = (fullURL === location.pathname);
+                    const isActive = fullURL === location.pathname;
                     return (
                         <Link
                             to={fullURL}
                             key={j}
                             onClick={() => setMenuState(false)}
-                            className={clsx(mobileMenuDropdownLink, isActive && 'active')}
+                            className={clsx(
+                                mobileMenuDropdownLink,
+                                isActive && 'active'
+                            )}
                         >
                             <span>{'>'}</span>
                             <div>{section}</div>
@@ -140,9 +146,11 @@ const MobileMenu = ({
                         {}
                     )}
                     <Location>
-                        {({ location }) => (
-                            navigation.map((navItem, i) => makeLinkAndDropdown(navItem, i, location))
-                        )}
+                        {({ location }) =>
+                            navigation.map((navItem, i) =>
+                                makeLinkAndDropdown(navItem, i, location)
+                            )
+                        }
                     </Location>
                 </nav>
             </CSSTransition>

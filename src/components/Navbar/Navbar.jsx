@@ -70,37 +70,40 @@ function Navbar() {
     };
 
     // Browser event controller
-    useEffect(() => {
-        // Scroll handler
-        function handleScroll() {
-            resizeNavbar(WINDOW_DIMS);
-        }
-        // Resize handler
-        function handleResize() {
-            // Update window dimensions
-            WINDOW_DIMS.width = winWidth();
-            WINDOW_DIMS.height = winHeight();
-            // Minify navbar if necessary
-            resizeNavbar(WINDOW_DIMS);
-            // Adjust SVG dimensions
-            resizeSVG(WINDOW_DIMS.width);
-            // Set mobile mode if necessary
-            setMobileMode(WINDOW_DIMS.width <= 700);
-        }
+    useEffect(
+        () => {
+            // Scroll handler
+            function handleScroll() {
+                resizeNavbar(WINDOW_DIMS);
+            }
+            // Resize handler
+            function handleResize() {
+                // Update window dimensions
+                WINDOW_DIMS.width = winWidth();
+                WINDOW_DIMS.height = winHeight();
+                // Minify navbar if necessary
+                resizeNavbar(WINDOW_DIMS);
+                // Adjust SVG dimensions
+                resizeSVG(WINDOW_DIMS.width);
+                // Set mobile mode if necessary
+                setMobileMode(WINDOW_DIMS.width <= 700);
+            }
 
-        // Register event handlers on component mount
-        window.addEventListener('scroll', handleScroll, false);
-        window.addEventListener('resize', handleResize, false);
-        // Invoke resize to start
-        handleResize();
-        // Cleanup event handlers on unmount
-        return function cleanup() {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [
-        /* Empty update-on array ensures useEffect only runs on mount */
-    ]);
+            // Register event handlers on component mount
+            window.addEventListener('scroll', handleScroll, false);
+            window.addEventListener('resize', handleResize, false);
+            // Invoke resize to start
+            handleResize();
+            // Cleanup event handlers on unmount
+            return function cleanup() {
+                window.removeEventListener('scroll', handleScroll);
+                window.removeEventListener('resize', handleResize);
+            };
+        },
+        [
+            /* Empty update-on array ensures useEffect only runs on mount */
+        ]
+    );
 
     // CSS classes for styling
     const classes = navbarStyles();

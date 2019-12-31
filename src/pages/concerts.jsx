@@ -10,9 +10,8 @@ import {
     Parallax,
     Sheet,
     ImageBanner,
-    InternalButtonLink
+    InternalButtonLink,
 } from 'components';
-
 
 // Styling for homepage elements
 const concertPageStyles = makeStyles((theme) => ({
@@ -42,7 +41,11 @@ function Concerts({ data }) {
                     posters={data.posters.nodes}
                 />
                 <div className={buttonWrapper}>
-                    <InternalButtonLink color="primary" variant="outlined" to={`/archives/past-seasons`}>
+                    <InternalButtonLink
+                        color="primary"
+                        variant="outlined"
+                        to={`/archives/past-seasons`}
+                    >
                         Explore Past Seasons
                     </InternalButtonLink>
                 </div>

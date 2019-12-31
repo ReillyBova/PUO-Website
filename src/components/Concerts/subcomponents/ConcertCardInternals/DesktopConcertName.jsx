@@ -15,50 +15,53 @@ const DesktopConcertName = ({ concertName, concertNameCardClass }) => {
     const concertNameText = useRef();
 
     // On desktop display, need to prevent the concert name from overflowing box
-    useEffect(() => {
-        // closure variable to keep track of event listener removals
-        let finished = false;
+    useEffect(
+        () => {
+            // closure variable to keep track of event listener removals
+            let finished = false;
 
-        // Event handler cleanup (prevents double remove)
-        function cleanup() {
-            if (!finished) {
-                finished = true;
-                window.removeEventListener('resize', handleResize);
-            }
-        }
-
-        // Resize handler
-        function handleResize() {
-            if (!concertNameWrapper || !concertNameText) {
-                return;
+            // Event handler cleanup (prevents double remove)
+            function cleanup() {
+                if (!finished) {
+                    finished = true;
+                    window.removeEventListener('resize', handleResize);
+                }
             }
 
-            // Compute gap between internal and external divs
-            const outerWidth = concertNameWrapper.current.clientWidth;
-            const innerWidth = concertNameText.current.clientWidth;
-            const difference = outerWidth - innerWidth;
+            // Resize handler
+            function handleResize() {
+                if (!concertNameWrapper || !concertNameText) {
+                    return;
+                }
 
-            // 16px margin spacing on either side gives target of 32px difference
-            if (difference < 32) {
-                setconcertNameCardWidth(concertNameCardWidth + difference);
-                // We only need to set once, so we can cleanup
-                cleanup();
-            } else if (outerWidth === 150) {
-                // We can cleanup because outerWidth won't shrink anymore
-                cleanup();
+                // Compute gap between internal and external divs
+                const outerWidth = concertNameWrapper.current.clientWidth;
+                const innerWidth = concertNameText.current.clientWidth;
+                const difference = outerWidth - innerWidth;
+
+                // 16px margin spacing on either side gives target of 32px difference
+                if (difference < 32) {
+                    setconcertNameCardWidth(concertNameCardWidth + difference);
+                    // We only need to set once, so we can cleanup
+                    cleanup();
+                } else if (outerWidth === 150) {
+                    // We can cleanup because outerWidth won't shrink anymore
+                    cleanup();
+                }
             }
-        }
 
-        // Register event handlers on component mount
-        window.addEventListener('resize', handleResize, false);
-        // Invoke resize to start
-        handleResize();
+            // Register event handlers on component mount
+            window.addEventListener('resize', handleResize, false);
+            // Invoke resize to start
+            handleResize();
 
-        // Cleanup event handler on unmount
-        return cleanup;
-    }, [
-        /* Empty update-on array ensures useEffect only runs on mount */
-    ]);
+            // Cleanup event handler on unmount
+            return cleanup;
+        },
+        [
+            /* Empty update-on array ensures useEffect only runs on mount */
+        ]
+    );
 
     return (
         <Paper

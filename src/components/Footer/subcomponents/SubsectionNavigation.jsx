@@ -10,15 +10,20 @@ import { InternalButtonLink } from 'components';
 import { arrayToURL, scrollToHash, smoothScroll, urlify } from 'utils';
 
 // Renders quick-links to subsections of current page at the top of the footer
-function SubsectionNavigation({ classes, currentLocation}) {
+function SubsectionNavigation({ classes, currentLocation }) {
     // Current location information
-    const { currentPage, currentSection, pageType, subSections } = currentLocation;
+    const {
+        currentPage,
+        currentSection,
+        pageType,
+        subSections,
+    } = currentLocation;
 
     // CSS classes for styling
     const { button } = classes;
 
     // Render different linkage based on page type
-    if (pageType === "OnePageOnly") {
+    if (pageType === 'OnePageOnly') {
         // Links trigger scrolling animation
         return (
             <Grid
@@ -32,10 +37,15 @@ function SubsectionNavigation({ classes, currentLocation}) {
                     // Button for jumping to hash location
                     return (
                         <Button
-                            className={clsx(button, (section === currentSection) && 'active')}
+                            className={clsx(
+                                button,
+                                section === currentSection && 'active'
+                            )}
                             color="primary"
                             key={`${section}-${i}`}
-                            onClick={() => scrollToHash(urlify(section), currentPage)}
+                            onClick={() =>
+                                scrollToHash(urlify(section), currentPage)
+                            }
                         >
                             {section}
                         </Button>

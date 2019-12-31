@@ -62,7 +62,7 @@ const dropdownStyles = makeStyles((theme) => ({
         '&:not(:hover)': {
             backgroundColor: 'unset',
             boxShadow: 'unset',
-        }
+        },
     },
 }));
 
@@ -125,7 +125,13 @@ const DropdownList = ({ list, headerRef, style }) => {
     }, []);
 
     // CSS classes with props
-    const { arrow, listItem, listWrapper, menuWrapper, positioner } = dropdownStyles({
+    const {
+        arrow,
+        listItem,
+        listWrapper,
+        menuWrapper,
+        positioner,
+    } = dropdownStyles({
         extendRight,
     });
     // Render
@@ -141,7 +147,7 @@ const DropdownList = ({ list, headerRef, style }) => {
                                     className={listItem}
                                     variant="contained"
                                     color="secondary"
-                                    component={"li"}
+                                    component={'li'}
                                     key={i}
                                 >
                                     {item}
