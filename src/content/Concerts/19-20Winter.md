@@ -2,7 +2,7 @@
 # Concert Name (e.g. "Fall Concert")
 concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#00B0FF"
+colorTheme: "#69215c"
 # Date YY-MM-DD (for sorting)
 date: "2019-12-05"
 # Season
@@ -10,7 +10,7 @@ season: "2019/20"
 # Is current season?
 current: "true"
 # Poster filename (without extension)
-poster: "bruckner"
+poster: ""
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -22,7 +22,7 @@ youtube: ""
 # Spotify link (if applicable)
 spotify: ""
 ---
-Title = Rachmaninoff & Bruckner
+Title = A Romantic Night Out
 Subtitle = Michael Pratt, Conductor
 
 Section
