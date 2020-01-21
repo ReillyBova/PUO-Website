@@ -25,6 +25,9 @@ const concertCardStyles = makeStyles((theme) => ({
 
         // Borders
         borderRadius: theme.shape.borderRadius,
+
+        // Opacity fade transition
+        transition: 'opacity 1s ease-in-out',
     },
     // Styling for concert card paper element
     card: ({ isRTL }) => ({
