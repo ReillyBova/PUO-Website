@@ -61,6 +61,7 @@ function Footer() {
 
     // CSS classes for styling
     const classes = footerStyles();
+    console.log(classes);
 
     const {
         footerWrapper,
