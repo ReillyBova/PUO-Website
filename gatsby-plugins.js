@@ -31,7 +31,7 @@ module.exports = [
             },
         },
     },
-    // Global navbar sits above pages
+    // Global navbar and footer sit above pages
     {
         resolve: `gatsby-plugin-layout`,
         options: {
