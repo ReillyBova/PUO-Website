@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 // UI imports
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 // Project imports
 import { recolorMuiTheme } from 'utils';
 

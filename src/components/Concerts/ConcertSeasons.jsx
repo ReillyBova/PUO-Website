@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { graphql, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 // UI imports
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';

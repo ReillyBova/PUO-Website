@@ -3,13 +3,13 @@ import React, { Fragment } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Location } from '@reach/router';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 // UI imports
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 // Project imports
 import { computeCurrentLocation } from 'utils';
 // Local imports
-import footerStyles from './footer-styles';
 import {
     FooterNavigation,
     SocialMedia,
@@ -23,7 +23,7 @@ import {
 } from 'branding';
 
 // A Navbar that sits above the web-app
-function Footer() {
+function Footer({ classes }) {
     // Query navigation settings from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -60,9 +60,6 @@ function Footer() {
     const relatedLinks = site.siteMetadata.relatedLinks;
 
     // CSS classes for styling
-    const classes = footerStyles();
-    console.log(classes);
-
     const {
         footerWrapper,
         dividerStyle,
@@ -211,6 +208,8 @@ function Footer() {
 }
 
 // No props!
-Footer.propTypes = {};
+Footer.propTypes = {
+    classes: PropTypes.object, // CSS classes
+};
 
 export default Footer;

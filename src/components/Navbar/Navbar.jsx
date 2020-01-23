@@ -2,10 +2,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 // Project imports
 import { scrollTop, winHeight, winWidth } from 'utils';
 // Local imports
-import navbarStyles from './navbar-styles';
 import {
     Brand,
     DesktopLinks,
@@ -17,7 +17,7 @@ import {
 const WINDOW_DIMS = {};
 
 // A Navbar that sits above the web-app
-function Navbar() {
+function Navbar({ classes }) {
     // Query navbar settings from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -106,7 +106,6 @@ function Navbar() {
     );
 
     // CSS classes for styling
-    const classes = navbarStyles();
     const { navbarHeader, navbarMain, navbarTriangle } = classes;
 
     // Useful variables for rendering
@@ -151,6 +150,8 @@ function Navbar() {
 }
 
 // No props!
-Navbar.propTypes = {};
+Navbar.propTypes = {
+    classes: PropTypes.object, // CSS classes
+};
 
 export default Navbar;

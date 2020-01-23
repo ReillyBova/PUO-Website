@@ -1,7 +1,16 @@
 module.exports = [
+    // Global navbar and footer sit above pages
+    {
+        resolve: `gatsby-plugin-layout`,
+        options: {
+            component: require.resolve(
+                `./src/components/SiteLayout/SiteLayout.jsx`
+            ),
+        },
+    },
     // Material UI
     'gatsby-plugin-top-layout',
-    'gatsby-plugin-material-ui',
+    `gatsby-plugin-material-ui`,
     // Search Engine Optimization (SEO)
     'gatsby-plugin-react-helmet',
     {
@@ -29,15 +38,6 @@ module.exports = [
                 content: './content', // <- will become ./src/content
                 utils: './utils', // <- will become ./src/utils
             },
-        },
-    },
-    // Global navbar and footer sit above pages
-    {
-        resolve: `gatsby-plugin-layout`,
-        options: {
-            component: require.resolve(
-                `./src/components/SiteLayout/SiteLayout.jsx`
-            ),
         },
     },
     // Markdown support
