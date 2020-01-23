@@ -64,6 +64,7 @@ function Footer({ location }) {
 
     // CSS classes for styling
     const classes = footerStyles();
+    console.log(classes);
     const {
         footerWrapper,
         dividerStyle,
