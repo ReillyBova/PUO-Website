@@ -1,7 +1,6 @@
 // Library imports
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Location } from '@reach/router';
 // Project imports
 import { Navbar, Footer } from 'components';
 
@@ -13,9 +12,7 @@ function SiteLayout({ children }) {
         <Fragment>
             <Navbar />
             {children}
-            <Location>
-                {({ location }) => <Footer location={location} />}
-            </Location>
+            <Footer />
         </Fragment>
     );
 }

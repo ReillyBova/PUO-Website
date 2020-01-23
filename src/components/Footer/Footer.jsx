@@ -1,6 +1,7 @@
 // Library imports
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Location } from '@reach/router';
 import clsx from 'clsx';
 // UI imports
 import Divider from '@material-ui/core/Divider';
@@ -22,7 +23,7 @@ import {
 } from 'branding';
 
 // A Navbar that sits above the web-app
-function Footer({ location }) {
+function Footer() {
     // Query navigation settings from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -53,18 +54,14 @@ function Footer({ location }) {
         `
     );
 
-    // Identify this page and extract its subsections
+    // Extract relevant info from site metadata
     const siteSkeleton = site.siteMetadata.navigation;
-    const currentLocation = computeCurrentLocation(location, siteSkeleton);
-    const { subSections } = currentLocation;
-
-    // Extract links from query
     const socialMedia = site.siteMetadata.socialMedia;
     const relatedLinks = site.siteMetadata.relatedLinks;
 
     // CSS classes for styling
     const classes = footerStyles();
-    console.log(classes);
+
     const {
         footerWrapper,
         dividerStyle,
@@ -87,17 +84,32 @@ function Footer({ location }) {
                 alignItems={'center'}
                 spacing={2}
             >
-                {subSections.length > 0 && (
-                    <SubsectionNavigation
-                        classes={{ button }}
-                        currentLocation={currentLocation}
-                    />
-                )}
-                <FooterNavigation
-                    classes={{ footerNavLink }}
-                    currentLocation={currentLocation}
-                    siteSkeleton={siteSkeleton}
-                />
+                <Location>
+                    {({ location }) => {
+                        // Identify this page and extract its subsections
+                        const currentLocation = computeCurrentLocation(
+                            location,
+                            siteSkeleton
+                        );
+                        const { subSections } = currentLocation;
+
+                        return (
+                            <Fragment>
+                                {subSections.length > 0 && (
+                                    <SubsectionNavigation
+                                        classes={{ button }}
+                                        currentLocation={currentLocation}
+                                    />
+                                )}
+                                <FooterNavigation
+                                    classes={{ footerNavLink }}
+                                    currentLocation={currentLocation}
+                                    siteSkeleton={siteSkeleton}
+                                />
+                            </Fragment>
+                        );
+                    }}
+                </Location>
                 <Grid item xs={12}>
                     <Divider className={dividerStyle} />
                 </Grid>
