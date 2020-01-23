@@ -23,8 +23,8 @@ const concertCardStyles = makeStyles((theme) => ({
         height: '100%',
         position: 'absolute !important',
 
-        // Layering
-        zIndex: 0,
+        // No click events
+        pointerEvents: 'none',
 
         // Borders
         borderRadius: theme.shape.borderRadius,
@@ -83,9 +83,6 @@ const concertCardStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         textAlign: 'left',
         margin: '0 auto',
-
-        // Layering
-        zIndex: 1,
 
         // Remove margin on smaller screens
         '@media screen and (max-width: 700px)': {
