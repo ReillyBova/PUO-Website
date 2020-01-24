@@ -273,7 +273,7 @@ const ConcertCardCore = ({
     if (cardLayoutIndex > 1) {
         concertCard.push(
             <DesktopConcertName
-                key={'desktop-name'}
+                key='desktop-name'
                 concertName={concertName}
                 concertNameCardClass={concertNameCard}
             />
@@ -292,7 +292,7 @@ const ConcertCardCore = ({
             // Inline poster (desktop and tablet layouts)
             concertCard.push(
                 <Image
-                    key={'poster-image'}
+                    key='poster-image'
                     className={posterStyle}
                     fluid={fluidPoster}
                 />
@@ -301,7 +301,7 @@ const ConcertCardCore = ({
             // Background poster (mobile layout only)
             concertCard.push(
                 <div
-                    key={'background-image'}
+                    key='background-image'
                     ref={backgroundPosterRef}
                     className={backgroundImageWrapper}
                 >

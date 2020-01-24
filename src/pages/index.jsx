@@ -20,11 +20,11 @@ function HomePage({ data }) {
         <PageLayout>
             <Parallax>
                 <WelcomeVideo />
-                <WelcomeOverlay to={'/concerts'}>
+                <WelcomeOverlay to='/concerts'>
                     {`Explore Our ${currentSeasonString} Season`}
                 </WelcomeOverlay>
             </Parallax>
-            <Sheet hinting={'peek'}>
+            <Sheet hinting='peek'>
                 <div style={{ height: 5000, backgroundColor: 'red' }}>
                     {`This is just me tesrting :)
                 This is just me tesrting :)

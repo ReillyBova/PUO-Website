@@ -11,10 +11,10 @@ const HistoryButtons = ({ youtube, spotify, buttonIcon }) => (
     <Fragment>
         <Button
             disabled={!youtube}
-            color={'primary'}
+            color='primary'
             href={youtube}
-            aria-label={'Watch on YouTube'}
-            target={'_blank'}
+            aria-label='Watch on YouTube'
+            target='_blank'
             rel='noopener noreferrer'
         >
             <YouTubeIcon className={buttonIcon} />
@@ -22,10 +22,10 @@ const HistoryButtons = ({ youtube, spotify, buttonIcon }) => (
         </Button>
         <Button
             disabled={!spotify}
-            color={'primary'}
+            color='primary'
             href={spotify}
-            aria-label={'Listen on Spotify'}
-            target={'_blank'}
+            aria-label='Listen on Spotify'
+            target='_blank'
             rel='noopener noreferrer'
         >
             <SpotifyIcon className={buttonIcon} />

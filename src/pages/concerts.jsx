@@ -35,7 +35,7 @@ function Concerts({ data }) {
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
-            <Sheet hinting={'visible'}>
+            <Sheet hinting='visible'>
                 <ConcertSeasons
                     concerts={data.concerts.nodes}
                     posters={data.posters.nodes}
@@ -44,7 +44,7 @@ function Concerts({ data }) {
                     <InternalButtonLink
                         color='primary'
                         variant='outlined'
-                        to={`/archives/past-seasons`}
+                        to='/archives/past-seasons'
                     >
                         Explore Past Seasons
                     </InternalButtonLink>

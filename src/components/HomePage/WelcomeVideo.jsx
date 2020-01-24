@@ -117,7 +117,7 @@ function WelcomeVideo() {
                 loop
                 muted
                 playsInline
-                crossOrigin={'anonymous'}
+                crossOrigin='anonymous'
             >
                 <source type='video/mp4' />
             </video>

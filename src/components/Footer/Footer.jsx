@@ -78,8 +78,8 @@ function Footer({ classes }) {
         <footer className={footerWrapper}>
             <Grid
                 container
-                justify={'space-between'}
-                alignItems={'center'}
+                justify='space-between'
+                alignItems='center'
                 spacing={2}
             >
                 <Location>
@@ -119,8 +119,8 @@ function Footer({ classes }) {
                 <Grid
                     container
                     item
-                    justify={'space-around'}
-                    alignItems={'center'}
+                    justify='space-around'
+                    alignItems='center'
                     lg={9}
                     md={8}
                     sm={6}
@@ -128,7 +128,7 @@ function Footer({ classes }) {
                 >
                     <a
                         href={`https://www.${relatedLinks.university}`}
-                        target={'_blank'}
+                        target='_blank'
                         rel='noopener noreferrer'
                     >
                         <img
@@ -138,7 +138,7 @@ function Footer({ classes }) {
                     </a>
                     <a
                         href={`https://www.${relatedLinks.department}`}
-                        target={'_blank'}
+                        target='_blank'
                         rel='noopener noreferrer'
                     >
                         <img
@@ -148,7 +148,7 @@ function Footer({ classes }) {
                     </a>
                     <a
                         href={site.siteMetadata.siteUrl}
-                        target={'_blank'}
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <div
@@ -171,8 +171,8 @@ function Footer({ classes }) {
                 <Grid
                     container
                     item
-                    justify={'flex-end'}
-                    alignItems={'center'}
+                    justify='flex-end'
+                    alignItems='center'
                     lg={3}
                     md={4}
                     sm={6}
@@ -186,7 +186,7 @@ function Footer({ classes }) {
                         <div>
                             <a
                                 href={`https://www.${relatedLinks.copyright}`}
-                                target={'_blank'}
+                                target='_blank'
                                 rel='nofollow noopener noreferrer'
                             >
                                 {'Copyright Infringement'}
@@ -194,7 +194,7 @@ function Footer({ classes }) {
                             {' | '}
                             <a
                                 href={`https://www.${relatedLinks.privacy}`}
-                                target={'_blank'}
+                                target='_blank'
                                 rel='nofollow noopener noreferrer'
                             >
                                 {'Privacy Notice'}

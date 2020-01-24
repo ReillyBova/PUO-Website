@@ -147,7 +147,7 @@ const DropdownList = ({ list, headerRef, style }) => {
                                     className={listItem}
                                     variant='contained'
                                     color='secondary'
-                                    component={'li'}
+                                    component='li'
                                     key={i}
                                 >
                                     {item}

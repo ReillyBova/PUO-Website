@@ -17,7 +17,7 @@ function PastSeasons({ data }) {
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
-            <Sheet hinting={'visible'}>
+            <Sheet hinting='visible'>
                 <ConcertSeasons
                     concerts={data.concerts.nodes}
                     posters={data.posters.nodes}

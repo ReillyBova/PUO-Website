@@ -17,7 +17,7 @@ const DesktopLinks = ({ classes, navigation }) => {
         const baseURL = urlify(navItem.page);
         const isCurrentPage = baseURL === location.pathname.split('/')[1];
         const headerLink = (
-            <Link to={`/${baseURL}`} activeClassName={'active'} partiallyActive>
+            <Link to={`/${baseURL}`} activeClassName='active' partiallyActive>
                 {navItem.page}
             </Link>
         );

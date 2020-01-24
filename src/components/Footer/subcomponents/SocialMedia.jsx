@@ -49,8 +49,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
             container
             item
             xs={12}
-            justify={'space-evenly'}
-            alignItems={'center'}
+            justify='space-evenly'
+            alignItems='center'
         >
             {isDesktopMode ? ( // Wide buttons with text:
                 <Fragment>
@@ -59,8 +59,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!facebookLink}
                         href={facebookLink}
-                        aria-label={'Facebook'}
-                        target={'_blank'}
+                        aria-label='Facebook'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <FacebookIcon className={buttonIcon} />
@@ -71,8 +71,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!youtubeLink}
                         href={youtubeLink}
-                        aria-label={'YouTube'}
-                        target={'_blank'}
+                        aria-label='YouTube'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <YouTubeIcon className={buttonIcon} />
@@ -83,8 +83,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!spotifyLink}
                         href={spotifyLink}
-                        aria-label={'Spotify'}
-                        target={'_blank'}
+                        aria-label='Spotify'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <SpotifyIcon className={buttonIcon} />
@@ -95,8 +95,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!instagramLink}
                         href={instagramLink}
-                        aria-label={'Instagram'}
-                        target={'_blank'}
+                        aria-label='Instagram'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <InstagramIcon className={buttonIcon} />
@@ -107,8 +107,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!twitterLink}
                         href={twitterLink}
-                        aria-label={'Twitter'}
-                        target={'_blank'}
+                        aria-label='Twitter'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <TwitterIcon className={buttonIcon} />
@@ -123,8 +123,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!facebookLink}
                         href={facebookLink}
-                        aria-label={'Facebook'}
-                        target={'_blank'}
+                        aria-label='Facebook'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <FacebookIcon className={clsx(buttonIcon, 'circle')} />
@@ -134,8 +134,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!youtubeLink}
                         href={youtubeLink}
-                        aria-label={'YouTube'}
-                        target={'_blank'}
+                        aria-label='YouTube'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <YouTubeIcon className={clsx(buttonIcon, 'circle')} />
@@ -145,8 +145,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!spotifyLink}
                         href={spotifyLink}
-                        aria-label={'Spotify'}
-                        target={'_blank'}
+                        aria-label='Spotify'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <SpotifyIcon className={clsx(buttonIcon, 'circle')} />
@@ -156,8 +156,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!instagramLink}
                         href={instagramLink}
-                        aria-label={'Instagram'}
-                        target={'_blank'}
+                        aria-label='Instagram'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <InstagramIcon className={clsx(buttonIcon, 'circle')} />
@@ -167,8 +167,8 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                         color='primary'
                         disabled={!twitterLink}
                         href={twitterLink}
-                        aria-label={'Twitter'}
-                        target={'_blank'}
+                        aria-label='Twitter'
+                        target='_blank'
                         rel='me noopener noreferrer'
                     >
                         <TwitterIcon className={clsx(buttonIcon, 'circle')} />
@@ -180,13 +180,13 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                 color='primary'
                 disabled={!departmentLink}
                 href={departmentLink}
-                aria-label={'Music Departent'}
-                target={'_blank'}
+                aria-label='Music Departent'
+                target='_blank'
                 rel='noopener noreferrer'
             >
                 <MusicDepartmentIcon
                     className={buttonIcon}
-                    viewBox={'-15 -15 130 130'}
+                    viewBox='-15 -15 130 130'
                 />
                 {'Music Dept'}
             </Button>
@@ -195,13 +195,13 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                 color='primary'
                 disabled={!universityLink}
                 href={universityLink}
-                aria-label={'Princeton University'}
-                target={'_blank'}
+                aria-label='Princeton University'
+                target='_blank'
                 rel='noopener noreferrer'
             >
                 <PrincetonShieldIcon
                     className={buttonIcon}
-                    viewBox={'-2 -2 15 18'}
+                    viewBox='-2 -2 15 18'
                 />
                 {'Princeton'}
             </Button>

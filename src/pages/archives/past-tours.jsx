@@ -11,7 +11,7 @@ function PastSeasons({ data }) {
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
-            <Sheet hinting={'visible'}>GAGAGAGGAGA</Sheet>
+            <Sheet hinting='visible'>GAGAGAGGAGA</Sheet>
         </PageLayout>
     );
 }

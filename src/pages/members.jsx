@@ -17,7 +17,7 @@ function Members({ data }) {
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
-            <Sheet hinting={'visible'}>
+            <Sheet hinting='visible'>
                 <Subheader>{'Members'}</Subheader>
             </Sheet>
         </PageLayout>

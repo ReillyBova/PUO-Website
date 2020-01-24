@@ -49,7 +49,7 @@ const MobileMenu = ({
                 to={`/${baseURL}`}
                 key={i}
                 partiallyActive={true}
-                activeClassName={'active'}
+                activeClassName='active'
                 onClick={(event) => {
                     setMenuState(false);
                     event.stopPropagation();

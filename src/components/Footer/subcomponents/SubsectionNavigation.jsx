@@ -30,8 +30,8 @@ function SubsectionNavigation({ classes, currentLocation }) {
                 container
                 item
                 xs={12}
-                justify={'space-evenly'}
-                alignItems={'center'}
+                justify='space-evenly'
+                alignItems='center'
             >
                 {subSections.map((section, i) => {
                     // Button for jumping to hash location
@@ -60,8 +60,8 @@ function SubsectionNavigation({ classes, currentLocation }) {
                 container
                 item
                 xs={12}
-                justify={'space-evenly'}
-                alignItems={'center'}
+                justify='space-evenly'
+                alignItems='center'
             >
                 {subSections.map((section, i) => {
                     // Corner case for matching section

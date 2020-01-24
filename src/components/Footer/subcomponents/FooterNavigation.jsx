@@ -25,8 +25,8 @@ function FooterNavigation({ classes, currentLocation, siteSkeleton }) {
             container
             item
             xs={12}
-            justify={'space-evenly'}
-            alignItems={'center'}
+            justify='space-evenly'
+            alignItems='center'
         >
             {isHomepageActive ? (
                 <span
@@ -36,7 +36,7 @@ function FooterNavigation({ classes, currentLocation, siteSkeleton }) {
                     {'Home'}
                 </span>
             ) : (
-                <InternalLink className={footerNavLink} to={'/'}>
+                <InternalLink className={footerNavLink} to='/'>
                     {'Home'}
                 </InternalLink>
             )}
