@@ -11,6 +11,7 @@ import {
 } from 'components';
 
 function Members({ data }) {
+    console.log(data)
     // Render
     return (
         <PageLayout title='Members'>
@@ -24,6 +25,18 @@ function Members({ data }) {
     );
 }
 
+// Query fragment for members data
+export const memberDataFragment = graphql`
+    fragment MemberDataFragment on MarkdownRemark {
+        html
+        frontmatter {
+            suffixedName
+            section
+            seasons
+        }
+    }
+`;
+
 // Fetch data for page
 export const pageQuery = graphql`
     query {
@@ -35,15 +48,14 @@ export const pageQuery = graphql`
             ...ImageBannerFragment
         }
 
-        posters: allFile(
+        members: allMarkdownRemark(
             filter: {
-                sourceInstanceName: { eq: "images" }
-                relativeDirectory: { eq: "posters" }
-                ext: { eq: ".jpg" }
-            }
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Members\\/.*\\.md$/"},
+                frontmatter: {active: {eq: "true"}}
+            },
         ) {
             nodes {
-                ...ConcertPosterFragment
+                ...MemberDataFragment
             }
         }
     }

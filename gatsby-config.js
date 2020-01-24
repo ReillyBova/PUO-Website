@@ -41,7 +41,7 @@ module.exports = {
                 page: 'About',
                 type: 'OnePageOnly',
                 sections: [
-                    'The Orchestra',
+                    'Our Orchestra',
                     'Our Conductor',
                     'Our Officers',
                     'Contact Us',

@@ -24,7 +24,8 @@
     "format": "prettier --write '*.js' '*.jsx' 'src/**/*.js' 'src/**/*.jsx'",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "populate": "node scripts/populate_roster/populate_roster.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.8.2",
@@ -54,6 +55,7 @@
     "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
+    "exceljs": "^3.6.1",
     "gh-pages": "^2.1.1",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"

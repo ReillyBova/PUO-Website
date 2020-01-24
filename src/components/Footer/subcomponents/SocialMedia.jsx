@@ -45,13 +45,7 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
 
     // Links route to different page
     return (
-        <Grid
-            container
-            item
-            xs={12}
-            justify='space-evenly'
-            alignItems='center'
-        >
+        <Grid container item xs={12} justify='space-evenly' alignItems='center'>
             {isDesktopMode ? ( // Wide buttons with text:
                 <Fragment>
                     <Button

@@ -21,13 +21,7 @@ function FooterNavigation({ classes, currentLocation, siteSkeleton }) {
 
     // Links route to different page
     return (
-        <Grid
-            container
-            item
-            xs={12}
-            justify='space-evenly'
-            alignItems='center'
-        >
+        <Grid container item xs={12} justify='space-evenly' alignItems='center'>
             {isHomepageActive ? (
                 <span
                     className={clsx(footerNavLink, 'active')}
