@@ -30,7 +30,7 @@ const Program = ({
             {cardLayoutIndex === 1 && (
                 // Special tablet ribbon for layering under spaced mobile ribbon
                 <div className={mobileConcertNameRibbon}>
-                    <Typography variant="h4">
+                    <Typography variant='h4'>
                         <br />
                     </Typography>
                 </div>
@@ -38,7 +38,7 @@ const Program = ({
             {cardLayoutIndex < 2 && (
                 // Mobile ribbon
                 <div className={mobileConcertName}>
-                    <Typography variant="h4">{concertName}</Typography>
+                    <Typography variant='h4'>{concertName}</Typography>
                 </div>
             )}
             <CardContent className={programContent}>{program}</CardContent>

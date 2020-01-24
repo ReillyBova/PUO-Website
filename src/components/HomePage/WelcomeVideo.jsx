@@ -119,7 +119,7 @@ function WelcomeVideo() {
                 playsInline
                 crossOrigin={'anonymous'}
             >
-                <source type="video/mp4" />
+                <source type='video/mp4' />
             </video>
         </div>
     );

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Element to render concert soloist text of concert card
 const ConcertSoloist = ({ text }) => (
-    <Typography variant="body2" color="textSecondary">
+    <Typography variant='body2' color='textSecondary'>
         <span dangerouslySetInnerHTML={{ __html: text }} />
     </Typography>
 );

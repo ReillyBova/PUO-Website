@@ -6,8 +6,8 @@ import { PageLayout } from 'components';
 
 export default function App() {
     return (
-        <PageLayout title="About" description="about this jon">
-            <Container maxWidth="sm">
+        <PageLayout title='About' description='about this jon'>
+            <Container maxWidth='sm'>
                 <Box my={4}></Box>
             </Container>
         </PageLayout>

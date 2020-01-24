@@ -145,8 +145,8 @@ const DropdownList = ({ list, headerRef, style }) => {
                             return (
                                 <Button
                                     className={listItem}
-                                    variant="contained"
-                                    color="secondary"
+                                    variant='contained'
+                                    color='secondary'
                                     component={'li'}
                                     key={i}
                                 >

@@ -129,7 +129,7 @@ function Footer({ classes }) {
                     <a
                         href={`https://www.${relatedLinks.university}`}
                         target={'_blank'}
-                        rel="noopener noreferrer"
+                        rel='noopener noreferrer'
                     >
                         <img
                             src={PrincetonSignature}
@@ -139,7 +139,7 @@ function Footer({ classes }) {
                     <a
                         href={`https://www.${relatedLinks.department}`}
                         target={'_blank'}
-                        rel="noopener noreferrer"
+                        rel='noopener noreferrer'
                     >
                         <img
                             src={MusicDepartmentSignature}
@@ -149,7 +149,7 @@ function Footer({ classes }) {
                     <a
                         href={site.siteMetadata.siteUrl}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <div
                             className={clsx(
@@ -187,7 +187,7 @@ function Footer({ classes }) {
                             <a
                                 href={`https://www.${relatedLinks.copyright}`}
                                 target={'_blank'}
-                                rel="nofollow noopener noreferrer"
+                                rel='nofollow noopener noreferrer'
                             >
                                 {'Copyright Infringement'}
                             </a>
@@ -195,7 +195,7 @@ function Footer({ classes }) {
                             <a
                                 href={`https://www.${relatedLinks.privacy}`}
                                 target={'_blank'}
-                                rel="nofollow noopener noreferrer"
+                                rel='nofollow noopener noreferrer'
                             >
                                 {'Privacy Notice'}
                             </a>

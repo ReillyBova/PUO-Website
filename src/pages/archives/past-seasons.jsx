@@ -13,7 +13,7 @@ import {
 function PastSeasons({ data }) {
     // Render
     return (
-        <PageLayout title="Past Seasons">
+        <PageLayout title='Past Seasons'>
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>

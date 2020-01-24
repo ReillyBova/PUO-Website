@@ -29,11 +29,11 @@ const ConcertDatetime = ({ text }) => {
 
     // Render
     return (
-        <Typography variant="subtitle2">
+        <Typography variant='subtitle2'>
             <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                component="span"
+                variant='subtitle2'
+                color='textSecondary'
+                component='span'
             >
                 {timeString}
             </Typography>

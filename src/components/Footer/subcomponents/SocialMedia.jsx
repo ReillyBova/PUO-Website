@@ -56,60 +56,60 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                 <Fragment>
                     <Button
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!facebookLink}
                         href={facebookLink}
                         aria-label={'Facebook'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <FacebookIcon className={buttonIcon} />
                         {'Facebook'}
                     </Button>
                     <Button
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!youtubeLink}
                         href={youtubeLink}
                         aria-label={'YouTube'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <YouTubeIcon className={buttonIcon} />
                         {'YouTube'}
                     </Button>
                     <Button
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!spotifyLink}
                         href={spotifyLink}
                         aria-label={'Spotify'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <SpotifyIcon className={buttonIcon} />
                         {'Spotify'}
                     </Button>
                     <Button
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!instagramLink}
                         href={instagramLink}
                         aria-label={'Instagram'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <InstagramIcon className={buttonIcon} />
                         {'Instagram'}
                     </Button>
                     <Button
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!twitterLink}
                         href={twitterLink}
                         aria-label={'Twitter'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <TwitterIcon className={buttonIcon} />
                         {'Twitter'}
@@ -120,56 +120,56 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
                 <Fragment>
                     <IconButton
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!facebookLink}
                         href={facebookLink}
                         aria-label={'Facebook'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <FacebookIcon className={clsx(buttonIcon, 'circle')} />
                     </IconButton>
                     <IconButton
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!youtubeLink}
                         href={youtubeLink}
                         aria-label={'YouTube'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <YouTubeIcon className={clsx(buttonIcon, 'circle')} />
                     </IconButton>
                     <IconButton
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!spotifyLink}
                         href={spotifyLink}
                         aria-label={'Spotify'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <SpotifyIcon className={clsx(buttonIcon, 'circle')} />
                     </IconButton>
                     <IconButton
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!instagramLink}
                         href={instagramLink}
                         aria-label={'Instagram'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <InstagramIcon className={clsx(buttonIcon, 'circle')} />
                     </IconButton>
                     <IconButton
                         className={button}
-                        color="primary"
+                        color='primary'
                         disabled={!twitterLink}
                         href={twitterLink}
                         aria-label={'Twitter'}
                         target={'_blank'}
-                        rel="me noopener noreferrer"
+                        rel='me noopener noreferrer'
                     >
                         <TwitterIcon className={clsx(buttonIcon, 'circle')} />
                     </IconButton>
@@ -177,12 +177,12 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
             )}
             <Button
                 className={button}
-                color="primary"
+                color='primary'
                 disabled={!departmentLink}
                 href={departmentLink}
                 aria-label={'Music Departent'}
                 target={'_blank'}
-                rel="noopener noreferrer"
+                rel='noopener noreferrer'
             >
                 <MusicDepartmentIcon
                     className={buttonIcon}
@@ -192,12 +192,12 @@ function SocialMedia({ classes, mediaLinks, relatedLinks }) {
             </Button>
             <Button
                 className={button}
-                color="primary"
+                color='primary'
                 disabled={!universityLink}
                 href={universityLink}
                 aria-label={'Princeton University'}
                 target={'_blank'}
-                rel="noopener noreferrer"
+                rel='noopener noreferrer'
             >
                 <PrincetonShieldIcon
                     className={buttonIcon}

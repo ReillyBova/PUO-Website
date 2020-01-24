@@ -70,7 +70,7 @@ const DesktopConcertName = ({ concertName, concertNameCardClass }) => {
             className={concertNameCardClass}
             style={{ minWidth: concertNameCardWidth }}
         >
-            <Typography ref={concertNameText} variant="h4">
+            <Typography ref={concertNameText} variant='h4'>
                 {concertName}
             </Typography>
         </Paper>

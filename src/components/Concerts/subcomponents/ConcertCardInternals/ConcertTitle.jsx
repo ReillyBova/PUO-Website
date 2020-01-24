@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Element to render concert title text of concert card
 const ConcertTitle = ({ text }) => (
-    <Typography variant="h5">
+    <Typography variant='h5'>
         <span dangerouslySetInnerHTML={{ __html: text }} />
     </Typography>
 );

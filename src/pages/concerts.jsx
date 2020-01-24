@@ -31,7 +31,7 @@ function Concerts({ data }) {
 
     // Render
     return (
-        <PageLayout title="Concerts">
+        <PageLayout title='Concerts'>
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
@@ -42,8 +42,8 @@ function Concerts({ data }) {
                 />
                 <div className={buttonWrapper}>
                     <InternalButtonLink
-                        color="primary"
-                        variant="outlined"
+                        color='primary'
+                        variant='outlined'
                         to={`/archives/past-seasons`}
                     >
                         Explore Past Seasons

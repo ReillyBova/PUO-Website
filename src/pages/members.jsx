@@ -1,15 +1,52 @@
+// Library imports
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import { graphql } from 'gatsby';
+// Project imports
+import {
+    PageLayout,
+    Parallax,
+    Sheet,
+    Subheader,
+    ImageBanner,
+} from 'components';
 
-import { PageLayout } from 'components';
-
-export default function App() {
+function Members({ data }) {
+    // Render
     return (
-        <PageLayout title="About" description="about this jon">
-            <Container maxWidth="sm">
-                <Box my={4}></Box>
-            </Container>
+        <PageLayout title='Members'>
+            <Parallax>
+                <ImageBanner fluid={data.banner.childImageSharp.fluid} />
+            </Parallax>
+            <Sheet hinting={'visible'}>
+                <Subheader>{'Members'}</Subheader>
+            </Sheet>
         </PageLayout>
     );
 }
+
+// Fetch data for page
+export const pageQuery = graphql`
+    query {
+        banner: file(
+            sourceInstanceName: { eq: "images" }
+            relativeDirectory: { eq: "banners" }
+            name: { eq: "members" }
+        ) {
+            ...ImageBannerFragment
+        }
+
+        posters: allFile(
+            filter: {
+                sourceInstanceName: { eq: "images" }
+                relativeDirectory: { eq: "posters" }
+                ext: { eq: ".jpg" }
+            }
+        ) {
+            nodes {
+                ...ConcertPosterFragment
+            }
+        }
+    }
+`;
+
+export default Members;

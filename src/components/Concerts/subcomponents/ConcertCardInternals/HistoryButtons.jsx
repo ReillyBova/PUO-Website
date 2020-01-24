@@ -15,7 +15,7 @@ const HistoryButtons = ({ youtube, spotify, buttonIcon }) => (
             href={youtube}
             aria-label={'Watch on YouTube'}
             target={'_blank'}
-            rel="noopener noreferrer"
+            rel='noopener noreferrer'
         >
             <YouTubeIcon className={buttonIcon} />
             {'Watch on YouTube'}
@@ -26,7 +26,7 @@ const HistoryButtons = ({ youtube, spotify, buttonIcon }) => (
             href={spotify}
             aria-label={'Listen on Spotify'}
             target={'_blank'}
-            rel="noopener noreferrer"
+            rel='noopener noreferrer'
         >
             <SpotifyIcon className={buttonIcon} />
             {'Listen on Spotify'}

@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 // Project imports
+import { Subheader } from 'components';
 import {
     CAN_USE_IO,
     preprocessConcerts,
@@ -24,21 +23,6 @@ const concertStyles = makeStyles((theme) => ({
     lazyLoadingWrapper: {
         margin: 'auto',
         width: 'fit-content',
-    },
-    subheader: {
-        position: 'relative',
-        zIndex: 4,
-        width: 'fit-content',
-        padding: theme.spacing(2),
-        marginBottom: theme.spacing(4),
-        marginLeft: -theme.spacing(6),
-        background: theme.palette.primary.main,
-        color: 'white',
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(1),
-            marginBottom: theme.spacing(2),
-            marginLeft: -theme.spacing(3),
-        },
     },
     seasonSection: {
         // Padding below each season
@@ -241,7 +225,7 @@ function ConcertSeasons({ concerts, posters }) {
     const seasonsToRender = seasons.slice(0, numRendered);
 
     // CSS classes for styling
-    const { subheader, seasonSection, lazyLoadingWrapper } = concertStyles();
+    const { seasonSection, lazyLoadingWrapper } = concertStyles();
 
     // Normal Render
     return (
@@ -258,11 +242,7 @@ function ConcertSeasons({ concerts, posters }) {
                         key={season}
                         ref={isLast ? lastSeasonRenderedRef : null}
                     >
-                        <Paper elevation={4} className={subheader}>
-                            <Typography variant="h3">
-                                {`The ${season} Season`}
-                            </Typography>
-                        </Paper>
+                        <Subheader>{`The ${season} Season`}</Subheader>
                         {concerts.map((props, i) => (
                             <ConcertCard
                                 key={i}

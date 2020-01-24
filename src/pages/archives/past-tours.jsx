@@ -2,18 +2,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
-import {
-    ConcertSeasons,
-    PageLayout,
-    Parallax,
-    Sheet,
-    ImageBanner,
-} from 'components';
+import { PageLayout, Parallax, Sheet, ImageBanner } from 'components';
 
 function PastSeasons({ data }) {
     // Render
     return (
-        <PageLayout title="Past Seasons">
+        <PageLayout title='Past Tours'>
             <Parallax>
                 <ImageBanner fluid={data.banner.childImageSharp.fluid} />
             </Parallax>
@@ -26,9 +20,9 @@ function PastSeasons({ data }) {
 export const pageQuery = graphql`
     query {
         banner: file(
-            sourceInstanceName: {eq: "images"},
-            relativeDirectory: {eq: "banners"},
-            name: {eq: "past-seasons"}
+            sourceInstanceName: { eq: "images" }
+            relativeDirectory: { eq: "banners" }
+            name: { eq: "past-seasons" }
         ) {
             ...ImageBannerFragment
         }
@@ -42,18 +36,6 @@ export const pageQuery = graphql`
         ) {
             nodes {
                 ...ConcertPosterFragment
-            }
-        }
-
-        concerts: allMarkdownRemark(
-            filter: {
-                fileAbsolutePath: {regex: "/\\/src\\/content\\/Concerts\\/.*\\.md$/"},
-                frontmatter: {current: {eq: "false"}}
-            },
-            sort: {fields: frontmatter___date}
-        ) {
-            nodes {
-                ...ConcertDataFragment
             }
         }
     }

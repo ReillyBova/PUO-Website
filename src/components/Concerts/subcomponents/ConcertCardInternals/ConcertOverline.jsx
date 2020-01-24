@@ -19,7 +19,7 @@ const ConcertOverline = ({ text }) => {
     const { thin } = overlineStyles();
     // Render
     return (
-        <Typography className={thin} variant="overline" color="textSecondary">
+        <Typography className={thin} variant='overline' color='textSecondary'>
             <span dangerouslySetInnerHTML={{ __html: text }} />
         </Typography>
     );

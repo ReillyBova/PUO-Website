@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Element to render concert overline text of concert card
 const ConcertBreak = ({ text }) => (
-    <Typography variant="subtitle2" color="textSecondary" gutterBottom>
+    <Typography variant='subtitle2' color='textSecondary' gutterBottom>
         <span dangerouslySetInnerHTML={{ __html: text }} />
     </Typography>
 );

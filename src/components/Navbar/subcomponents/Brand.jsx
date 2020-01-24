@@ -15,7 +15,7 @@ const Brand = ({ classes, setMenuState }) => {
     const alt_brand = 'The Princeton University Orchestra';
     // Render
     return (
-        <Link to="/" className={brand} onClick={() => setMenuState(false)}>
+        <Link to='/' className={brand} onClick={() => setMenuState(false)}>
             <img className={brandOrch} src={LargeDarkLogo} alt={alt_brand} />
             <img
                 className={clsx(brandText, 'below')}

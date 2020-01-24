@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Element to render concert subtitle text of concert card
 const ConcertHall = ({ text }) => (
-    <Typography variant="subtitle2">
+    <Typography variant='subtitle2'>
         <span dangerouslySetInnerHTML={{ __html: text }} />
     </Typography>
 );

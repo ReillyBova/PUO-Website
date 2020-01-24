@@ -13,7 +13,7 @@ const ConcertWork = ({ text }) => {
 
     // Render
     return (
-        <Typography variant="body1" gutterBottom component="div">
+        <Typography variant='body1' gutterBottom component='div'>
             <ConcertComposer text={composer} />
             <span dangerouslySetInnerHTML={{ __html: ` ${title}` }} />
             {soloists.map((soloist, i) => (

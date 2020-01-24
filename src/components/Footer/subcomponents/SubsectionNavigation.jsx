@@ -41,7 +41,7 @@ function SubsectionNavigation({ classes, currentLocation }) {
                                 button,
                                 section === currentSection && 'active'
                             )}
-                            color="primary"
+                            color='primary'
                             key={`${section}-${i}`}
                             onClick={() =>
                                 scrollToHash(urlify(section), currentPage)
@@ -70,7 +70,7 @@ function SubsectionNavigation({ classes, currentLocation }) {
                         return (
                             <Button
                                 className={`${button} active`}
-                                color="primary"
+                                color='primary'
                                 key={`${section}-${i}`}
                                 onClick={() => smoothScroll(0, 1000)}
                             >
@@ -83,7 +83,7 @@ function SubsectionNavigation({ classes, currentLocation }) {
                     return (
                         <InternalButtonLink
                             className={button}
-                            color="primary"
+                            color='primary'
                             key={`${section}-${i}`}
                             to={arrayToURL([currentPage, section])}
                         >

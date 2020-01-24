@@ -27,32 +27,32 @@ const HamburgerMenu = ({ classes, menuIsActive, setMenuState }) => {
             <Button
                 className={clsx(hamburger, menuIsActive && 'active')}
                 onClick={() => setMenuState(!menuIsActive)}
-                aria-label="Toggle Menu"
+                aria-label='Toggle Menu'
             >
                 <svg>
                     <path
-                        id="menuButtonL0"
-                        d="M 0,30.5 H 32"
+                        id='menuButtonL0'
+                        d='M 0,30.5 H 32'
                         style={hamburger_style}
                     />
                     <path
-                        id="menuButtonL1"
-                        d="M 0,23.25 H 32"
+                        id='menuButtonL1'
+                        d='M 0,23.25 H 32'
                         style={hamburger_style}
                     />
                     <path
-                        id="menuButtonL2"
-                        d="M 0,16 H 32"
+                        id='menuButtonL2'
+                        d='M 0,16 H 32'
                         style={hamburger_style}
                     />
                     <path
-                        id="menuButtonL3"
-                        d="M 0,8.75 H 32"
+                        id='menuButtonL3'
+                        d='M 0,8.75 H 32'
                         style={hamburger_style}
                     />
                     <path
-                        id="menuButtonL4"
-                        d="M 0,1.5 H 32"
+                        id='menuButtonL4'
+                        d='M 0,1.5 H 32'
                         style={hamburger_style}
                     />
                 </svg>

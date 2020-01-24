@@ -21,8 +21,8 @@ const ConcertSubtitle = ({ text }) => {
     return (
         <Typography
             className={thin}
-            variant="subtitle1"
-            color="textSecondary"
+            variant='subtitle1'
+            color='textSecondary'
             gutterBottom
         >
             <span dangerouslySetInnerHTML={{ __html: text }} />
