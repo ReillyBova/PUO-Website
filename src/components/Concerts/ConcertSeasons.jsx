@@ -110,7 +110,7 @@ function ConcertSeasons({ concerts, posters }) {
             const computeLayout = () => {
                 // Set mobile mode if necessary
                 const width = winWidth();
-                if (width < 960) {
+                if (width < 1280) {
                     if (width <= 700) {
                         return 0;
                     } else {
