@@ -41,7 +41,7 @@ const DesktopConcertName = ({ concertName, concertNameCardClass }) => {
 
                 // 16px margin spacing on either side gives target of 32px difference
                 if (difference < 32) {
-                    setconcertNameCardWidth(concertNameCardWidth + difference);
+                    setconcertNameCardWidth(outerWidth + (32 - difference));
                     // We only need to set once, so we can cleanup
                     cleanup();
                 } else if (outerWidth === 150) {
