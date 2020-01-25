@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 // Project imports
 import {
@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 
 // Preset section order for display
 const SECTION_ORDER = [
+    'Artistic Leadership',
     'Violin',
     'Viola',
     'Cello',
@@ -30,6 +31,9 @@ const SECTION_ORDER = [
     'Timpani/Percussion',
     'Harp',
     'Keyboard',
+    'Library',
+    'Personnel',
+    'Production',
 ];
 
 // Styling for page elements
@@ -62,7 +66,7 @@ function Members({ data }) {
     const membersBySection = {};
     data.members.nodes.forEach((member) => {
         // Extract member info from frontmatter heading
-        const { fullName, suffixedName, section } = member.frontmatter;
+        const { fullName, suffixedName, section, title, orderOverride } = member.frontmatter;
 
         // Create section if it doesn't exist
         if (!membersBySection[section]) {
@@ -71,13 +75,26 @@ function Members({ data }) {
 
         // Computer member last name and add member to section
         const lastName = fullName.split(' ').splice(-1)[0];
-        membersBySection[section].push({ lastName, suffixedName });
+        membersBySection[section].push({ lastName, suffixedName, title, orderOverride });
     });
 
-    // Sort sections by last name
-    const compareByLastName = (a, b) => a.lastName.localeCompare(b.lastName);
+    // Sort sections by members' order overrides, then by members' last names
+    const compareMembers = (a, b) => {
+        const aOrderOverride = Number.parseInt(a.orderOverride);
+        const bOrderOverride = Number.parseInt(b.orderOverride);
+
+        if (aOrderOverride === bOrderOverride) {
+            return a.lastName.localeCompare(b.lastName);
+        } else if (aOrderOverride < 0) {
+            return 1;
+        } else if (bOrderOverride < 0) {
+            return 1;
+        } else {
+            return aOrderOverride - bOrderOverride;
+        }
+    };
     Object.keys(membersBySection).forEach((section) =>
-        membersBySection[section].sort(compareByLastName)
+        membersBySection[section].sort(compareMembers)
     );
 
     // CSS classes for styling
@@ -97,13 +114,23 @@ function Members({ data }) {
                             <div className={sectionWrapper}>
                                 <Typography variant='h6'>{section}</Typography>
                                 {membersBySection[section].map(
-                                    ({ suffixedName }) => (
-                                        <Typography
-                                            key={suffixedName}
-                                            variant='body1'
-                                        >
-                                            {suffixedName}
-                                        </Typography>
+                                    ({ suffixedName, title }) => (
+                                        <Fragment key={suffixedName}>
+                                            <Typography
+                                                variant='body1'
+                                            >
+                                                {suffixedName}
+                                            </Typography>
+                                            {title &&
+                                                <Typography
+                                                    variant='body2'
+                                                    color='textSecondary'
+                                                    gutterBottom
+                                                >
+                                                    {title}
+                                                </Typography>
+                                            }
+                                        </Fragment>
                                     )
                                 )}
                             </div>
@@ -123,6 +150,8 @@ export const memberDataFragment = graphql`
             fullName
             suffixedName
             section
+            title
+            orderOverride
         }
     }
 `;

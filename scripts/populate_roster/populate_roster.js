@@ -67,8 +67,16 @@ workbook.xlsx.readFile(ROSTER_FILE_PATH)
           // For some reason we see a 0 index column. Let's remove it
           const values = row.values.slice(1);
 
-          // Values is structured as  [section, name, class, year joined]
-          const [section, name, gradYear, memberSince] = values;
+          // Values is structured as  [section, name, class, year joined, title, order override]
+          const [section, name, gradYear, memberSince, title, orderOverride] = values;
+
+          // Corner cases
+          if (typeof(section) !== 'string' || typeof(name) !== 'string') {
+              return;
+          }
+          if (section.length < 1 || name.length < 1) {
+              return;
+          }
 
           // Form suffixed member name
           let suffixedName;
@@ -97,6 +105,10 @@ section: "${section}"
 gradYear: "${processedGradYear}"
 # Year Joined
 memberSince: "${memberSince}"
+# Title
+title: "${(title) ? title : ""}"
+# Order Override for sorting
+orderOverride: "${(orderOverride)? orderOverride : -1}"
 # Active Seasons
 seasons: ["${CURRENT_SEASON}"]
 # Is active member?

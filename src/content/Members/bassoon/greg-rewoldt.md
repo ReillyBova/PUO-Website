@@ -9,6 +9,10 @@ section: "Bassoon"
 gradYear: ""
 # Year Joined
 memberSince: "1976"
+# Title
+title: ""
+# Order Override for sorting
+orderOverride: "-1"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?
