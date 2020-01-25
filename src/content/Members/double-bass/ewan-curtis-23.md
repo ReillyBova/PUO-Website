@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Daniel Strayer"
+fullName: "Ewan Curtis"
 # Suffixed Name
-suffixedName: "Daniel Strayer ’21"
+suffixedName: "Ewan Curtis ’23"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2021"
+gradYear: "2023"
 # Year Joined
-memberSince: "2017"
+memberSince: "2019"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

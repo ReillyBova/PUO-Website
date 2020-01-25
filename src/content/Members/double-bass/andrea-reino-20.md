@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Jacob Bleil"
+fullName: "Andrea Reino"
 # Suffixed Name
-suffixedName: "Jacob Bleil ’23"
+suffixedName: "Andrea Reino ’20"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2023"
+gradYear: "2020"
 # Year Joined
-memberSince: "2019"
+memberSince: "2016"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

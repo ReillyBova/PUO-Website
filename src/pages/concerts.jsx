@@ -13,7 +13,7 @@ import {
     InternalButtonLink,
 } from 'components';
 
-// Styling for homepage elements
+// Styling for page elements
 const concertPageStyles = makeStyles((theme) => ({
     buttonWrapper: {
         margin: 'auto',

@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Chaz Bethel-Brescia"
+fullName: "Tyler Benson"
 # Suffixed Name
-suffixedName: "Chaz Bethel-Brescia ’22"
+suffixedName: "Tyler Benson ’23"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2022"
+gradYear: "2023"
 # Year Joined
-memberSince: "2018"
+memberSince: "2019"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

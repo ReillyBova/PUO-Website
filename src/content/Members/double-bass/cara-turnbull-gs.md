@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Thomas Graul"
+fullName: "Cara Turnbull"
 # Suffixed Name
-suffixedName: "Thomas Graul ’21"
+suffixedName: "Cara Turnbull GS"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2021"
+gradYear: "GS"
 # Year Joined
-memberSince: "2017"
+memberSince: "2019"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

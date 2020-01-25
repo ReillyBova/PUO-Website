@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Debby Park"
+fullName: "Daniel Strayer"
 # Suffixed Name
-suffixedName: "Debby Park ’22"
+suffixedName: "Daniel Strayer ’21"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2022"
+gradYear: "2021"
 # Year Joined
-memberSince: "2018"
+memberSince: "2017"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

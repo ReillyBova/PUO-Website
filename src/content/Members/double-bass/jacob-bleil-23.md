@@ -1,10 +1,10 @@
 ---
 # Full Name
-fullName: "Tyler Benson"
+fullName: "Jacob Bleil"
 # Suffixed Name
-suffixedName: "Tyler Benson ’23"
+suffixedName: "Jacob Bleil ’23"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
 gradYear: "2023"
 # Year Joined

@@ -1,14 +1,14 @@
 ---
 # Full Name
-fullName: "Ewan Curtis"
+fullName: "Debby Park"
 # Suffixed Name
-suffixedName: "Ewan Curtis ’23"
+suffixedName: "Debby Park ’22"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
-gradYear: "2023"
+gradYear: "2022"
 # Year Joined
-memberSince: "2019"
+memberSince: "2018"
 # Active Seasons
 seasons: ["2019/20"]
 # Is active member?

@@ -4,7 +4,7 @@ fullName: "Luke Begley"
 # Suffixed Name
 suffixedName: "Luke Begley ’22"
 # Section
-section: "Bass"
+section: "Double Bass"
 # Graduation Year (or name suffix)
 gradYear: "2022"
 # Year Joined
