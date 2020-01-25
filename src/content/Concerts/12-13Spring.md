@@ -2,7 +2,7 @@
 # Concert Name (e.g. "Fall Concert")
 concertName: "Spring Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#7E57C2"
+colorTheme: "#B0477F"
 # Date YY-MM-DD (for sorting)
 date: "2013-04-26"
 # Season
@@ -10,7 +10,7 @@ season: "2012/13"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "ravel"
+poster: ""
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)

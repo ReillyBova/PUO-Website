@@ -45,7 +45,7 @@ const concertCardStyles = makeStyles((theme) => ({
         marginLeft: isRTL ? 75 : 'unset',
         marginRight: !isRTL ? 75 : 'unset',
 
-        '@media screen and (max-width: 959px)': {
+        '@media screen and (max-width: 1279px)': {
             marginLeft: 'unset',
             marginRight: 'unset',
             overflow: 'hidden',

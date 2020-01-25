@@ -34,8 +34,8 @@ Datetime = December 08, 2012 19:30
 Section
 
 Overline = Program
-Work = Gilad Cohen ~ *Dragon Mother* ~ Martha Elliot '82, Soprano ~ World Premiere
-Work = Richard Strauss ~ Horn Concerto No. 1 in E-flat major, op. 11 ~ Max Jacobson '13, French Horn ~ Ruth Ochs, Conductor
+Work = Gilad Cohen ~ *Dragon Mother* ~ Martha Elliot ’82, Soprano ~ World Premiere
+Work = Richard Strauss ~ Horn Concerto No. 1 in E-flat major, op. 11 ~ Max Jacobson ’13, French Horn ~ Ruth Ochs, Conductor
 Break = --- Intermission ---
-Work = Béla Bartók ~ Violin Concerto No. 2, BB. 117 ~ Caitlin Wood '15, Violin
+Work = Béla Bartók ~ Violin Concerto No. 2, BB. 117 ~ Caitlin Wood ’15, Violin
 Work = Aaron Copland ~ *El Salón México*

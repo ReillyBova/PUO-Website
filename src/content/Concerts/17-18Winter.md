@@ -35,6 +35,6 @@ Section
 
 Overline = Program
 Work = Gioachino Rossini ~ Overture to *William Tell*
-Work = Pyotr Ilyich Tchaikovsky ~ *Romeo and Juliet Fantasy Overture*, TH 42, ČW 39 ~ DG Kim '18, Conductor
+Work = Pyotr Ilyich Tchaikovsky ~ *Romeo and Juliet Fantasy Overture*, TH 42, ČW 39 ~ DG Kim ’18, Conductor
 Break = --- Intermission ---
 Work = Antonín Dvořák ~ Symphony No. 7 in D minor, op. 70

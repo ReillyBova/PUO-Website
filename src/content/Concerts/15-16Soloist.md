@@ -35,8 +35,8 @@ Section
 
 Overline = Program
 Work = Leonard Bernstein ~ Overture to *Candide*
-Work = Leonard Bernstein ~ "Glitter and be Gay" from *Candide* ~ Solène Le Van '18, Soprano
-Work = Nikolai Kapustin ~ Concerto for Piano and Orchestra, op. 14 ~ Evan Chow '16, Piano
-Work = Erich Wolfgang Korngold ~ Violin Concerto in D major, op. 35 ~ Jessie Chen '16, Violin
+Work = Leonard Bernstein ~ "Glitter and be Gay" from *Candide* ~ Solène Le Van ’18, Soprano
+Work = Nikolai Kapustin ~ Concerto for Piano and Orchestra, op. 14 ~ Evan Chow ’16, Piano
+Work = Erich Wolfgang Korngold ~ Violin Concerto in D major, op. 35 ~ Jessie Chen ’16, Violin
 Break = --- Intermission ---
 Work = Ludwig van Beethoven ~ Symphony No. 7 in A major, op. 92

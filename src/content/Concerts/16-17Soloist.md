@@ -34,7 +34,7 @@ Datetime = March 11, 2017 19:30
 Section
 
 Overline = Program
-Work = Richard Strauss ~ Horn Concerto No. 2 in E-flat major, TrV 283 ~ Nivanthi Karunaratne '18, French Horn
-Work = Franz Liszt ~ Piano Concerto No. 1 in E-flat major, S. 124 ~ Kevin Chien '17, Piano
+Work = Richard Strauss ~ Horn Concerto No. 2 in E-flat major, TrV 283 ~ Nivanthi Karunaratne ’18, French Horn
+Work = Franz Liszt ~ Piano Concerto No. 1 in E-flat major, S. 124 ~ Kevin Chien ’17, Piano
 Break = --- Intermission ---
-Work = Sergei Rachmaninoff ~ Piano Concerto No. 3 in D minor, op. 30 ~ Seho Young '19, Piano
+Work = Sergei Rachmaninoff ~ Piano Concerto No. 3 in D minor, op. 30 ~ Seho Young ’19, Piano

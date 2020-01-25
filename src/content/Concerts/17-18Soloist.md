@@ -34,8 +34,8 @@ Datetime = March 10, 2018 19:30
 Section
 
 Overline = Program
-Work = Ernest Bloch ~ *Schelomo: Rhapsodie Hébraïque* for Violoncello and Orchestra ~ Leland Ko '20, Cello ~ Ruth Ochs, Conductor
-Work = Sergei Prokofiev ~ Violin Concerto No. 2 in G minor, op. 63 ~ Hana Mundiya '20, Violin
+Work = Ernest Bloch ~ *Schelomo: Rhapsodie Hébraïque* for Violoncello and Orchestra ~ Leland Ko ’20, Cello ~ Ruth Ochs, Conductor
+Work = Sergei Prokofiev ~ Violin Concerto No. 2 in G minor, op. 63 ~ Hana Mundiya ’20, Violin
 Break = --- Intermission ---
-Work = Samuel Barber ~ *Knoxville Summer of 1915*, op. 24 ~ Solène Le Van '18, Soprano
+Work = Samuel Barber ~ *Knoxville Summer of 1915*, op. 24 ~ Solène Le Van ’18, Soprano
 Work = Richard Strauss ~ *Till Eulenspiegels lustige Streiche* (Till Eulenspiegel's Merry Pranks), op. 28

@@ -36,4 +36,4 @@ Section
 Overline = Program
 Work = Dan Trueman / Donnacha Dennehy ~ Four Sean-nós Songs for Voice and Orchestra ~ Iarla Ó Lionáird, Vocalist
 Break = --- Intermission ---
-Work = Gustav Mahler ~ Symphony No. 4 in G major ~ Katherine Buzard '14, Soprano
+Work = Gustav Mahler ~ Symphony No. 4 in G major ~ Katherine Buzard ’14, Soprano

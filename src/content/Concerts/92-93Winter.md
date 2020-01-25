@@ -38,5 +38,5 @@ Work = Igor Stravinsky ~ *Circus Polka: For a Young Elephant* ~ Claudio Spies, C
 Work = W. A. Mozart ~ Adagio and Fugue in C minor, K. 546 ~ Claudio Spies, Conductor
 Work = W. A. Mozart ~ Overture to *La clemenza di Tito* (The Clemency of Titus), K. 621 ~ Claudio Spies, Conductor
 Break = --- Intermission ---
-Work = Felix Mendelssohn ~ *Ouvertüre zum Märchen von der schönen Melusine* (Overture to the Legend of the Fair Melusine), op. 32 ~ William Intriligator '92, Conductor
-Work = Felix Mendelssohn ~ Symphony No. 4 in A major, op. 90, *Italian* ~ William Intriligator '92, Conductor
+Work = Felix Mendelssohn ~ *Ouvertüre zum Märchen von der schönen Melusine* (Overture to the Legend of the Fair Melusine), op. 32 ~ William Intriligator ’92, Conductor
+Work = Felix Mendelssohn ~ Symphony No. 4 in A major, op. 90, *Italian* ~ William Intriligator ’92, Conductor

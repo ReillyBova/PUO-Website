@@ -2,7 +2,7 @@
 # Concert Name (e.g. "Fall Concert")
 concertName: "Winter Concert"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#00B0FF"
+colorTheme: "#93DADA"
 # Date YY-MM-DD (for sorting)
 date: "2013-12-05"
 # Season
@@ -10,7 +10,7 @@ season: "2013/14"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "dvorak"
+poster: ""
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
@@ -39,5 +39,5 @@ Work = David Sanford ~ *Teatro di Strada* (Street Theater) ~ Ralph Bowen, Saxoph
 
 
 Break = --- Intermission ---
-Work = Ludwig van Beethoven ~ Overture to *Egmont*, op. 84 ~ J.J. Warshaw, Conductor
+Work = Ludwig van Beethoven ~ Overture to *Egmont*, op. 84 ~ J.J. Warshaw ’14, Conductor
 Work = Antonín Dvořák ~ Symphony No. 9 in E minor, op. 95, *From the New World*

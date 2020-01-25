@@ -34,6 +34,6 @@ Section
 
 Overline = Program
 Work = Igor Stravinsky ~ *Symphonies of Wind Instruments*
-Work = W. A. Mozart ~ Violin Concerto No. 5 in A major, K. 219, *The Turkish* ~ Alexis Kende '05, Violin
+Work = W. A. Mozart ~ Violin Concerto No. 5 in A major, K. 219, *The Turkish* ~ Alexis Kende ’05, Violin
 Break = --- Intermission ---
 Work = Nikolai Rimsky-Korsakov ~ *Scheherazade*, op. 35

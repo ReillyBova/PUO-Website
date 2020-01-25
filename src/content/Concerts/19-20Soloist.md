@@ -34,8 +34,8 @@ Datetime = March 7, 2020 19:30
 Section
 
 Overline = Program
-Work = Carl Maria von Weber ~ Overture to *Der Freischütz* (The Marksman), op. 77 ~ Reilly Bova '20, Conductor
+Work = Carl Maria von Weber ~ Overture to *Der Freischütz* (The Marksman), op. 77 ~ Reilly Bova ’20, Conductor
 Work = W. A. Mozart ~ Violin Concerto No. 3 in G major, K. 216 ~ Hana Mundiya ’20, Violin
 Break = --- Intermission ---
 Work = Annika Socolofsky GS ~ *Gaze*
-Work = Samuel Barber ~  Violin Concerto, op. 14 ~ Fumika Mizuno '21, Violin
+Work = Samuel Barber ~  Violin Concerto, op. 14 ~ Fumika Mizuno ’21, Violin

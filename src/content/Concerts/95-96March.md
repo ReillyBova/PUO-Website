@@ -33,7 +33,7 @@ Datetime = March 07, 1996 19:30
 Section
 
 Overline = Program
-Work = Bedřich Smetana ~ *Vltava* (The Moldau) ~ James Weiss '96, Conductor
+Work = Bedřich Smetana ~ *Vltava* (The Moldau) ~ James Weiss ’96, Conductor
 Work = Peter Westergaard ~ *Ringing Changes* ~ World Premiere
 Break = --- Intermission ---
 Work = Sergei Rachmaninoff ~ *Symphonic Dances*, op. 45

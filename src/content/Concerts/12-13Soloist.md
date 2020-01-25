@@ -2,7 +2,7 @@
 # Concert Name (e.g. "Fall Concert")
 concertName: "Soloist Spotlight"
 # Concert Color theme (use hex form of sRGB to find)
-colorTheme: "#8AC44A"
+colorTheme: "#000000"
 # Date YY-MM-DD (for sorting)
 date: "2013-03-08"
 # Season
@@ -10,7 +10,7 @@ season: "2012/13"
 # Is current season?
 current: "false"
 # Poster filename (without extension)
-poster: "wagner"
+poster: ""
 # Google Calendar link (if applicable)
 calendar: ""
 # Ticket link (if applicable)
