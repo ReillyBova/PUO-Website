@@ -45,7 +45,7 @@
     "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-remark-smartypants": "^2.1.19",
     "gatsby-source-filesystem": "^2.1.43",
-    "gatsby-transformer-remark": "^2.6.45",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.9",
     "mdi-material-ui": "^6.10.0",
     "prop-types": "^15.7.2",
